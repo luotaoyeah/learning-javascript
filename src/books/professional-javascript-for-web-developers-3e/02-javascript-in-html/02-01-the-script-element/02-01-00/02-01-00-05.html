@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>02-01</title>
+    <!--
+        如果通过 src 引入了外部的 JS 文件（只要 <script> 标签上出现了 src 属性），
+        则 <script> 标签中间内嵌的代码会被忽略，不会执行
+    -->
+    <script src="./02-01-00-05.js">
+      // 不会执行
+      (function() {
+        alert("B");
+      })();
+    </script>
+    <script src>
+      // 不会执行
+      (function() {
+        alert("C");
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
