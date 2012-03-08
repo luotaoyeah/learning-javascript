@@ -3,11 +3,18 @@
   <head>
     <meta charset="utf-8" />
     <title>02-01</title>
+
     <!--
-      <script> 标签有一个特性, 就是可以加载其他域名下的 JS 文件,
-      实现跨域资源访问
+      <script> 标签有一个特性, 就是可以加载其他域名下的 JS 文件, 从而实现跨域资源访问
     -->
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
     <script>
       window.addEventListener('load', function() {
         $('#btn')
@@ -18,7 +25,8 @@
       });
     </script>
   </head>
-  <body>
-    <button id="btn" style="border-radius: 3px;cursor: pointer;"></button>
+
+  <body style="padding: 10px;">
+    <button id="btn" type="button" class="btn btn-primary"></button>
   </body>
 </html>

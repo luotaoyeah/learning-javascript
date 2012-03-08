@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>02-01-02</title>
+
+    <!--
+        当 <script> 标签通过 src 引入外部的 JS 文件时, <script> 标签支持 defer 属性,
+        
+        defer 属性的含义是:
+          JS 文件会**立即**开始下载, 但是不会阻塞其他部分的解析,
+          JS 文件在下载完成之后**不会**立即解析执行,
+          最后所有 defer 的 JS 文件依然会按顺序执行,
+          
+        那么什么时候执行呢? 会延迟到 DOM 树构建完成之后, 在 DOMContentLoaded 事件之前执行,
+        并且所有 defer 的 <script> 标签, 依然会按照它们的先后顺序执行
+    -->
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('DOMContentLoaded');
+      });
+    </script>
+
+    <!--
+        如下, 两个 <script> 标签虽然是写在 <head> 标签里面的,
+        但是它们会在 DOM 解析完之后再执行, 因此可以根据 ID 获取 DOM 元素
+    -->
+    <script src="./02-01-02.01.01.js" defer></script>
+    <script src="./02-01-02.01.02.js" defer></script>
+
+    <script src="./02-01-02.01.03.js"></script>
+  </head>
+  <body>
+    <div id="div01">FOO</div>
+  </body>
+</html>

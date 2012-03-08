@@ -1,7 +1,7 @@
 (function() {
-  alert('HI');
+  alert('A');
 })();
 
 function fn01() {
-  alert('FN01');
+  alert('B');
 }

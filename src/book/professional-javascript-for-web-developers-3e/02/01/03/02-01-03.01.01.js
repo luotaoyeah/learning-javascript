@@ -195,4 +195,4 @@
  * 很多注释
  * 很多注释
  */
-console.log('%cASYNC 01', 'color:blue');
+console.log('%cA', 'color:blue');
