@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>02-01</title>
+    <!--
+        内嵌 JS 的 <script> 标签, 会依次解析执行（interpret）,
+        这个过程会阻塞页面其他部分的加载和解析,
+        因此如果 JS 代码解析执行的时间较长, 则可以看到页面会长时间处于一个空白的状态
+    -->
+    <script>
+      function fn01() {
+        alert('FN01');
+      }
+    </script>
+    <script>
+      fn01();
+
+      function fn02() {
+        alert('FN02');
+      }
+    </script>
+    <script>
+      fn02();
+    </script>
+  </head>
+  <body>
+    BAR
+  </body>
+</html>

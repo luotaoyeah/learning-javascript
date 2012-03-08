@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>02-01</title>
+    <!--
+      <script> 标签有一个特性, 就是可以加载其他域名下的 JS 文件,
+      实现跨域资源访问
+    -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      window.addEventListener('load', function() {
+        $('#btn')
+          .html('CLICK ME')
+          .on('click', function() {
+            alert('CLICK');
+          });
+      });
+    </script>
+  </head>
+  <body>
+    <button id="btn" style="border-radius: 3px;cursor: pointer;"></button>
+  </body>
+</html>
