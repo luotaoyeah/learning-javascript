@@ -5,14 +5,18 @@
     <title>03-01-04</title>
     <script>
       /*
-       * ES5 引入了严格模式（strict mode）的概念,
+       * ES5 引入了严格模式 (strict mode) 的概念,
        * 在 JS 文件最顶端通过 "use strict" 指令, 标识整个文件使用严格模式,
-       * 如下, 在严格模式下, 不能隐式地声明全局变量（省略 var 关键字）
+       * 如下, 在严格模式下, 不能隐式地声明全局变量 (省略 var 关键字)
        */
+
       "use strict";
 
-      X = "X";
-      console.log(window.X);
+      try {
+        X = "X";
+      } catch (e) {
+        console.assert(e.message === "X is not defined");
+      }
     </script>
 
     <script>
@@ -24,14 +28,17 @@
       (function fn01() {
         // 普通模式
         Y = "Y";
-        console.log(window.Y);
+        console.assert(window.Y === "Y");
       })();
 
       (function fn02() {
         // 严格模式
         "use strict";
-        Z = "Z";
-        console.log(window.Z);
+        try {
+          Z = "Z";
+        } catch (e) {
+          console.assert(e.message === "Z is not defined");
+        }
       })();
     </script>
 
@@ -39,8 +46,8 @@
       /*
        * 普通模式
        */
-      A = "A";
-      console.log(window.A);
+      FOO = "FOO";
+      console.assert(window.FOO === "FOO");
     </script>
   </head>
   <body></body>
