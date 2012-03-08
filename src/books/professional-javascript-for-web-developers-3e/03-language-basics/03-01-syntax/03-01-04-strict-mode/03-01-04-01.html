@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-01-04</title>
+    <script>
+      /*
+       * ES5 引入了严格模式（strict mode）的概念，
+       * 在 JS 文件最顶端通过 "use strict" 指令，标识整个文件使用严格模式，
+       * 如下，在严格模式下，不能隐式地声明全局变量（省略 var 关键字）
+       */
+      "use strict";
+
+      X = "X";
+      console.log(X);
+    </script>
+
+    <script>
+      /*
+       * 在 function body 的最顶端通过 "use strict" 指令，
+       * 标识当前 function 使用严格模式
+       */
+
+      (function fn01() {
+        // 普通模式
+        Y = "Y";
+        console.log(Y);
+      })();
+
+      (function fn02() {
+        // 严格模式
+        "use strict";
+        Z = "Z";
+        console.log(Z);
+      })();
+    </script>
+
+    <script>
+      /*
+       * 普通模式
+       */
+      A = "A";
+      console.log(A);
+    </script>
+  </head>
+  <body></body>
+</html>
