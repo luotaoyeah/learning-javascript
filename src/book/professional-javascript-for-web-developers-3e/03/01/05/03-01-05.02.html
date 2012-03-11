@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-01-05</title>
+
+    <script>
+      /*
+       * 控制语句的代码如果有多条语句, 则必须使用{}包裹
+       */
+
+      if (1 < 2) {
+        console.assert(true);
+        console.assert(true);
+      }
+    </script>
+
+    <script>
+      /*
+       * 控制语句的代码如果只有一条语句, 则可以使用{}包裹(推荐), 也可以不使用{}包裹
+       */
+
+      if (1 < 2) console.assert(true);
+
+      if (1 < 2) {
+        console.assert(true);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
