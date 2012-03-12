@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-03</title>
+
+    <script>
+      'use strict';
+
+      /*
+       * 变量有两种作用域:
+       *   1. 在 function 外面声明的变量属于全局作用域(global scope)
+       *   2. 在 function 里面声明的变量属于函数作用域(function scope)
+       */
+
+      var x = 'X';
+
+      function fn01() {
+        console.assert(x === 'X');
+
+        var y = 'Y';
+        console.assert(y === 'Y');
+      }
+
+      try {
+        console.log(y);
+      } catch (e) {
+        console.log(e.message);
+        console.assert(e instanceof ReferenceError);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
