@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-03</title>
+
+    <script>
+      'use strict';
+
+      /*
+       * JS 是一个动态弱类型的语言, 可以将任意类型的值赋值给同一个变量
+       */
+
+      var x;
+      console.assert(typeof x === 'undefined');
+
+      x = 0;
+      console.assert(typeof x === 'number');
+
+      x = '0';
+      console.assert(typeof x === 'string');
+
+      x = true;
+      console.assert(typeof x === 'boolean');
+    </script>
+  </head>
+  <body></body>
+</html>
