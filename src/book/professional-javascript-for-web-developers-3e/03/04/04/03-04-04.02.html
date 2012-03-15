@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-04-04</title>
+
+    <script>
+      'use strict';
+
+      /*
+       * 可以使用 Boolean() 方法, 将任意的值转换为 true 或 false
+       */
+
+      console.assert(Boolean('') === false);
+      console.assert(Boolean('0') === true);
+
+      console.assert(Boolean(0) === false);
+      console.assert(Boolean(-1) === true);
+      console.assert(Boolean(Number.NaN) === false);
+
+      console.assert(Boolean({}) === true);
+
+      console.assert(Boolean(null) === false);
+      console.assert(Boolean(undefined) === false);
+    </script>
+  </head>
+  <body></body>
+</html>
