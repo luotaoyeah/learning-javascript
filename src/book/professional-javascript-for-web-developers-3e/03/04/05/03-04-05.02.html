@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-04-05</title>
+
+    <script>
+      'use strict';
+
+      /*
+       * 浮点数包含三个部分: <整数部分><小数点><小数部分>
+       */
+
+      var f01 = 3.14;
+    </script>
+
+    <script>
+      'use strict';
+
+      /*
+       * 整数部分如果为 0, 则可以省略整数部分(不推荐)
+       */
+
+      var f02 = 0.3;
+      // prettier-ignore
+      var f03 = .3;
+    </script>
+
+    <script>
+      'use strict';
+
+      /*
+       * 如果小数部分为 0, 或者小数部分为空, 则该变量会被解析为一个整数,
+       * 因为浮点数所占用的内存空间是整数的两倍, 解析为整数可以节省内存空间
+       */
+
+      var f04 = 1.0;
+      // prettier-ignore
+      var f05 = 1.;
+    </script>
+  </head>
+  <body></body>
+</html>
