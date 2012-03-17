@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-04-05</title>
+
+    <script>
+      'use strict';
+
+      /*
+       * JS 可以表示的数字范围是有限的, 其中:
+       *   1. 最大值为 Number.MAX_VALUE
+       *   2. 最小值为 Number.MIN_VALUE
+       *   3. 大于最大值的值为 Number.POSITIVE_INFINITY
+       *   4. 小于最小值的值为 0
+       */
+
+      /*
+       * Number.MIN_VALUE 表示最小值,
+       * 它的计算公式为 0.<51个0>1 * 2^(1 - 1023) = 2^-52 * 2^-1022 = 2^-1074
+       */
+      console.assert(Number.MIN_VALUE === 2 ** -1074);
+
+      /*
+       * 小于最小值的数字无法表示, 只能表示为 0
+       */
+      console.assert(2 ** -1075 === 0);
+    </script>
+
+    <script>
+      'use strict';
+
+      /*
+       * Number.MAX_VALUE 表示最大值,
+       * 它的计算公式为 1.<52个1> * 2^(2046 - 1023) = 2^1023 + 2^1022 + ... + 2^971
+       * 总共有 53 个1, 第一个 1 为 2^1023, 最后一个 1 为 2^971, 累加起来就是可以表示的最大值
+       */
+
+      var MAX_VALUE = 0;
+      for (var i = 971; i <= 1023; i++) {
+        MAX_VALUE += 2 ** i;
+      }
+      console.assert(Number.MAX_VALUE === MAX_VALUE);
+
+      /*
+       * 大于最大值的数字无法表示, 只能表示为 Infinity
+       */
+      console.assert(!Number.isFinite(Number.MAX_VALUE + Number.MAX_VALUE));
+    </script>
+
+    <script>
+      'use strict';
+
+      /*
+       * 如果考虑符号位,
+       *   则 0 有两种表示: +0 / -0
+       *   无穷也有两种表示: 正无穷(Number.POSITIVE_INFINITY) / 负无穷(Number.NEGATIVE_INFINITY)
+       */
+
+      console.assert(!Number.isFinite(Number.POSITIVE_INFINITY));
+      console.assert(!Number.isFinite(Number.NEGATIVE_INFINITY));
+    </script>
+  </head>
+  <body></body>
+</html>
