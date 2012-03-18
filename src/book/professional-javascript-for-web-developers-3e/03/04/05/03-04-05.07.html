@@ -20,21 +20,24 @@
       console.assert(Number.isNaN(Number(undefined)));
 
       /*
-       * "" 转换为 0
+       * 空字符串转换为 0
        */
       console.assert(Number('') === 0);
+      console.assert(Number(' ') === 0);
       /*
-       * 支持转换十进制整数, 前面的 0 会被忽略, 支持正负号
+       * 支持转换十进制整数, 前面的空格和 0 会被忽略, 支持正负号
        */
       console.assert(Number('+009') === 9);
       /*
        * 支持转换十六进制数, 0x 前面不能有其他字符, 0x 后面紧挨着的 0 会被忽略, 支持正负号
        */
       console.assert(Number('0x0000f') === 15);
+      console.assert(Number(' 0x0000f') === 15);
       /*
-       * 支持转换浮点数, 前面的 0 会被忽略
+       * 支持转换浮点数, 前面的空格和 0 会被忽略
        */
       console.assert(Number('-03.14') === -3.14);
+      console.assert(Number(' -03.14') === -3.14);
       /*
        * 只要包含任意非法字符, 转换结果就为 NaN
        */
