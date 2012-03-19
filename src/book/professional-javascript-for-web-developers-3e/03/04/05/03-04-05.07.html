@@ -39,6 +39,10 @@
       console.assert(Number('-03.14') === -3.14);
       console.assert(Number(' -03.14') === -3.14);
       /*
+       * 支持科学计数法
+       */
+      console.assert(Number('3.14e2') === 314);
+      /*
        * 只要包含任意非法字符, 转换结果就为 NaN
        */
       console.assert(Number.isNaN(Number('1f')));

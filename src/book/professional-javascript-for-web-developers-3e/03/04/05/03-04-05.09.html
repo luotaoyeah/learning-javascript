@@ -8,7 +8,7 @@
       'use strict';
 
       /*
-       * parseFloat() 类似于 parseInt(), 会从第一位合法字符开始往后解析, 直到遇到非法字符,
+       * parseFloat() 类似于 parseInt(), 会从第一位合法字符开始往后解析, 直到遇到非法字符为止,
        * 对于 parseFloat() 来说, 第一个小数点是合法字符
        */
 
@@ -27,6 +27,12 @@
       console.assert(Number('3.14e2') === 314);
       console.assert(parseInt('3.14e2') === 3);
       console.assert(parseFloat('3.14e2') === 314);
+
+      /*
+       * parseFloat() 不支持十六进制
+       */
+      console.assert(parseInt('0xf') === 15);
+      console.assert(parseFloat('0xf') === 0);
     </script>
   </head>
   <body></body>

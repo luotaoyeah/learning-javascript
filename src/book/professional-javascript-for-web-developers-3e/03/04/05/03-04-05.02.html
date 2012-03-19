@@ -30,13 +30,12 @@
       'use strict';
 
       /*
-       * 如果小数部分为 0, 或者小数部分为空, 则该变量会被解析为一个整数,
-       * 因为浮点数所占用的内存空间是整数的两倍, 解析为整数可以节省内存空间
+       * 如果小数部分为 0, 或者小数部分为空, 则该变量会被解析为一个整数
        */
 
-      var f04 = 1.0;
+      console.assert(String(1.0) === '1');
       // prettier-ignore
-      var f05 = 1.;
+      console.assert(String(1.) === '1');
     </script>
   </head>
   <body></body>
