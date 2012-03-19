@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-04-06</title>
+
+    <script>
+      'use strict';
+
+      /*
+       * 可以使用某个值的 toString() 方法将它转换为 string 类型,
+       * 不能对 null 和 undefined 调用 toString() 方法
+       */
+
+      console.assert('x'.toString() === 'x');
+      console.assert(true.toString() === 'true');
+      console.assert((9).toString() === '9');
+      console.assert({}.toString() === '[object Object]');
+    </script>
+
+    <script>
+      'use strict';
+
+      /*
+       * 当调用 number 类型的 toString() 方法时, 可以通过参数指定进制, 默认为十进制
+       */
+
+      var n02 = 10;
+      console.assert(n02.toString() === '10');
+      console.assert(n02.toString(2) === '1010');
+      console.assert(n02.toString(8) === '12');
+      console.assert(n02.toString(16) === 'a');
+    </script>
+  </head>
+  <body></body>
+</html>
