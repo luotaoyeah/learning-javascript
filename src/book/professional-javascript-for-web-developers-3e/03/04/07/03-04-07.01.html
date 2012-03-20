@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-04-07</title>
+
+    <script>
+      'use strict';
+
+      /*
+       * Object 类型是所有对象类型的基类, 使用 new 操作符来创建一个 Object 类型的实例对象
+       */
+
+      var obj01 = new Object();
+      console.assert(obj01 instanceof Object);
+
+      /*
+       * 使用 new 创建实例对象时, 如果没有参数, 则构造函数后面的小括号可以省略(并不推荐)
+       */
+      // prettier-ignore
+      var obj02 = new Object;
+      console.assert(obj02 instanceof Object);
+    </script>
+  </head>
+  <body></body>
+</html>
