@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>03-05-01</title>
+
+    <script>
+      'use strict';
+
+      /*
+       * ++/-- 也可以用于 boolean/string/object 类型的变量,
+       * 会首先使用 Number() 方法将值转换为 number 类型的值, 再进行自增/自减
+       */
+
+      var b01 = true;
+      console.assert(b01++ === 1);
+      console.assert(b01 === 2);
+
+      var s01 = '1f';
+      console.assert(Number.isNaN(s01++));
+
+      var obj01 = {};
+      console.assert(Number.isNaN(obj01++));
+
+      var obj02 = {
+        valueOf: function() {
+          return 9;
+        },
+      };
+      console.assert(obj02++ === 9);
+
+      var obj03 = {
+        toString: function() {
+          return 8;
+        },
+      };
+      console.assert(++obj03 === 9);
+    </script>
+  </head>
+  <body></body>
+</html>
