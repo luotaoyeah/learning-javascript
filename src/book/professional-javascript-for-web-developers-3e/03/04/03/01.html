@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>the-null-type</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // 语义上讲, `null` 表示空的对象引用
+
+        console.assert(typeof null === 'object');
+      })();
+
+      (function () {
+        // `null` 和 `undefined` 不严格地相等
+
+        console.assert(null == undefined);
+        console.assert(null !== undefined);
+      })();
+    </script>
+  </head>
+
+  <body></body>
+</html>
