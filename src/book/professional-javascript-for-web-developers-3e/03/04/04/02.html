@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>the-boolean-type</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // 可以使用 `Boolean()` 方法, 将任意的值转换为 `true` 或 `false`
+        // 注意前面没有使用 `new` 关键字
+
+        console.assert(Boolean(undefined) === false);
+        console.assert(Boolean(null) === false);
+        console.assert(Boolean('') === false);
+        console.assert(Boolean(0) === false);
+        console.assert(Boolean(Number.NaN) === false);
+        console.assert(Boolean(false) === false);
+
+        console.assert(Boolean(true) === true);
+        console.assert(Boolean('0') === true);
+        console.assert(Boolean(-1) === true);
+        console.assert(Boolean(Number.POSITIVE_INFINITY) === true);
+        console.assert(Boolean(Number.NEGATIVE_INFINITY) === true);
+        console.assert(Boolean({}) === true);
+      })();
+
+      (function () {
+        // 在条件语句中, 如果 condition 不是一个 boolean 类型的值,
+        // 则 JS 会自动将它转换为 boolean 类型的值, 再进行判断,
+        // 转换的方法就是使用 `Boolean()` 函数
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
