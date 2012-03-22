@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>the-undefined-type</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // undefined variable 和 undeclared variable 的区别:
+        //   访问 undefined variable 的值, 返回 `undefined`,
+        //   访问 undeclared variable 的值, 运行报错
+
+        var x;
+        console.assert(x === undefined);
+
+        try {
+          console.assert(y === undefined);
+        } catch (e) {
+          console.assert(e.message === 'y is not defined');
+        }
+      })();
+
+      (function () {
+        // undefined variable 和 undeclared variable 的相同点:
+        // typeof 的结果都为 `undefined`
+
+        var x;
+        console.assert(typeof x === 'undefined');
+        console.assert(typeof y === 'undefined');
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

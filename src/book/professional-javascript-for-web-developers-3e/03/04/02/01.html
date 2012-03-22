@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>the-undefined-type</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // 如果一个变量声明之后没有赋值, 则它的值为 `undefined`
+
+        var x;
+        console.assert(x === undefined);
+      })();
+
+      (function () {
+        // 也可以显式地给变量赋值为 `undefined`
+
+        var x = undefined;
+        console.assert(x === undefined);
+      })();
+    </script>
+  </head>
+
+  <body></body>
+</html>
