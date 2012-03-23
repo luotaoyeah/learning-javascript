@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>floating-point-values</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // 浮点数必须包含小数点
+
+        console.assert(3.14 === 3.14);
+      })();
+
+      (function () {
+        // 整数部分如果为 0, 则整数部分可以省略,
+        // 但是并不推荐这种写法
+
+        // prettier-ignore
+        console.assert(0.15 === .15);
+        console.assert(String(0.15) === '0.15');
+        // prettier-ignore
+        console.assert(String(.15) === '0.15');
+      })();
+
+      (function () {
+        // 因为小数占用的内存是整数的两倍,
+        // 所以 JS 会尽可能地将一个数字转换为整数来存储,
+        // 比如当小数部分为 0 或者小数部分为空的数字, 就会被转换为整数
+
+        console.assert(String(1.0) === '1');
+        // prettier-ignore
+        console.assert(String(1.)==='1');
+      })();
+
+      (function () {
+        // 可以使用科学计数法(e-notation)表示数字
+
+        console.assert(314 === 3.14e2);
+        console.assert(String(3.14e2) === '314');
+      })();
+
+      (function () {
+        // 如果整数部分为 0, 且小数点后面超过 6 个 0 (>=6),
+        // 则 JS 会自动将它转换为科学计数法表示
+
+        console.assert(String(0.000001) === '0.000001');
+        console.assert(String(1e-6) === '0.000001');
+
+        console.assert(String(0.0000001) === '1e-7');
+        console.assert(String(1e-7) === '1e-7');
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
