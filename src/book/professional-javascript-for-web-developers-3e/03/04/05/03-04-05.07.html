@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>03-04-05</title>
+    <title>the-number-type</title>
 
     <script>
       'use strict';
@@ -59,17 +59,17 @@
        */
       console.assert(
         Number({
-          valueOf: function() {
+          valueOf: function () {
             return 1;
           },
-          toString: function() {
+          toString: function () {
             return 2;
           },
         }) === 1,
       );
       console.assert(
         Number({
-          toString: function() {
+          toString: function () {
             return 2;
           },
         }) === 2,
