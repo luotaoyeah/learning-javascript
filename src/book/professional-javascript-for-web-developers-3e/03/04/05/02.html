@@ -27,11 +27,11 @@
       (function () {
         // 因为小数占用的内存是整数的两倍,
         // 所以 JS 会尽可能地将一个数字转换为整数来存储,
-        // 比如当小数部分为 0 或者小数部分为空的数字, 就会被转换为整数
+        // 比如小数部分为 0 或者小数部分为空的数字, 就会被转换为整数
 
         console.assert(String(1.0) === '1');
         // prettier-ignore
-        console.assert(String(1.)==='1');
+        console.assert(String(1.) === '1');
       })();
 
       (function () {
@@ -42,14 +42,14 @@
       })();
 
       (function () {
-        // 如果整数部分为 0, 且小数点后面超过 6 个 0 (>=6),
-        // 则 JS 会自动将它转换为科学计数法表示
+        // 当一个数字的指数 >=21 或者 <=-7 时,
+        // JS 会将它们表示成科学计数法
 
-        console.assert(String(0.000001) === '0.000001');
-        console.assert(String(1e-6) === '0.000001');
+        console.assert(String(10 ** -7) === '1e-7');
+        console.assert(String(10 ** -6) === '0.000001');
 
-        console.assert(String(0.0000001) === '1e-7');
-        console.assert(String(1e-7) === '1e-7');
+        console.assert(String(10 ** 20) === '100000000000000000000');
+        console.assert(String(10 ** 21) === '1e+21');
       })();
     </script>
   </head>
