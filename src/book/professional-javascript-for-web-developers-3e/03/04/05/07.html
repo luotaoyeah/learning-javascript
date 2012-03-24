@@ -56,6 +56,20 @@
         );
       })();
     </script>
+
+    <script>
+      (function () {
+        // 如果第一个参数不是 string 类型, 会首先使用 `String()` 将它转换为 string 类型,
+        // 再进行转换
+
+        console.assert(Number.parseInt(021, 8) === 15);
+        console.assert(Number.parseInt(0o21, 8) === 15);
+
+        console.assert(String(021) === '17');
+        console.assert(String(0o21) === '17');
+        console.assert(Number.parseInt('17', 8) === 15);
+      })();
+    </script>
   </head>
   <body></body>
 </html>
