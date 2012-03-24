@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>number-conversions</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // `Number.parseInt()` 用来将 string 类型的值转换为整数,
+        // 从第一个合法字符一直往后解析, 直到不能解析的字符为止,
+
+        // 如果第一个字符是非法字符, 则结果为 `Number.NaN`
+        console.assert(Number.isNaN(Number.parseInt('X')));
+
+        // 空白字符的结果是 `Number.NaN`
+        console.assert(Number.isNaN(Number.parseInt('')));
+        console.assert(Number.isNaN(Number.parseInt('\r\n\v\f\t')));
+
+        // 前面的空格和 0 会被忽略
+        console.assert(Number.parseInt(' \t\v\f\r\n9') === 9);
+        console.assert(Number.parseInt('09') === 9);
+
+        // 小数点也是非法字符
+        console.assert(Number.parseInt('09.9XX') === 9);
+
+        // 支持十六进制, 必须以 0x 开头(开头可以包含空格)
+        console.assert(Number.parseInt('0x00f') === 15);
+        console.assert(Number.parseInt(' 0xf') === 15);
+      })();
+
+      (function () {
+        // 可以通过第二个参数指定进制(建议始终指定),
+        // 默认没有指定第二个参数时:
+        //   1. 如果字符串以 0x 开头, 则会解析为十六进制
+        //   2. 否则就解析为十进制
+
+        console.assert(Number.parseInt('11') === 11);
+        console.assert(Number.parseInt('11', 2) === 3);
+        console.assert(Number.parseInt('11', 8) === 9);
+        console.assert(Number.parseInt('11', 16) === 17);
+
+        // 进制参数的范围为 [2, 36],
+        // 进制参数也可以为 0, 等价于 10,
+        // 如果超过范围, 则结果为 `Number.NaN`
+        console.assert(Number.parseInt('11', 0) === 11);
+        console.assert(Number.isNaN(Number.parseInt('11', 1)));
+        console.assert(Number.parseInt('11', 2) === 3);
+        console.assert(Number.parseInt('11', 36) === 37);
+        console.assert(Number.isNaN(Number.parseInt('11', 37)));
+
+        console.assert(
+          JSON.stringify(['0', '1', '2', '3'].map(Number.parseInt)) ===
+            JSON.stringify([0, Number.NaN, Number.NaN, Number.NaN]),
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
