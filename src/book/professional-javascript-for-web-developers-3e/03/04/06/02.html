@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>the-nature-of-strings</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // string 类型的值是 immutable 的, 一旦创建之后就不能被修改了,
+        // 当我们修改一个 string 变量时, 实际上会创建一个新的 string 赋值给变量, 并将原来的 string 销毁,
+        // 如下, 会创建一个新的 string 存放 'foobar', 并将 'foo' 和 'bar' 销毁
+
+        var x = 'foo';
+        x = x + 'bar';
+        console.assert(x === 'foobar');
+      })();
+    </script>
+  </head>
+
+  <body></body>
+</html>
