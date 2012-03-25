@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>converting-to-a-string</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // 可以使用 `String()` 方法将任意类型的值转换为 string 类型, 包括 `null` 和 `undefined`,
+        // 如果被转换的值拥有 `toString()` 方法, `String()` 会直接调用它的 `toString()` 方法(不传参数)
+
+        console.assert(String(null) === 'null');
+        console.assert(String(undefined) === 'undefined');
+        console.assert(String({}) === '[object Object]');
+        console.assert(
+          String({
+            toString: function () {
+              return 'foo';
+            },
+          }) === 'foo',
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
