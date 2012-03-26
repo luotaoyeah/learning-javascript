@@ -34,6 +34,7 @@
 
       (function () {
         // 在进行算术运算的时候, 八进制和十六进制都会被转换成十进制
+        // 如下, `String()` 函数会调用 `Number.prototype.toString()` 方法, 默认使用的十进制
         console.assert(String(011) === '9');
         console.assert(String(0x11) === '17');
       })();
