@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>logical-and</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // `&&` 表示逻辑与,
+        // 它具有短路特性(short-circuit): 当前面的条件不成立时, 后面的条件不会被执行
+
+        // noinspection PointlessBooleanExpressionJS
+        console.assert((false && x) === false);
+        // noinspection PointlessBooleanExpressionJS
+        console.assert(
+          (false &&
+            (function () {
+              throw new Error();
+            })()) === false,
+        );
+      })();
+
+      (function () {
+        // `&&` 返回的结果, 是其中某个操作数的值,
+        // 在判断条件的时候, 会将数据转换成 boolean 类型进行判断,
+        // 但是在返回结果的时候, 返回的是某个操作数的原始数据
+
+        // noinspection PointlessBooleanExpressionJS
+        console.assert((null && true) === null);
+        // noinspection PointlessBooleanExpressionJS
+        console.assert((undefined && true) === undefined);
+        console.assert((0 && true) === 0);
+        console.assert(('' && true) === '');
+        console.assert(Number.isNaN(Number.NaN && true));
+
+        // noinspection PointlessBooleanExpressionJS
+        console.assert(true && null === null);
+        console.assert(({} && null) === null);
+      })();
+    </script>
+  </head>
+
+  <body></body>
+</html>
