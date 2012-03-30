@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress PointlessBooleanExpressionJS -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -28,11 +29,10 @@
       (function () {
         // `Number.NaN` 跟任何数据的比较结果都是 false
 
-        // noinspection PointlessBooleanExpressionJS
         console.assert(Number.NaN < 0 === false);
-        // noinspection PointlessBooleanExpressionJS
+
         console.assert((Number.NaN === 0) === false);
-        // noinspection PointlessBooleanExpressionJS
+
         console.assert(Number.NaN > 0 === false);
       })();
     </script>

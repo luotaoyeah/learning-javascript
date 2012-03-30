@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress PointlessBooleanExpressionJS -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,9 +12,8 @@
         // `&&` 表示逻辑与,
         // 它具有短路特性(short-circuit): 当前面的条件不成立时, 后面的条件不会被执行
 
-        // noinspection PointlessBooleanExpressionJS
         console.assert((false && x) === false);
-        // noinspection PointlessBooleanExpressionJS
+
         console.assert(
           (false &&
             (function () {
@@ -29,15 +29,13 @@
         //
         // 所谓"最后一个被执行的操作数"指的是能够决定运算结果的那个操作数
 
-        // noinspection PointlessBooleanExpressionJS
         console.assert((null && true) === null);
-        // noinspection PointlessBooleanExpressionJS
+
         console.assert((undefined && true) === undefined);
         console.assert((0 && true) === 0);
         console.assert(('' && true) === '');
         console.assert(Number.isNaN(Number.NaN && true));
 
-        // noinspection PointlessBooleanExpressionJS
         console.assert(true && null === null);
         console.assert(({} && null) === null);
       })();

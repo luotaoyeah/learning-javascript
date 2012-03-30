@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress PointlessBooleanExpressionJS -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -11,9 +12,7 @@
         // `||` 表示逻辑或,
         // 它具有短路特性(short-circuit): 当前面的条件不成立时, 后面的条件不会被执行
 
-        // noinspection PointlessBooleanExpressionJS
         console.assert((true || x) === true);
-        // noinspection PointlessBooleanExpressionJS
         console.assert(
           (true ||
             (function () {
@@ -27,15 +26,10 @@
         // 在判断条件的时候, 会将操作数转换成 boolean 类型进行判断,
         // 但是在返回结果的时候, 返回的是最后一个被执行的操作数
 
-        // noinspection PointlessBooleanExpressionJS
         console.assert((false || null) === null);
-        // noinspection PointlessBooleanExpressionJS
         console.assert((false || undefined) === undefined);
-        // noinspection PointlessBooleanExpressionJS
         console.assert((false || 0) === 0);
-        // noinspection PointlessBooleanExpressionJS
         console.assert((false || '') === '');
-        // noinspection PointlessBooleanExpressionJS
         console.assert(Number.isNaN(false || Number.NaN));
 
         console.assert((3 || false) === 3);
