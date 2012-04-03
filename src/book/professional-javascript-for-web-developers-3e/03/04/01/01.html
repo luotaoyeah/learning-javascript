@@ -7,35 +7,39 @@
     <script>
       'use strict';
 
-      // JS 中有五个基本类型:
-      //   1. undefined
-      //   2. null
-      //   3. string
-      //   4. number
-      //   5. boolean
-      //
-      // JS 中有一个复杂类型:
-      //   1. object
-      //
-      // array/function/regexp 等等都属于 object 类型
+      (function () {
+        // ----------------------------------------------------------------------------------------------------
 
-      // 使用 `typeof` 操作符可以查询某个值的数据类型, 返回的是一个表示类型的字符串,
-      // 这儿查询的数据类型跟上面说的六个类型相比有两个例外:
-      //   1. typeof null 的值为 'object'
-      //   2. typeof function 的值为 'function'
+        // JS 中有五个基本类型:
+        //   1. undefined
+        //   2. null
+        //   3. string
+        //   4. number
+        //   5. boolean
+        //
+        // JS 中有一个复杂类型:
+        //   1. object
+        //
+        // array/function/regexp 等等都属于 object 类型
 
-      console.assert(typeof undefined === 'undefined');
-      console.assert(typeof null === 'object');
-      console.assert(typeof '0' === 'string');
-      console.assert(typeof 0 === 'number');
-      console.assert(typeof true === 'boolean');
+        // 使用 `typeof` 操作符可以查询某个值的数据类型, 返回的是一个表示类型的字符串,
+        // 这儿查询的数据类型跟上面说的六个类型相比有两个例外:
+        //   1. typeof null 的值为 'object'
+        //   2. typeof function 的值为 'function'
 
-      console.assert(typeof {} === 'object');
-      console.assert(typeof [] === 'object');
-      console.assert(typeof new RegExp() === 'object');
+        console.assert(typeof undefined === 'undefined');
+        console.assert(typeof null === 'object');
+        console.assert(typeof '0' === 'string');
+        console.assert(typeof 0 === 'number');
+        console.assert(typeof true === 'boolean');
 
-      console.assert(typeof function () {} === 'function');
-      console.assert(typeof RegExp === 'function');
+        console.assert(typeof {} === 'object');
+        console.assert(typeof [] === 'object');
+        console.assert(typeof new RegExp() === 'object');
+
+        console.assert(typeof function () {} === 'function');
+        console.assert(typeof RegExp === 'function');
+      })();
     </script>
   </head>
 

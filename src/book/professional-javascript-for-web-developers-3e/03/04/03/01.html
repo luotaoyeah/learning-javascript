@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--suppress PointlessBooleanExpressionJS -->
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,12 +9,14 @@
       'use strict';
 
       (function () {
+        // ----------------------------------------------------------------------------------------------------
         // 语义上讲, `null` 表示空的对象引用
 
         console.assert(typeof null === 'object');
       })();
 
       (function () {
+        // ----------------------------------------------------------------------------------------------------
         // `null` 和 `undefined` 不严格地相等
 
         console.assert(null == undefined);
