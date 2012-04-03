@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--suppress PointlessBooleanExpressionJS -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>understanding-arguments</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // ----------------------------------------------------------------------------------------------------
+        // 函数的形参个数和实参个数可以不同
+
+        console.assert(
+          (function (x) {
+            return x + 1;
+          })(1, 2) === 2,
+        );
+      })();
+
+      (function () {
+        // ----------------------------------------------------------------------------------------------------
+        // 在函数中可以通过 `arguments` 访问所有实参
+
+        (function () {
+          console.assert(arguments[0] === 'a');
+          console.assert(arguments[1] === 'b');
+          console.assert(arguments[2] === 'c');
+        })('a', 'b', 'c');
+      })();
+
+      (function () {
+        // ----------------------------------------------------------------------------------------------------
+        // `arguments` 是一个 array-like object
+
+        (function () {
+          console.assert(arguments instanceof Array === false);
+
+          console.assert(arguments.length === 3);
+
+          console.assert(
+            JSON.stringify(arguments) ===
+              JSON.stringify({
+                0: 'a',
+                1: 'b',
+                2: 'c',
+              }),
+          );
+        })('a', 'b', 'c');
+      })();
+
+      (function (x, y) {
+        // ----------------------------------------------------------------------------------------------------
+        // 未传值的参数值为 `undefined`
+
+        console.assert(x === 1);
+        console.assert(y === undefined);
+      })(1);
+    </script>
+  </head>
+
+  <body></body>
+</html>
