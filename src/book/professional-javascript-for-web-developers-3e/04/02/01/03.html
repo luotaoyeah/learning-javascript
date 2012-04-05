@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>variable-declaration</title>
+
+    <script>
+      (function () {
+        // ----------------------------------------------------------------------------------------------------
+        // NON-STRICT 模式下
+        // 如果声明变量没有使用 `var`, 则该变量会被添加到 global execution context 中
+
+        (function () {
+          __SOME_VAR = '__SOME_VAR';
+        })();
+
+        console.assert(window.__SOME_VAR === '__SOME_VAR');
+      })();
+    </script>
+  </head>
+
+  <body></body>
+</html>
