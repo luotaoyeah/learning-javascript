@@ -26,19 +26,19 @@
         // 在 executionContextObj4ChangeColor.activationObject 上找不到 color 变量,
         // 就会顺着 scopeChain 找到 executionContextObj4Global.variableObject.color 变量
 
-        var variableObject = {
+        var variableObject4Global = {
           color: undefined,
           changeColor: null,
         };
         var executionContextObj4Global = {
-          variableObject: variableObject,
-          scopeChain: [variableObject],
+          variableObject: variableObject4Global,
+          scopeChain: [variableObject4Global],
         };
 
-        var activationObject = { arguments: { length: 0 } };
+        var activationObject4ChangeColor = { arguments: { length: 0 } };
         var executionContextObj4ChangeColor = {
-          activationObject: activationObject,
-          scopeChain: [activationObject, executionContextObj4Global.variableObject],
+          activationObject: activationObject4ChangeColor,
+          scopeChain: [activationObject4ChangeColor, variableObject4Global],
         };
       })();
 
@@ -63,13 +63,13 @@
 
         // 上面的代码生成的 execution context object 大致如下:
 
-        var variableObject = {
+        var variableObject4Global = {
           color: undefined,
           changeColor: null,
         };
         var executionContextObject4Global = {
-          variableObject: variableObject,
-          scopeChain: [variableObject],
+          variableObject: variableObject4Global,
+          scopeChain: [variableObject4Global],
         };
 
         var activationObject4ChangeColor = {
@@ -78,7 +78,7 @@
         };
         var executionContextObject4ChangeColor = {
           activationObject: activationObject4ChangeColor,
-          scopeChain: [activationObject4ChangeColor, executionContextObject4Global.variableObject],
+          scopeChain: [activationObject4ChangeColor, variableObject4Global],
         };
 
         var activationObject4SwapColors = {
@@ -87,11 +87,39 @@
         };
         var executionContextObject4SwapColors = {
           activationObject: activationObject4SwapColors,
-          scopeChain: [
-            activationObject4SwapColors,
-            executionContextObject4ChangeColor.activationObject,
-            executionContextObject4Global.variableObject,
-          ],
+          scopeChain: [activationObject4SwapColors, activationObject4ChangeColor, variableObject4Global],
+        };
+      })();
+
+      (function () {
+        // ----------------------------------------------------------------------------------------------------
+
+        GlobalExectionContext = {
+          LexicalEnvironment: {
+            EnvironmentRecord: {
+              Type: 'Object',
+            },
+            outer: '<null>',
+            this: '<global object>',
+          },
+        };
+
+        FunctionExectionContext = {
+          LexicalEnvironment: {
+            EnvironmentRecord: {
+              Type: 'Declarative',
+              Arguments: { length: 0 },
+            },
+            outer: '<Global or outer function environment reference>',
+            this: '<depends on how function is called>',
+          },
+          VariableEnvironment: {
+            EnvironmentRecord: {
+              Type: 'Declarative',
+            },
+            outer: '<GlobalLexicalEnvironment>',
+            ThisBinding: '<Global Object or undefined>',
+          },
         };
       })();
     </script>
