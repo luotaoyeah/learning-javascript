@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>execution-context-and-scope</title>
+
+    <script>
+      'use strict';
+
+      (function () {
+        // ----------------------------------------------------------------------------------------------------
+        // execution context 关联一个 variable object,
+        // variable object 上定义了该 context 可以访问的变量和函数,
+        // variable object 串起来组成 scope chain,
+        // 下层的 context 可以访问 scope chain 中所有上层的 context 中的变量和函数
+
+        var color = 'blue';
+
+        function changeColor() {
+          console.assert(color === 'blue');
+        }
+
+        changeColor();
+
+        // 上面的代码生成的 execution context object 大致如下,
+        // 在 executionContextObj4ChangeColor.activationObject 上找不到 color 变量,
+        // 就会顺着 scopeChain 找到 executionContextObj4Global.variableObject.color 变量
+
+        var variableObject = {
+          color: undefined,
+          changeColor: null,
+        };
+        var executionContextObj4Global = {
+          variableObject: variableObject,
+          scopeChain: [variableObject],
+        };
+
+        var activationObject = { arguments: { length: 0 } };
+        var executionContextObj4ChangeColor = {
+          activationObject: activationObject,
+          scopeChain: [activationObject, executionContextObj4Global.variableObject],
+        };
+      })();
+
+      (function () {
+        // ----------------------------------------------------------------------------------------------------
+
+        var color = 'blue';
+
+        function changeColor() {
+          var anotherColor = 'red';
+
+          function swapColors() {
+            var tempColor = anotherColor;
+            anotherColor = color;
+            color = tempColor;
+          }
+
+          swapColors();
+        }
+
+        changeColor();
+
+        // 上面的代码生成的 execution context object 大致如下:
+
+        var variableObject = {
+          color: undefined,
+          changeColor: null,
+        };
+        var executionContextObject4Global = {
+          variableObject: variableObject,
+          scopeChain: [variableObject],
+        };
+
+        var activationObject4ChangeColor = {
+          anotherColor: undefined,
+          arguments: { length: 0 },
+        };
+        var executionContextObject4ChangeColor = {
+          activationObject: activationObject4ChangeColor,
+          scopeChain: [activationObject4ChangeColor, executionContextObject4Global.variableObject],
+        };
+
+        var activationObject4SwapColors = {
+          tempColor: undefined,
+          arguments: { length: 0 },
+        };
+        var executionContextObject4SwapColors = {
+          activationObject: activationObject4SwapColors,
+          scopeChain: [
+            activationObject4SwapColors,
+            executionContextObject4ChangeColor.activationObject,
+            executionContextObject4Global.variableObject,
+          ],
+        };
+      })();
+    </script>
+  </head>
+
+  <body></body>
+</html>
