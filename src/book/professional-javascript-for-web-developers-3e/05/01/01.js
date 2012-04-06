@@ -32,3 +32,23 @@
   console.assert(obj['5'] === 1);
   console.assert(obj['x y'] === 2);
 })();
+
+(function () {
+  // ----------------------------------------------------------------------------------------------------
+  // 访问对象属性有两种方式:
+  //   1. dot notation
+  //   2. barcket notation
+
+  var obj = {
+    x: 1,
+    ' y ': 2,
+  };
+
+  var key = 'x';
+
+  console.assert(obj.x === obj['x']);
+  console.assert(obj.x === obj[key]);
+
+  // 如果属性名包含特殊字符, 就只能使用 bracket notation 访问
+  console.assert(obj[' y '] === 2);
+})();
