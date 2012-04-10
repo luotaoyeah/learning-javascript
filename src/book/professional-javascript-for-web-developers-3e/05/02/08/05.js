@@ -4,21 +4,21 @@
 
 (function () {
   // ----------------------------------------------------------------------------------------------------
-  // `Array.every()` 方法,
-  // 如果所有元素都满足条件, 则返回 true, 否则返回 false
+  // `Array.some()` 方法,
+  // 只要有一个元素满足条件, 就返回 true, 否则返回 false
 
   var arr = [1, 2, 3, 4, 5];
 
   console.assert(
-    arr.every(function (item) {
+    arr.some(function (item) {
       return item % 2 === 0;
-    }) === false,
+    }) === true,
   );
 
   console.assert(
-    arr.every(function (item) {
-      return item > 0;
-    }) === true,
+    arr.some(function (item) {
+      return item < 0;
+    }) === false,
   );
 })();
 
@@ -31,11 +31,11 @@
   var testedElements = [];
 
   console.assert(
-    arr.every(function (item) {
+    arr.some(function (item) {
       testedElements.push(item);
       return item % 2 === 0;
-    }) === false,
+    }) === true,
   );
 
-  console.assert(JSON.stringify(testedElements) === JSON.stringify([1]));
+  console.assert(JSON.stringify(testedElements) === JSON.stringify([1, 2]));
 })();
