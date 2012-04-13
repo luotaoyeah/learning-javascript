@@ -37,3 +37,16 @@
   console.assert(date.getDate() === 1);
   console.assert(date.getDay() === 0);
 })();
+
+(function () {
+  // ----------------------------------------------------------------------------------------------------
+  // `Date.getTimezoneOffset()` 返回当前系统时区偏移的分钟数,
+  // 结果跟日期参数中的时区无关, 可以用来检测当前系统的时区
+
+  console.assert(new Date().getTimezoneOffset() === -(8 * 60));
+  console.assert(new Date('2012-04-01').getTimezoneOffset() === -(8 * 60));
+  console.assert(new Date('2012-04-01T13:01:01.000').getTimezoneOffset() === -(8 * 60));
+  console.assert(new Date('2012-04-01T13:01:01.000Z').getTimezoneOffset() === -(8 * 60));
+  console.assert(new Date('2012-04-01T13:01:01.000+0100').getTimezoneOffset() === -(8 * 60));
+  console.assert(new Date('2012-04-01T13:01:01.000+0800').getTimezoneOffset() === -(8 * 60));
+})();
