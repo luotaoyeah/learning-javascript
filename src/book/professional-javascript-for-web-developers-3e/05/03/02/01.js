@@ -14,7 +14,7 @@
   console.assert(date.toLocaleDateString() === '2012-4-1');
   console.assert(date.toLocaleTimeString() === '13:01:01');
 
+  // `Date.toUTCString()` 和 `Date.toISOString()` 返回的时间都是基于 0 时区的
   console.assert(date.toUTCString() === 'Sun, 01 Apr 2012 05:01:01 GMT');
-
   console.assert(date.toISOString() === '2012-04-01T05:01:01.000Z');
 })();
