@@ -7,6 +7,7 @@
 
   function fn01() {
     console.assert(arguments.callee instanceof Function);
+    console.assert(arguments.callee.name === 'fn01');
     return arguments.callee.x;
   }
   console.assert(fn01() === undefined);
