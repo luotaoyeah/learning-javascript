@@ -1,5 +1,7 @@
 // function-properties-and-methods
 
+'use strict';
+
 (function () {
   // ----------------------------------------------------------------------------------------------------
   // `Function.prototype.length` 属性, 表示形参个数
