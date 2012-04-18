@@ -4,7 +4,7 @@
 
 (function () {
   // ----------------------------------------------------------------------------------------------------
-  // `Array.toString()` 方法, 返回数组的字符串表示,
+  // `Array.prototype.toString()` 方法, 返回数组的字符串表示,
   // 会调用每个元素的 toString() 方法, 然后将结果用逗号连接
 
   console.assert([1, 2, 3].toString() === '1,2,3');
@@ -12,7 +12,7 @@
 
 (function () {
   // ----------------------------------------------------------------------------------------------------
-  // `Array.toLocaleString()` 方法, 会调用每个元素的 toLocaleString() 方法
+  // `Array.prototype.toLocaleString()` 方法, 会调用每个元素的 toLocaleString() 方法
 
   var arr = [
     {
@@ -39,8 +39,8 @@
 
 (function () {
   // ----------------------------------------------------------------------------------------------------
-  // `Array.toString()` 方法的结果中, 默认使用逗号连接,
-  // `Array.join()` 方法, 默认跟 `Array.toString()` 方法结果一样,
+  // `Array.prototype.toString()` 方法的结果中, 默认使用逗号连接,
+  // `Array.prototype.join()` 方法, 默认跟 `Array.prototype.toString()` 方法结果一样,
   // 但是可以指定连接符号
 
   var arr = [1, 2, 3];

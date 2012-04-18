@@ -4,8 +4,8 @@
 
 (function () {
   // ----------------------------------------------------------------------------------------------------
-  // `Array.reduceRight()` 方法,
-  // 跟 `Array.reduce()` 的区别: 从后往前遍历
+  // `Array.prototype.reduceRight()` 方法,
+  // 跟 `Array.prototype.reduce()` 的区别: 从后往前遍历
 
   var intermediateResults = [];
 
