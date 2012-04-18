@@ -1,4 +1,4 @@
-// string-manipulation-methods
+// the-trim-method
 
 'use strict';
 

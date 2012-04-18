@@ -1,4 +1,4 @@
-// string-manipulation-methods
+// string-location-methods
 
 'use strict';
 
