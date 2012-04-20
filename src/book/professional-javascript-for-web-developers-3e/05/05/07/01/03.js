@@ -35,8 +35,8 @@
 
 (function () {
   // ----------------------------------------------------------------------------------------------------
-  // 如果直接调用 `eval()` 函数, 则它的 execution context 就是当前的 function execution context,
-  // 如果用非直接的方式调用 `eval()` 函数, 则它的 execution context 就是 global execution context
+  // 如果直接调用 `eval()` 函数,  则它的 execution context 就是当前的 function execution context,
+  // 如果用非直接的方式调用 `eval()` 函数, 则它的 execution context 就是 global execution context,
   // 非直接的方式包括:
   //   1. eval.call();
   //   2. eval.apply();
