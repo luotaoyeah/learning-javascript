@@ -8,8 +8,8 @@
        * load 事件是注册到 window 对象上的,
        * 此时, 所有资源都已经加载完成, 包括外部资源（例如：图片）
        */
-      window.addEventListener("load", function() {
-        const imgEl = document.getElementById("img");
+      window.addEventListener('load', function () {
+        const imgEl = document.getElementById('img');
         if (imgEl) {
           console.log(`load: (${imgEl.offsetWidth}, ${imgEl.offsetHeight})`);
         }
@@ -20,17 +20,21 @@
        * 此时, HTML 下载完成, DOM 树构建完成,
        * 此时, 外部资源（例如：图片, 外部的CSS）可能尚未加载完成,
        */
-      document.addEventListener("DOMContentLoaded", function() {
-        const imgEl = document.getElementById("img");
+      document.addEventListener('DOMContentLoaded', function () {
+        const imgEl = document.getElementById('img');
         if (imgEl) {
-          console.log(
-            `DOMContentLoaded: (${imgEl.offsetWidth}, ${imgEl.offsetHeight})`
-          );
+          console.log(`DOMContentLoaded: (${imgEl.offsetWidth}, ${imgEl.offsetHeight})`);
         }
       });
     </script>
   </head>
   <body>
-    <img id="img" src="./001201.png" />
+    <input type="button" value="手动提交" onclick="javascript:hello()" />
+
+    <script>
+      function hello() {
+        console.log('hello');
+      }
+    </script>
   </body>
 </html>
