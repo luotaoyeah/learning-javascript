@@ -30,3 +30,33 @@
 
   console.assert('e' in person === false);
 })();
+
+(function () {
+  // ----------------------------------------------------------------------------------------------------
+  // `for/in` 循环,
+  // 如果属性是 enumerable instance property 或者 enumerable prototype property, 则可以被遍历
+
+  function Person(a) {
+    this.a = a;
+  }
+
+  Person.prototype.b = 'b';
+
+  var person = new Person();
+  Object.defineProperty(person, 'c', {
+    value: 'c',
+    enumerable: false,
+  });
+  Object.defineProperty(Person.prototype, 'd', {
+    value: 'd',
+    enumerable: false,
+  });
+
+  var keys = [];
+
+  for (var key in person) {
+    keys.push(key);
+  }
+
+  console.assert(JSON.stringify(keys) === JSON.stringify(['a', 'b']));
+})();
