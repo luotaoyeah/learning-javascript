@@ -83,3 +83,27 @@
 
   console.assert(JSON.stringify(Object.keys(person)) === JSON.stringify(['a']));
 })();
+
+(function () {
+  // ----------------------------------------------------------------------------------------------------
+  // `Object.getOwnPropertyNames()` 返回 instance property 属性名的数组
+
+  function Person(a) {
+    this.a = a;
+  }
+
+  Person.prototype.b = 'b';
+
+  var person = new Person();
+
+  Object.defineProperty(person, 'c', {
+    value: 'c',
+    enumerable: false,
+  });
+  Object.defineProperty(Person.prototype, 'd', {
+    value: 'd',
+    enumerable: false,
+  });
+
+  console.assert(JSON.stringify(Object.getOwnPropertyNames(person)) === JSON.stringify(['a', 'c']));
+})();
