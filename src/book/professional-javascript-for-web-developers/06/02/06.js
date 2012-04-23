@@ -46,3 +46,21 @@
   delete person.name;
   console.assert(person.name === 'foo');
 })();
+
+(function () {
+  // ----------------------------------------------------------------------------------------------------
+  // `Object.prototype.hasOwnProperty()` 方法, 判断属性是否存在于实例对象上,
+  // 如果属性不存在, 或者属性存在于 prototype 对象上, 则返回 `false`
+
+  function Person(age) {
+    this.age = age;
+  }
+
+  Person.prototype.name = 'foo';
+
+  var person = new Person();
+
+  console.assert(person.hasOwnProperty('age') === true);
+  console.assert(person.hasOwnProperty('name') === false);
+  console.assert(person.hasOwnProperty('xxx') === false);
+})();
