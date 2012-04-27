@@ -7,6 +7,7 @@
   //   2. Object.prototype.isPrototypeOf()
 
   function Person() {}
+
   function Boy() {}
 
   Boy.prototype = new Person();
