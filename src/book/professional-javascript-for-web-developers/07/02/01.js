@@ -19,3 +19,27 @@
   console.assert(inner(2) === 5);
   console.assert(inner(7) === 10);
 })();
+
+(function () {
+  // ----------------------------------------------------------------------------------------------------
+  // 如果 outer scope 中的某个属性值是一个对象, 则我们在外部修改这个对象的属性, 会影响 closure 里面
+
+  var obj = { x: 1 };
+
+  function outer(_obj) {
+    var y = 2;
+
+    return function (z) {
+      return _obj.x + y + z;
+    };
+  }
+
+  var inner = outer(obj);
+
+  console.assert(inner(2) === 5);
+  console.assert(inner(7) === 10);
+
+  obj.x = 6;
+  console.assert(inner(2) === 10);
+  console.assert(inner(7) === 15);
+})();
