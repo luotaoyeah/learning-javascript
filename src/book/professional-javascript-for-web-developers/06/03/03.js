@@ -1,5 +1,7 @@
 // prototype-and-instance-relationships
 
+'use strict';
+
 (function () {
   // ----------------------------------------------------------------------------------------------------
   // 有两种方式判断 instance 和 prototype/constructor 之间的关系:

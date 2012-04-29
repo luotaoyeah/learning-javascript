@@ -1,5 +1,7 @@
 // mimicking-block-scope
 
+'use strict';
+
 (function () {
   // ----------------------------------------------------------------------------------------------------
   // javascript 只有 global scope 和 function scope, 没有 block scope,

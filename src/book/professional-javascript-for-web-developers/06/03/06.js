@@ -1,5 +1,7 @@
 // combination-inheritance
 
+'use strict';
+
 (function () {
   // ----------------------------------------------------------------------------------------------------
   // 同时使用 constructor stealing 和 prototype chain

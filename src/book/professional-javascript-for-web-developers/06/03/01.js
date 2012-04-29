@@ -1,5 +1,7 @@
 // prototype-chaining
 
+'use strict';
+
 (function () {
   // ----------------------------------------------------------------------------------------------------
   // prototype 本身也是一个 instance, 它可以指向另一个 prototype, 最终组成一个 prototype chain

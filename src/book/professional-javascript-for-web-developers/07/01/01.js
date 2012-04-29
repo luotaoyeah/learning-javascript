@@ -1,5 +1,7 @@
 // recursion
 
+'use strict';
+
 (function () {
   // ----------------------------------------------------------------------------------------------------
   // function expression 有一个特性: 后面的函数可以定义名称,
@@ -10,7 +12,7 @@
     console.assert(bar.name === 'bar');
   };
 
-  console.assert((foo.name = 'bar'));
+  console.assert(foo.name === 'bar');
 
   try {
     // 在外面不能访问这个函数名称

@@ -1,5 +1,7 @@
 // constructor-stealing
 
+'use strict';
+
 (function () {
   // ----------------------------------------------------------------------------------------------------
   // 当我们使用 prototype chain 来实现继承时, 父类的 instance property 会变成子类的 prototype property

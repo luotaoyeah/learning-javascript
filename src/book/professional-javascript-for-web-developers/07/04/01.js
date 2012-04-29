@@ -1,5 +1,7 @@
 // private-variables
 
+'use strict';
+
 (function () {
   // ----------------------------------------------------------------------------------------------------
   // 使用 closure 来模拟私有属性
@@ -23,4 +25,6 @@
   console.assert(person.age === 18);
   console.assert(person.name === undefined);
   console.assert(person.getName() === 'foo');
+
+  console.assert(new Person().getName !== new Person().getName);
 })();
