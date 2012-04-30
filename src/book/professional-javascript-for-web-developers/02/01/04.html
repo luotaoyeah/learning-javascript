@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>the-script-element</title>
+
+    <!--
+        可以通过 <script> 标签的 `src` 属性引入外部的 javascript 文件,
+        跟 inline javascript 一样, external javascript 文件也是按照顺序来下载并解析执行的,
+        也会阻塞页面其他部分的解析
+    -->
+
+    <script src="./04.js"></script>
+
+    <script>
+      fn01();
+    </script>
+  </head>
+
+  <body>
+    BODY
+  </body>
+</html>

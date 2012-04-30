@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>02-01</title>
+    <title>the-script-element</title>
 
     <!--
-      <script> 标签有一个特性, 就是可以加载其他域名下的 JS 文件, 从而实现跨域资源访问
+      <script> 标签有一个特性, 可以加载其他域名下的 javascript 文件, 从而实现跨域资源访问
     -->
 
     <link
@@ -17,16 +17,14 @@
 
     <script>
       window.addEventListener('load', function () {
-        $('#btn')
-          .html('CLICK ME')
-          .on('click', function () {
-            alert('CLICK');
-          });
+        $('#btn').on('click', function () {
+          alert('CLICK');
+        });
       });
     </script>
   </head>
 
   <body style="padding: 10px;">
-    <button id="btn" type="button" class="btn btn-primary"></button>
+    <button class="btn btn-primary" id="btn" type="button">CLICK ME</button>
   </body>
 </html>
