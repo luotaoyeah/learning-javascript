@@ -16,12 +16,12 @@
 
     <!--
         <script> 标签的 async 属性和 defer 类似, 但是有一定的区别,
-        
-        async 的含义是: 
-          JS 文件会**立即**进行下载, 但是不会阻塞其他部分的解析(跟 defer 一样),
-          JS 文件在下载完成之后, 只要有机会, 就会解析执行(跟 defer 不同),
-          所有 async 的 JS 文件不能保证会按照先后顺序执行(跟 defer 不同),
-          
+
+        async 的含义是:
+          javascript 文件会**立即**进行下载, 但是不会阻塞其他部分的解析(跟 defer 一样),
+          javascript 文件在下载完成之后, 只要有机会, 就会解析执行(跟 defer 不同),
+          所有 async 的 javascript 文件不能保证会按照先后顺序执行(跟 defer 不同),
+
         因此, 设置了 async 的 <script> 标签,
             1. 不能保证会按照先后顺序执行（跟 defer 不同）,
             2. 不能保证会在 DOMContentLoaded 事件之前执行（跟 defer 不同）,

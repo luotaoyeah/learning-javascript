@@ -8,5 +8,5 @@
 
   var str = 'js';
 
-  console.assert(String.fromCharCode(str.charCodeAt(0) - 32, str.charCodeAt(1) - 32) === 'JS');
+  console.assert(String.fromCharCode(str.charCodeAt(0) - 32, str.charCodeAt(1) - 32) === 'javascript');
 })();
