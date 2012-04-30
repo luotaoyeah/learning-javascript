@@ -1,0 +1,13 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>document-modes</title>
+
+    <script>
+      // 如果没有指定 `DOCTYPE` 指令, 就是怪异模式(quirks mode),
+      // 此时 `document.compatMode` 属性的值为 'BackCompat'
+      console.assert(document.compatMode === 'BackCompat');
+    </script>
+  </head>
+  <body></body>
+</html>
