@@ -20,13 +20,18 @@
       var results = [];
 
       window.addEventListener('load', function () {
-        console.assert(
-          JSON.stringify(results) === JSON.stringify(['NO_DEFER_01', 'DEFER_01', 'DEFER_02', 'DOMContentLoaded']),
-        );
+        results.push('load');
       });
 
       document.addEventListener('DOMContentLoaded', function () {
         results.push('DOMContentLoaded');
+      });
+
+      window.addEventListener('load', function () {
+        console.assert(
+          JSON.stringify(results) ===
+            JSON.stringify(['NO_DEFER_01', 'DEFER_01', 'DEFER_02', 'DOMContentLoaded', 'load']),
+        );
       });
     </script>
 
