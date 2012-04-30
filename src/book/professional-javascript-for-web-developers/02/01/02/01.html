@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>defer</title>
+
+    <!--
+        当 <script> 标签引入 external javascript 时, <script> 标签支持 `defer` 属性,
+
+        `defer` 属性的含义是:
+          javascript 文件会**立即**开始下载, 但是不会阻塞其他部分的解析,
+          javascript 文件在下载完成之后**不会**立即解析执行,
+          最后所有 defer 的 javascript 文件依然会按顺序执行,
+
+        那么什么时候执行呢? 会延迟到 DOM 树构建完成之后, 在 `DOMContentLoaded` 事件之前执行,
+        并且所有 defer 的 <script> 标签, 依然会按照它们的先后顺序执行
+    -->
+
+    <script>
+      var results = [];
+
+      window.addEventListener('load', function () {
+        console.assert(
+          JSON.stringify(results) === JSON.stringify(['NO_DEFER_01', 'DEFER_01', 'DEFER_02', 'DOMContentLoaded']),
+        );
+      });
+
+      document.addEventListener('DOMContentLoaded', function () {
+        results.push('DOMContentLoaded');
+      });
+    </script>
+
+    <!--
+        如下, 两个 <script> 标签虽然放在 <head> 标签里面,
+        但是它们会在 DOM 解析完之后再执行, 因此可以获取 DOM 元素
+    -->
+    <script src="_01.js" defer></script>
+    <script src="_02.js" defer></script>
+    <script src="_03.js"></script>
+  </head>
+
+  <body>
+    <div id="div01"></div>
+  </body>
+</html>
