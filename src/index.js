@@ -1,1 +1,1 @@
-document.getElementById("app").innerHTML = "hello world";
+require("./mdn/reference/object/freeze");
