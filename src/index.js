@@ -1,1 +1,1 @@
-require("./mdn/reference/object/freeze");
+require("./mdn/reference/global-objects/array/reduce");
