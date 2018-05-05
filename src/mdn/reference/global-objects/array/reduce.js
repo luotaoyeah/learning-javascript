@@ -1,8 +1,4 @@
 /*
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
- */
-
-/*
  * 接收 2 个参数：'迭代函数'，'初始值'；
  * 迭代'数组'元素，返回累加结果；
  * --------------------------------------------------

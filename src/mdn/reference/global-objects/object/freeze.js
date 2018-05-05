@@ -1,8 +1,4 @@
 /*
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze
- */
-
-/*
  * 冻结一个对象；
  * 不能添加属性，不能删除属性，不能改变属性修饰符（value，configurable，enumerable，writable），不能修改原型；
  * --------------------------------------------------
