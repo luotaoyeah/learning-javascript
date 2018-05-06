@@ -154,3 +154,23 @@ console.log("\n-------------------------------------------------- 07");
   /* cat */
   console.log(name);
 })("tom");
+
+/*
+ * 严格模式：delete 一个非对象属性，报错；
+ * 普通模式，delete 一个非对象属性，不报错，返回 false；
+ */
+console.log("\n-------------------------------------------------- 08");
+(function() {
+  "use strict";
+  var name = "tom";
+  /*
+    /!* SyntaxError *!/
+    console.log(delete name);
+  */
+})();
+
+(function() {
+  var name = "tom";
+  /* false */
+  console.log(delete name);
+})();
