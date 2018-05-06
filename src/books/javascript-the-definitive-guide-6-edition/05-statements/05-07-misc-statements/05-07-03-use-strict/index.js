@@ -136,3 +136,21 @@ console.log("\n-------------------------------------------------- 06");
   /* undefined */
   console.log(obj01.age);
 })();
+
+/*
+ * 严格模式：arguments 中的元素是命名参数的复制；
+ * 普通模式，arguments 中的元素跟命名参数共享同一个值；
+ */
+console.log("\n-------------------------------------------------- 07");
+(function(name) {
+  "use strict";
+  arguments[0] = "cat";
+  /* tom */
+  console.log(name);
+})("tom");
+
+(function(name) {
+  arguments[0] = "cat";
+  /* cat */
+  console.log(name);
+})("tom");
