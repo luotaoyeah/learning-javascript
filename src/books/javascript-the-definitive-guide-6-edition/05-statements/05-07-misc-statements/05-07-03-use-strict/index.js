@@ -174,3 +174,33 @@ console.log("\n-------------------------------------------------- 08");
   /* false */
   console.log(delete name);
 })();
+
+/*
+ * 严格模式：delete 一个 nonconfigurable 属性，报错；
+ * 普通模式，delete 一个 nonconfigurable 属性，不报错，返回 false；
+ */
+console.log("\n-------------------------------------------------- 09");
+(function() {
+  "use strict";
+  const obj01 = {};
+  Object.defineProperty(obj01, "name", {
+    value: "tom",
+    configurable: false
+  });
+
+  /*
+    /!* TypeError: Cannot delete property 'name' of #<Object> *!/
+    console.log(delete obj01.name);
+  */
+})();
+
+(function() {
+  const obj01 = {};
+  Object.defineProperty(obj01, "name", {
+    value: "tom",
+    configurable: false
+  });
+
+  /* false */
+  console.log(delete obj01.name);
+})();
