@@ -294,3 +294,22 @@ console.log("\n-------------------------------------------------- 13");
   /* tom cat */
   console.log(eval, arguments);
 })();
+
+/*
+ * 严格模式：读取 arguments.caller 或 arguments.callee 报错；
+ * 普通模式：读取 arguments.caller 或 arguments.callee 不会报错；
+ */
+console.log("\n-------------------------------------------------- 14");
+(function() {
+  "use strict";
+  /*
+    /!* Uncaught TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them *!/
+    console.log(arguments.caller);
+    console.log(arguments.callee);
+  */
+})();
+
+(function() {
+  console.log(arguments.caller);
+  console.log(arguments.callee);
+})();
