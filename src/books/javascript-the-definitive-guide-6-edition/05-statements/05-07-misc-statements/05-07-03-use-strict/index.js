@@ -93,3 +93,46 @@ console.log("\n-------------------------------------------------- 05");
 (function() {
   console.log("this === undefined:", this === undefined);
 }.call(undefined));
+
+/*
+ * 严格模式：给 nonwritable 属性赋值，给 nonextensible 对象添加属性，都会报错；
+ * 普通模式：给 nonwritable 属性赋值，给 nonextensible 对象添加属性，直接无效，不会报错；
+ */
+console.log("\n-------------------------------------------------- 06");
+
+(function() {
+  "use strict";
+  const obj01 = {};
+  Object.defineProperty(obj01, "name", {
+    value: "tom",
+    writable: false
+  });
+  Object.freeze(obj01);
+
+  /*
+    /!* TypeError: Cannot assign to read only property 'name' of object '#<Object>' *!/
+    obj01.name = "cat";
+  */
+
+  /*
+    /!* TypeError: Cannot add property age, object is not extensible *!/
+    obj01.age = 18;
+  */
+})();
+
+(function() {
+  const obj01 = {};
+  Object.defineProperty(obj01, "name", {
+    value: "tom",
+    writable: false
+  });
+  Object.freeze(obj01);
+
+  obj01.name = "cat";
+  /* tom */
+  console.log(obj01.name);
+
+  obj01.age = 18;
+  /* undefined */
+  console.log(obj01.age);
+})();
