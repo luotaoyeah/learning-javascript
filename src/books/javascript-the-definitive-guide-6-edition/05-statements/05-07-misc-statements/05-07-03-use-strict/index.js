@@ -232,3 +232,24 @@ console.log("\n-------------------------------------------------- 10");
   /* cat */
   console.log(obj.name);
 })();
+
+/*
+ * 严格模式：函数参数同名，报错,
+ * 普通模式：函数参数同名，不报错；
+ */
+console.log("\n-------------------------------------------------- 11");
+(function() {
+  "use strict";
+  /*
+    /!* SyntaxError: Duplicate parameter name not allowed in this context *!/
+    (function(name, name) {
+      "use strict";
+      console.log(name);
+    })();
+  */
+})();
+
+(function(name, name) {
+  /* cat */
+  console.log(name);
+})("tom", "cat");
