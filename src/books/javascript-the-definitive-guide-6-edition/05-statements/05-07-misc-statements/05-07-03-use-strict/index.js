@@ -273,3 +273,24 @@ console.log("\n-------------------------------------------------- 12");
   const y = 07;
   console.log(x, y);
 })();
+
+/*
+ * 严格模式：eval 和 arguments 被视为关键字，不能被赋值；
+ * 普通模式：八进制整数可以以 0O 或 0o 或 0 开头；
+ */
+console.log("\n-------------------------------------------------- 13");
+(function() {
+  "use strict";
+  /*
+    /!* SyntaxError: Unexpected eval or arguments in strict mode *!/
+    var eval = "tom";
+    var arguments = "cat";
+  */
+})();
+
+(function() {
+  var eval = "tom";
+  var arguments = "cat";
+  /* tom cat */
+  console.log(eval, arguments);
+})();
