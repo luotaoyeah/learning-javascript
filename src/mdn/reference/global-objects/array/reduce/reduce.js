@@ -5,56 +5,6 @@
  */
 
 /*
- * 如果没有提供'初始值'，则'初始值'为'数组'的第一个元素，且从'数组'第二个元素开始迭代；
- * --------------------------------------------------
- */
-console.log("----------: 无初始值");
-const array01 = [3, 2, 1];
-/* 3-2-1 */
-console.log(
-  array01.reduce((accumulator, value, index, array) => {
-    console.log("index:", index);
-    return `${accumulator}-${value}`;
-  })
-);
-console.log("----------: 有初始值");
-/* 5-3-2-1 */
-console.log(
-  array01.reduce((accumulator, value, index) => {
-    console.log("index:", index);
-    return `${accumulator}-${value}`;
-  }, 5)
-);
-
-/*
- * 如果'数组'为空，且无'初始值'，报错；
- * --------------------------------------------------
- */
-console.log("----------: 如果'数组'为空，且无'初始值'，报错");
-/*
-  /!* TypeError: Reduce of empty array with no initial value *!/
-  [].reduce(() => {});
-*/
-
-/*
- * 如果'数组'为空，且有'初始值'，
- * 或者'数组'只有一个元素，且无'初始值'，
- * 则直接返回'初始值'或者第一个元素，不执行'迭代函数'；
- * --------------------------------------------------
- */
-console.log("----------: 直接返回，不执行'迭代函数'");
-console.log(
-  [].reduce(() => {
-    console.log("callback()");
-  }, "tom")
-);
-console.log(
-  ["tom"].reduce(() => {
-    console.log("callback()");
-  })
-);
-
-/*
  * 提供'初始值'能使程序更加健壮；
  * 否则可能会返回不同类型的结果；
  * --------------------------------------------------

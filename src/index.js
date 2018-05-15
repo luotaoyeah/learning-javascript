@@ -1,1 +1,1 @@
-require("./books/javascript-the-definitive-guide-6-edition/06/06-01/06-01-02");
+require("./mdn/reference/global-objects/array/reduce/reduce-02");
