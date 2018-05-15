@@ -5,40 +5,6 @@
  */
 
 /*
- * 提供'初始值'能使程序更加健壮；
- * 否则可能会返回不同类型的结果；
- * --------------------------------------------------
- */
-console.log("----------: 应该提供'初始值'");
-const reducer01 = (accumulator, value) => {
-  return Math.max(accumulator.x, value.x);
-};
-/* 2 */
-console.log([{ x: 1 }, { x: 2 }].reduce(reducer01));
-/* { x: 1 } */
-console.log([{ x: 1 }].reduce(reducer01));
-/*
-  /!* TypeError: Reduce of empty array with no initial value *!/
-  [].reduce(reducer01);
-*/
-
-/*
- * 例子：数组元素求和；
- * --------------------------------------------------
- */
-console.log("----------: 数组元素求和");
-console.log([1, 2, 3].reduce((accumulator, value) => accumulator + value, 0));
-
-/*
- * 例子：平化数组；
- * --------------------------------------------------
- */
-console.log("----------: 平化数组");
-console.log(
-  [[1, 2], [3, 4]].reduce((accumulator, value) => accumulator.concat(value), [])
-);
-
-/*
  * 例子：统计元素出现次数；
  * --------------------------------------------------
  */

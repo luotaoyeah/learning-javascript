@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/array/reduce/reduce-02");
+require("./mdn/reference/global-objects/array/reduce/reduce-05");
