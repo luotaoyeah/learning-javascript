@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/array/sort/sort-04");
+require("./mdn/reference/global-objects/array/sort/sort-05");
