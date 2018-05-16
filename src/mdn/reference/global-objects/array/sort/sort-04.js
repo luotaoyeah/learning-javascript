@@ -1,4 +1,6 @@
 /*
+ * Example: Sorting non-ASCII characters
+ *
  * 对于 non-ASCII 字符，应该使用 String.localeCompare() 方法进行比较；
  */
 console.log("\n-------------------------------------------------- 01");

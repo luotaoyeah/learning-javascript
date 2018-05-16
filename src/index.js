@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/array/sort/sort-05");
+require("./books/javascript-the-definitive-guide-6-edition/06/06-01/06-01-03-D");
