@@ -17,3 +17,5 @@ const flattern = array => {
   }, []);
 };
 console.log(flattern([1, [2, [3, [4, [5]]]]]));
+
+export {};

@@ -24,3 +24,5 @@ console.log(
     console.log("callback()");
   })
 );
+
+export {};

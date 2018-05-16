@@ -13,3 +13,5 @@ console.log(
     return accumulator;
   }, {})
 );
+
+export {};

@@ -11,3 +11,5 @@ console.log([{ x: 1 }, { x: 2 }].reduce(reducer01));
 console.log([{ x: 1 }].reduce(reducer01));
 /* TypeError: Reduce of empty array with no initial value */
 [].reduce(reducer01);
+
+export {};
