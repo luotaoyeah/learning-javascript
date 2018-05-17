@@ -1,5 +1,5 @@
 /*
- * 接收 1 个参数：'compareFunction（optional）'，定义排序规则；
+ * 接收 1 个参数: 'compareFunction（optional）', 定义排序规则;
  */
 console.log("\n-------------------------------------------------- 01");
 /* [ 1, 2, 3 ] */

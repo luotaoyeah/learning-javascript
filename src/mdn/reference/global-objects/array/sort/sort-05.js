@@ -1,9 +1,9 @@
 /*
  * Example: Sorting with map;
  *
- * 如果数组元素很多，且 compareFunction 逻辑比较复杂，
- * 可以使用 Array.prototype.map() 创建一个临时数组，
- * 然后对临时数组进行排序，最后再从临时数组得到排好序的数组；
+ * 如果数组元素很多, 且 compareFunction 逻辑比较复杂,
+ * 可以使用 Array.prototype.map() 创建一个临时数组,
+ * 然后对临时数组进行排序, 最后再从临时数组得到排好序的数组;
  *
  */
 console.log("\n-------------------------------------------------- 01");

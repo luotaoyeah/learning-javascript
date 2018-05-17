@@ -1,5 +1,5 @@
 /*
- * 例子：实现 Array.prototype.map()；
+ * 例子: 实现 Array.prototype.map();
  */
 console.log("\n-------------------------------------------------- 01");
 
