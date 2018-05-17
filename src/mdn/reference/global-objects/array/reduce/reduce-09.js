@@ -1,5 +1,5 @@
 /*
- * 例子: 顺序执行多个 promise;
+ * Example: 顺序执行多个 promise;
  */
 console.log("\n-------------------------------------------------- 01");
 const promise01 = () => new Promise(resolve => resolve(5));
