@@ -1,1 +1,1 @@
-require("./books/javascript-the-definitive-guide-6-edition/06/06-01/06-01-03-D");
+require("./mdn/reference/global-objects/array/concat/concat-00");
