@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/array/concat/concat-04");
+require("./mdn/reference/global-objects/array/concat/concat-05");
