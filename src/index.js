@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/array/map/map-05");
+require("./mdn/reference/global-objects/array/map/map-06");
