@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/array/join/join-02");
+require("./mdn/reference/global-objects/array/join/join-03");
