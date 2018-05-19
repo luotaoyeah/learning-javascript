@@ -36,4 +36,5 @@ console.log(delete obj01.y);
  * 操作数不是'属性访问表达式'
  */
 console.log(delete 0);
+
 export {};
