@@ -27,8 +27,10 @@ function inherit(p) {
   return new F();
 }
 
+/*
 const obj01 = inherit(Object.prototype);
-/* true */
+/!* true *!/
 console.log(obj01.__proto__ === {}.__proto__);
+*/
 
-export {};
+export { inherit };
