@@ -1,8 +1,8 @@
 import { inherit } from "../06-01/06-01-04/example-6-1";
 
 /*
- * Object.keys()：
- *     返回对象的 enumerable 为 true 的 own properties 的属性名称数组；
+ * Object.getOwnPropertyNames()：
+ *     返回对象的 own properties 的属性名称数组，包括 enumerable 为 false 的属性；
  */
 
 console.log("\n-------------------------------------------------- 01");
@@ -14,7 +14,7 @@ Object.defineProperty(obj01, "z", {
   enumerable: false
 });
 
-/* [ 'y' ] */
-console.log(Object.keys(obj01));
+/* [ 'y', 'z' ] */
+console.log(Object.getOwnPropertyNames(obj01));
 
 export {};
