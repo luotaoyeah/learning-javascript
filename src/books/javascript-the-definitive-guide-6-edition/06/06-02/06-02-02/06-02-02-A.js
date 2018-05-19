@@ -1,10 +1,12 @@
 import { inherit } from "../../06-01/06-01-04/example-6-1";
+
 /*
  * 6.2.2 Inheritance
+ *
+ * 对象有 own properties 以及从 prototype 对象继承的属性；
  */
 
 /*
- * 对象有 own properties 以及从 prototype 对象继承的属性；
  * 当访问对象的某个属性时，
  *     首先从对象的 own properties 找，
  *     如果没找到，且对象的 prototype 对象不为空，则从 prototype 对象的 own properties 找；
