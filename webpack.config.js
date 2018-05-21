@@ -36,14 +36,14 @@ module.exports = {
     ]
   },
   plugins: [
-    /*
-        /!* 取消混淆，加快编译 *!/
-        new UglifyJsPlugin({
-          uglifyOptions: {
-            ecma: 7
-          }
-        }),
-    */
+    new UglifyJsPlugin({
+      parallel: true,
+      uglifyOptions: {
+        compress: false,
+        mangle: true,
+        ecma: 7
+      }
+    }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "src/index.html",
