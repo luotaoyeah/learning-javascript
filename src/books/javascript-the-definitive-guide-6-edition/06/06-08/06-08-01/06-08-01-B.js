@@ -44,7 +44,7 @@ console.log(obj05.constructor === Object);
 /*
  * 获取对象的 prototype，④：
  *     使用 Object.create() 创建的对象的 constructor 属性为 Object() 构造函数，
- *     但是对象的 prototype 为第一个参数，
+ *     但是对象的 prototype 为方法的第一个参数，
  *     因此不能使用 obj.constructor.prototype 获取对象的 prototype；
  */
 console.log("\n-------------------------------------------------- 04");
