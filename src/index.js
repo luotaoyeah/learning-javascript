@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/object/is-prototype-of/is-prototype-of-00");
+require("./books/javascript-the-definitive-guide-6-edition/06/06-08/06-08-02/06-08-02-A");
