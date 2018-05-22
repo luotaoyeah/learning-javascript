@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/object/get-prototype-of/get-prototype-of-01");
+require("./mdn/reference/global-objects/object/is-prototype-of/is-prototype-of-00");
