@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/object/freeze/freeze-00");
+require("./books/javascript-the-definitive-guide-6-edition/06/06-09/06-09-A");
