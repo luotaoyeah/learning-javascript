@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/object/to-string/to-string-01");
+require("./mdn/reference/global-objects/object/value-of/value-of-00");
