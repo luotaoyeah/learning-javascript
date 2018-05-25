@@ -1,11 +1,12 @@
 /*
- * 创建一个对象，并指定对象的 prototpye 对象；
+ * Object.create()：
+ *     创建一个对象，并指定对象的 prototpye 对象；
  */
 console.log("\n-------------------------------------------------- 01");
 
 const person = {
   isHuman: false,
-  printIntroduction() {
+  hello() {
     console.log(`My name is ${this.name}. Am i a human? ${this.isHuman}`);
   }
 };
@@ -13,6 +14,6 @@ const person = {
 const me = Object.create(person);
 me.name = "Tom";
 me.isHuman = true;
-me.printIntroduction();
+me.hello();
 
 export {};
