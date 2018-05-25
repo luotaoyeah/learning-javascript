@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/Object/valueOf/valueOf-00");
+require("./mdn/reference/global-objects/Object/toLocaleString/toLocaleString-00");
