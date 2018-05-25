@@ -95,8 +95,8 @@ console.log("\n-------------------------------------------------- 05");
 }.call(undefined));
 
 /*
- * 严格模式: 给 nonwritable 属性赋值, 给 nonextensible 对象添加属性, 都会报错;
- * 普通模式: 给 nonwritable 属性赋值, 给 nonextensible 对象添加属性, 直接无效, 不会报错;
+ * 严格模式: 给 nonwritable 属性赋值, 给 non-extensible 对象添加属性, 都会报错;
+ * 普通模式: 给 nonwritable 属性赋值, 给 non-extensible 对象添加属性, 直接无效, 不会报错;
  */
 console.log("\n-------------------------------------------------- 06");
 
@@ -176,8 +176,8 @@ console.log("\n-------------------------------------------------- 08");
 })();
 
 /*
- * 严格模式: delete 一个 nonconfigurable 属性, 报错;
- * 普通模式: delete 一个 nonconfigurable 属性, 不报错, 返回 false;
+ * 严格模式: delete 一个 non-configurable 属性, 报错;
+ * 普通模式: delete 一个 non-configurable 属性, 不报错, 返回 false;
  */
 console.log("\n-------------------------------------------------- 09");
 (function() {

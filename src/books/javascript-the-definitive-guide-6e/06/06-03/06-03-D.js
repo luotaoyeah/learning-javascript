@@ -1,5 +1,5 @@
 /*
- * nonconfigurable property 不能被删除；
+ * non-configurable 的 property 不能被删除；
  */
 console.log("\n-------------------------------------------------- 01");
 
@@ -15,7 +15,7 @@ delete obj01.x;
 */
 
 /*
- * nonextensible object 的 configurable property 可以被删除；
+ * non-extensible object 的 configurable property 可以被删除；
  */
 console.log("\n-------------------------------------------------- 02");
 
@@ -27,7 +27,7 @@ console.log(delete obj02.x);
 /*
  * global variable 不能被删除；
  * global function 不能被删除；
- * TODO 待确认
+ * TODO 待验证
  */
 console.log("\n-------------------------------------------------- 03");
 
