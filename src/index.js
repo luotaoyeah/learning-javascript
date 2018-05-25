@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/Object/toLocaleString/toLocaleString-00");
+require("./books/javascript-the-definitive-guide-6e/07/07-01/07-01-A");
