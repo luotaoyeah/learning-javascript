@@ -1,1 +1,1 @@
-require("./mdn/reference/global-objects/object/value-of/value-of-00");
+require("./mdn/reference/global-objects/Object0/valueOf/valueOf-00");
