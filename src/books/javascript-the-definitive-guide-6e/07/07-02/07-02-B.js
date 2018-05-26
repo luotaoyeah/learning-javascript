@@ -12,7 +12,7 @@ console.log(obj01);
 
 /*
  * array 相比于 object 特殊的地方在于：
- *     当 property name 是 non-negative number 时，array 会自动维护它的 length 属性；
+ *     当 property name 是 non-negative integer 时，array 会自动维护它的 length 属性；
  */
 console.log("\n-------------------------------------------------- 02");
 
