@@ -1,5 +1,6 @@
 /*
  * 7.8.4 Array.prototype.concat()
+ *
  * 连接多个 array 的 element 或者 value；
  */
 
