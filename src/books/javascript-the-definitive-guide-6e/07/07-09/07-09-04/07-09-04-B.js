@@ -1,42 +1,42 @@
 /*
- * 7.9.4 Array.prototype.every()
+ * 7.9.4 Array.prototype.some()
  */
 
 (function() {
   /*
-   * Array.prototype.every() 是一个 array predicate，
-   * 如果每一个 element 对于 function 都返回 true，
-   * 则 every() 返回 true；
+   * Array.prototype.some() 是一个 array predicate，
+   * 只要有一个 element 对于 function 返回 true，
+   * 则 some() 返回 true；
    */
   console.log("\n-------------------------------------------------- 01");
   const array01 = [1, 2, 3, 4, 5];
   /* true */
-  console.log(array01.every(item => item > 0));
+  console.log(array01.some(item => item % 2 === 0));
   /* false */
   console.log(array01.every(item => item % 2 === 0));
 })();
 
 (function() {
   /*
-   * 在能够得出最终结果的时候，就会终止遍历；
-   * 类似 && 的短路；
+   * 在能够得出最终结果时，就会终止遍历；
+   * 类似于 || 的短路；
    */
   console.log("\n-------------------------------------------------- 02");
   const array01 = [1, 2, 3, 4, 5];
-  /* false */
+  /* true */
   console.log(
-    array01.every((item, index) => {
+    array01.some((item, index) => {
       console.log(index);
-      return item < 3;
+      return item % 2 === 0;
     })
   );
 })();
 
 (function() {
   /*
-   * 对于 empty array，every() 始终返回 true；
+   * 对于 empty array，some() 始终返回 false；
    */
   console.log("\n-------------------------------------------------- 03");
-  /* true */
-  console.log([].every(item => typeof item === "string"));
+  /* false */
+  console.log([].some(() => true));
 })();
