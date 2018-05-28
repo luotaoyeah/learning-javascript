@@ -18,10 +18,23 @@
 
 (function() {
   /*
-   * 如果 element 又是 array，该 array 会被展开，以此类推；
-   * 因此可以实现简单 array 的深层展开（deep flatten）；
+   * Array.prototype.toString() 返回的结果，
+   * 跟 Array.prototype.join() 不传参数返回的结果是一样的；
    */
   console.log("\n-------------------------------------------------- 02");
+  const array01 = [1, 2, 3];
+  /* 1,2,3 */
+  console.log(array01.toString());
+  /* 1,2,3 */
+  console.log(array01.join());
+})();
+
+(function() {
+  /*
+   * 如果 element 又是 array，该 array 会被展开，以此类推；
+   * 因此可以用来实现简单 array 的深层展开（deep flatten）；
+   */
+  console.log("\n-------------------------------------------------- 03");
   const array01 = [1, [2, [3, [4]]]];
   /* 1,2,3,4 */
   console.log(array01.toString());
@@ -33,7 +46,7 @@
   /*
    * Array.prototype.toLocaleString() 会调用每个 element 的 toLocaleString() 方法；
    */
-  console.log("\n-------------------------------------------------- 03");
+  console.log("\n-------------------------------------------------- 04");
   const array01 = [1000, 2000, 3000];
   /* 1000,2000,3000 */
   console.log(array01.toString());
