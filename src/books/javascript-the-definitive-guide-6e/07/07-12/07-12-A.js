@@ -39,6 +39,8 @@
     )
   );
 
-  /* TypeError: Cannot assign to read only property 'length' of object '[object String]' */
-  console.log(Array.prototype.push.call(str01, "x"));
+  /*
+    /!* TypeError: Cannot assign to read only property 'length' of object '[object String]' *!/
+    console.log(Array.prototype.push.call(str01, "x"));
+  */
 })();
