@@ -11,11 +11,6 @@
    *     d. array 的 class attribute 为 "Array"；
    */
   console.log("\n-------------------------------------------------- 01");
-
-  /* true */
-  console.log(Array.isArray([]));
-  /* false */
-  console.log(Array.isArray({}));
 })();
 
 (function() {
