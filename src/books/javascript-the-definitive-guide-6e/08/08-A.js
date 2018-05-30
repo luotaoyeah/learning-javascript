@@ -23,8 +23,7 @@
 
 (function() {
   /*
-   * 可以跟 new 一起使用，用来初始化一个 object 的 function，
-   * 称之为 constructor；
+   * 可以跟 new 一起使用，用来初始化一个 object 的 function，称之为 constructor；
    */
   console.log("\n-------------------------------------------------- 02");
 
