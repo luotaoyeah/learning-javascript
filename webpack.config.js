@@ -1,5 +1,4 @@
 const path = require("path");
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 function resolve(dir) {
@@ -37,14 +36,6 @@ module.exports = {
   },
   devtool: "source-map",
   plugins: [
-    new UglifyJsPlugin({
-      parallel: true,
-      uglifyOptions: {
-        compress: false,
-        mangle: true,
-        ecma: 7
-      }
-    }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       template: "src/index.html",

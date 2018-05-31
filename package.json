@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "precommit": "lint-staged",
-    "dev": "rimraf ./dist && webpack && node ./dist/index.js"
+    "dev": "rimraf ./dist && webpack && node $NODE_DEBUG_OPTION ./dist/index.js"
   },
   "dependencies": {
     "lodash": "^4.17.10"
@@ -27,7 +27,6 @@
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
     "prettier": "^1.13.0",
-    "uglifyjs-webpack-plugin": "^1.2.4",
     "webpack": "^3.11.0"
   }
 }
