@@ -1,6 +1,7 @@
 (function() {
   /*
    * closure 可以跟 getter/setter 结合使用；
+   * 这儿的 parameter 跟 local variable 具有同样的效果；
    */
   console.log("\n-------------------------------------------------- 01");
 
