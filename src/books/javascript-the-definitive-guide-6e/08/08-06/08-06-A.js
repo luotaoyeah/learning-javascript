@@ -4,7 +4,7 @@
 
 /*
  * JS 使用了 lexical scoping，意思是 function 在执行时使用的是 function 在定义时的 variable scope，
- * 而不是 function 在调用时的 variable scope；
+ * 而不是 function 在执行时时的 variable scope；
  * 为了实现 lesical scoping，function object 的内部状态不仅包含了 function 的 code，
  * 同时包含了对当前 scope chain 的引用；
  * 这种把 function object 和 scope 结合起来，就称之为一个 closure；
@@ -13,7 +13,7 @@
 /*
  * 每一个 function 都是一个 closure，因为每一个 function object 都关联了一个 scope chain；
  * 多数 function 在执行的时候，使用的 scope chain 都是该 function 在定义的时候的 scope chain；
- * 但是 function 在执行的时候使用的 scope chain 也可以跟 function 在定义的时候的 scope chain 不是同一个；
+ * 但是 function 在执行的时候使用的 scope chain 也可以不是 function 在定义的时候的 scope chain；
  */
 
 /*
