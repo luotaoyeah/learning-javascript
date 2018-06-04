@@ -16,7 +16,7 @@
 
 (function() {
   /*
-   * 对于 apply()，第二个参数是一个 array，其每一个 element 会作为 function 的参数传入
+   * 对于 apply()，第二个参数是一个 array，其每一个 element 会作为 function 的参数传入；
    */
   console.log("\n-------------------------------------------------- 02");
 
