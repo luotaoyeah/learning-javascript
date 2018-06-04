@@ -16,9 +16,6 @@
  * 但是 function 在执行的时候使用的 scope chain 也可以不是 function 在定义的时候的 scope chain；
  */
 
-/*
- *
- */
 (function() {
   console.log("\n-------------------------------------------------- 01");
   const scope = "scope01";
