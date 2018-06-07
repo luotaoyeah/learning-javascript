@@ -4,7 +4,8 @@
 
 /*
  * higher-order function 是指操作 function 的 function；
- * 如果一个 function 的一个或多个参数是 function，且返回值是 function，则它是一个 higher-order function；
+ * 如果一个 function 的一个或多个参数是 function，且返回值是 function，
+ * 则它是一个 higher-order function；
  */
 
 (function() {
