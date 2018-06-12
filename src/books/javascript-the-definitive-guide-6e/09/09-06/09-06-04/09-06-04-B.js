@@ -18,6 +18,10 @@
    * @return {boolean} 是否相等
    */
   Range.prototype.equals = function(obj02) {
+    if (this === obj02) {
+      return true;
+    }
+
     if (obj02 === null || obj02 === undefined) {
       return false;
     }
