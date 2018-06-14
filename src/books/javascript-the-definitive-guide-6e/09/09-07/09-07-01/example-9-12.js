@@ -35,6 +35,9 @@ import { extend } from "../../../08/08-05/example-8-3";
     },
     contains: function(x) {
       return this.member === x;
+    },
+    forEach: function(fn, context) {
+      fn.call(context, this.member);
     }
   });
 
@@ -43,4 +46,8 @@ import { extend } from "../../../08/08-05/example-8-3";
   console.log(singletonSet.contains(5));
   /* 1 */
   console.log(singletonSet.size());
+  singletonSet.forEach(x => {
+    /* 4 */
+    console.log(x);
+  });
 })();
