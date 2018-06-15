@@ -11,7 +11,10 @@ import { Set } from "../../09-06/09-06-01/example-9-6";
   console.log("\n-------------------------------------------------- 01");
 
   function NonNullSet() {
-    /* 将 Set 的 constructor 当做普通的 function 来调用 */
+    /*
+     * 将 Set 的 constructor 当做普通的 function 来调用，
+     * 这样它就不会再创建一个新的实例对象，而是直接初始化传入的当前的实例对象；
+     */
     Set.apply(this, arguments);
   }
 
