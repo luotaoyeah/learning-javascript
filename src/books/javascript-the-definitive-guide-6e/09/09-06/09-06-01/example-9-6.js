@@ -2,9 +2,6 @@
  * Example 9-6. Set.js: An arbitrary set of values
  */
 
-/*
-   *
-   */
 console.log("\n-------------------------------------------------- 01");
 
 function getObjectId(obj) {
