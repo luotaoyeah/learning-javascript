@@ -1,6 +1,6 @@
 /*
  * Object.preventExtensions()：
- *     设置对象的 extensible 为 false；
+ *     将对象设置为 non-extensible 的；
  *
  * 对象的 extensible 设为 false 之后，不能再重新设为 true；
  */
@@ -18,7 +18,7 @@ console.log(Object.isExtensible(obj01));
  * 对象的 prototype 的 extensible 不受影响，可以给其添加属性，然后被对象继承；
  *
  */
-console.log("\n-------------------------------------------------- 01");
+console.log("\n-------------------------------------------------- 02");
 
 const obj02 = {};
 Object.preventExtensions(obj02);
