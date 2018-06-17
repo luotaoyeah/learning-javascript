@@ -1,10 +1,9 @@
 /*
  * 7.8.6 Array.prototype.splice()
  *
- * 往 array 中插入一截，或者删除 array 中的某一截，
- * 或者在删除一截的同时插入一截；
- *
+ * 往 array 中插入一截，或者删除 array 中的某一截，或者在删除一截的同时插入一截；
  * 无论是删除还是插入，array 中 element 的 index 都会根据需要做相应的调整；
+ * 返回删除的那截子数组；
  */
 
 (function() {
