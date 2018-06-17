@@ -3,6 +3,8 @@
  */
 
 (function() {
+  "use strict";
+
   /*
    * 在 Object.prototype 上定义一个 properties() 方法，
    * 该方法返回一个对象，该对象包含 4 个方法：toString(), descriptors(), hide(), freeze()；
@@ -31,7 +33,7 @@
     var names = [];
 
     if (arguments.length === 0) {
-      names = Object.getOwnPropertyNames();
+      names = Object.getOwnPropertyNames(this);
     } else if (arguments.length === 1 && Array.isArray(arguments[0])) {
       names = arguments[0];
     } else {
@@ -52,9 +54,10 @@
    * make the properties non-enumerable；
    */
   Properties.prototype.hide = function() {
-    this.names.forEach(function(name) {
-      if (this.obj.hasOwnProperty(name)) {
-        Object.defineProperty(this.obj, name, {
+    const _this = this;
+    _this.names.forEach(function(name) {
+      if (_this.obj.hasOwnProperty(name)) {
+        Object.defineProperty(_this.obj, name, {
           enumerable: false
         });
       }
@@ -67,9 +70,10 @@
    * make the properties non-writable and non-configurable；
    */
   Properties.prototype.freeze = function() {
-    this.names.forEach(function(name) {
-      if (this.obj.hasOwnProperty(name)) {
-        Object.defineProperty(this.obj, name, {
+    const _this = this;
+    _this.names.forEach(function(name) {
+      if (_this.obj.hasOwnProperty(name)) {
+        Object.defineProperty(_this.obj, name, {
           writable: false,
           configurable: false
         });
@@ -82,27 +86,30 @@
   /**
    * 返回一个 property 到 property descriptor 的映射对象；
    */
-  Properties.prototypee.descriptors = function() {
+  Properties.prototype.descriptors = function() {
+    const _this = this;
     var descriptors = {};
 
-    this.names.forEach(function(name) {
-      if (this.obj.hasOwnProperty(name)) {
-        descriptors[name] = Object.getOwnPropertyDescriptor(this.obj, name);
+    _this.names.forEach(function(name) {
+      if (_this.obj.hasOwnProperty(name)) {
+        descriptors[name] = Object.getOwnPropertyDescriptor(_this.obj, name);
       }
     });
 
     return descriptors;
   };
 
-  Properties.prototypee.toString = function() {
+  Properties.prototype.toString = function() {
+    const _this = this;
+
     /**
      *
      * @param name
      * @return {string}
      */
     function nameToString(name) {
-      var str = "";
-      var descriptor = Object.getOwnPropertyDescriptor(this.obj, name);
+      var str = "\t";
+      var descriptor = Object.getOwnPropertyDescriptor(_this.obj, name);
 
       if (!descriptor) {
         return "nonexistent " + name + ": undefined";
@@ -132,7 +139,7 @@
       return str;
     }
 
-    return "{\n" + this.names.map(nameToString).join(",\n") + "\n}";
+    return "{\n" + _this.names.map(nameToString).join(",\n") + "\n}";
   };
 
   Properties.prototype.properties().hide();
