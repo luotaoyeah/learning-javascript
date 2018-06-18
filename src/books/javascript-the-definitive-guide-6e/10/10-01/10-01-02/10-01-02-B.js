@@ -1,5 +1,6 @@
 /*
  * JS 定义了一些特殊字符和转义字符，用来表示一些常用的 character classes；
+ * 称之为 special character-class escapes；
  */
 
 (function() {
