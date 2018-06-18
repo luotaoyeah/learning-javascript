@@ -1,1 +1,1 @@
-require("./books/javascript-the-definitive-guide-6e/09/09-09/09-09-02/09-09-02-C.js");
+require("./books/javascript-the-definitive-guide-6e/10/10-01/10-01-02/10-01-02-A.js");
