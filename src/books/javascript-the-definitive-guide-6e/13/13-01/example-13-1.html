@@ -1,0 +1,49 @@
+<!--Example 13-1. Simple client-side JavaScript for revealing content-->
+<!--
+    Window 对象的 onload 事件，表示 window.document 的内容已经加载完成；
+    涉及到对 DOM 的操作的 JS 代码，通常都需要放到该事件的处理函数中执行；
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>example-13-1</title>
+    <style>
+      .reveal * {
+        display: none;
+      }
+
+      .handle {
+        display: block;
+        cursor: pointer;
+        border: 1px solid red;
+        border-radius: 3px;
+        padding: 15px;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        const elementsByClassName = document.getElementsByClassName("reveal");
+        for (var i = 0, length = elementsByClassName.length; i < length; i++) {
+          var el = elementsByClassName[i];
+          const handleEl = el.getElementsByClassName("handle")[0];
+          if (handleEl) {
+            handleEl.onclick = function() {
+              if (el.className === "reveal") {
+                el.className = "revealed";
+              } else {
+                el.className = "reveal";
+              }
+            };
+          }
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <h1 class="handle">Click Here to Reveal Hidden Text</h1>
+      <p>This paragraph is hidden. It appears when you click on the title.</p>
+    </div>
+  </body>
+</html>
