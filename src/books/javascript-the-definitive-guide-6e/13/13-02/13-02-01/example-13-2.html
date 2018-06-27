@@ -1,0 +1,32 @@
+<!-- Example 13-2. A simple JavaScript digital clock -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example-13-2</title>
+    <script>
+      window.onload = function() {
+        const element = document.getElementById("clock");
+        if (element) {
+          element.innerText = new Date().toISOString();
+
+          setInterval(function() {
+            element.innerText = new Date().toISOString();
+          }, 1000);
+        }
+      };
+    </script>
+    <style>
+      #clock {
+        font: bold 24pt sans;
+        background: #DDDDFF;
+        padding: 10px;
+        border: solid black 2px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Digital Clock</h1>
+    <span id="clock"></span>
+  </body>
+</html>
