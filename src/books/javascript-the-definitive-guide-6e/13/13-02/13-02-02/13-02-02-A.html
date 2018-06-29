@@ -1,0 +1,20 @@
+<!-- 13.2.2 Scripts in External Files -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>13-02-02</title>
+    <!--
+        可以通过 <script> 标签的 src 属性，引入一个外部的 JS 文件；
+        此时，<script> 标签不能写为自关闭的形式：<script src="index.js"/>
+    -->
+    <!--
+        通过 src 引入外部 JS 文件，
+        等价于将外部 JS 文件的内容放到 <script></script> 标签中间；
+        同时 <script></script> 中原来的的内容会被忽略掉；
+    -->
+    <script src="./13-02-02-A.js">
+      alert("internal");
+    </script>
+  </head>
+  <body></body>
+</html>
