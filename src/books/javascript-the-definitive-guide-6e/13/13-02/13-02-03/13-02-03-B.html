@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>13-02-03</title>
+    <!--
+        如果浏览器无法识别 type 属性的值，
+        则，
+            1. 对于内嵌的代码，浏览器只会解析 script 元素，不会执行其内嵌代码，也不会显示到浏览器；
+            2. 对于引入的代码，外部 JS 文件不会下载；
+    -->
+    <script
+        id="script01"
+        type="type01"
+    >
+      alert("foo");
+    </script>
+    <script
+        id="script02"
+        type="type02"
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"
+    >
+      alert("foo");
+    </script>
+
+    <script>
+      /*
+       * 可以获取 script 元素中间的文本；
+       */
+      window.onload = function() {
+        const element01 = document.getElementById("script01");
+        if (element01) {
+          console.log(element01.textContent);
+        }
+
+        const element02 = document.getElementById("script02");
+        if (element02) {
+          console.log(element02.textContent);
+        }
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
