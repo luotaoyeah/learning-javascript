@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>13-02-05</title>
+  </head>
+  <body>
+    <!--
+        如果 javascript: 后面的代码的返回值不为 undefined，
+        则当前页面的内容会重新渲染为该返回值；
+    -->
+    <a href="javascript:new Date().toISOString();">now</a>
+    <a href="javascript:window.open('about:blank');">open window</a>
+  </body>
+</html>
