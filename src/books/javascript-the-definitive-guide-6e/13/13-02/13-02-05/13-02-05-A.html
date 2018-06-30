@@ -1,0 +1,19 @@
+<!-- 13.2.5 JavaScript in URLs -->
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>13-02-05</title>
+    <!--
+        HTML 中的 URL 一般用在这些地方：
+            <a> 标签的 href 属性；
+            <form> 标签的 action 属性；
+            window.open() 方法的参数；
+
+        可以通过 "javascript:" 协议，在 URL 中执行 JS 代码，
+        代码的返回值为 URL 真正的值，如果返回 undefined 则 URL 为空；
+    -->
+  </head>
+  <body>
+    <a href="javascript:alert('foo');">foo</a>
+  </body>
+</html>
