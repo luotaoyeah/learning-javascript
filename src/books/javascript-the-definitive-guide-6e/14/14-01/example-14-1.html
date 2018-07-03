@@ -1,0 +1,44 @@
+<!-- Example 14-1. A timer utility function -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example 14-1</title>
+    <script>
+      /**
+       *
+       * @param fn 回调函数
+       * @param start 延迟时间
+       * @param interval 间隔时间
+       * @param end 终止时间
+       */
+      function invoke(fn, start, interval, end) {
+        if (!start) {
+          start = 0;
+        }
+
+        if (arguments.length <= 2) {
+          window.setTimeout(fn, start);
+        } else {
+          /**
+           *
+           */
+          function repeat() {
+            const timer = window.setInterval(fn, interval);
+            if (end) {
+              window.setTimeout(function() {
+                window.clearInterval(timer);
+              }, end);
+            }
+          }
+
+          window.setTimeout(repeat, start);
+        }
+      }
+
+      invoke(function() {
+        document.write(new Date().toISOString() + "<br/>");
+      }, 2000, 1000, 10000);
+    </script>
+  </head>
+  <body></body>
+</html>
