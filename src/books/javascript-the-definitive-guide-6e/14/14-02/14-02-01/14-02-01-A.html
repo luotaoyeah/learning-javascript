@@ -1,0 +1,51 @@
+<!-- 14.2.1 Parsing URLs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-02-01</title>
+    <script>
+      /*
+       * window.location 是一个 Location 对象，表示当前 URL；
+       * window.location.href 表示完整的 URL 的字符串形式，
+       * window.location.toString() 返回的就是 window.location.href 的值；
+       */
+      console.log(window.location.href);
+      console.log(window.location.toString());
+      console.log(window.location.toString() === window.location.href);
+
+      /*
+       * window.location.protocol
+       * window.location.host
+       * window.location.hostname
+       * window.location.port
+       * window.location.pathname
+       * window.location.search
+       * window.location.hash
+       *
+       * 分别表示 URL 的不同部分，其中：
+       * window.location.origin = {window.location.protocol}//{window.location.host}
+       * window.location.host = {window.location.hostname}:{window.location.port}
+       */
+
+      /*
+       * 对于 URL（http://localhost:63342/14-02-01-A.html?name=foo#02）
+       *
+       * window.location.protocol: http:
+       * window.location.host: localhost:63342
+       * window.location.hostname: localhost
+       * window.location.port: 63342
+       * window.location.pathname: /14-02-01-A.html
+       * window.location.search: ?name=foo
+       * window.location.hash: #02
+       */
+      document.write("window.location.protocol: " + window.location.protocol + "<br/>");
+      document.write("window.location.host: " + window.location.host + "<br/>");
+      document.write("window.location.hostname: " + window.location.hostname + "<br/>");
+      document.write("window.location.port: " + window.location.port + "<br/>");
+      document.write("window.location.pathname: " + window.location.pathname + "<br/>");
+      document.write("window.location.search: " + window.location.search + "<br/>");
+      document.write("window.location.hash: " + window.location.hash + "<br/>");
+    </script>
+  </head>
+  <body></body>
+</html>
