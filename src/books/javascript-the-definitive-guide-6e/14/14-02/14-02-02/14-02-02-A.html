@@ -1,0 +1,27 @@
+<!-- 14.2.2 Loading New Documents -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-02-02</title>
+    <script>
+      /*
+       * window.location.assign()：加载并显示指定的 URL 地址；
+       */
+
+      window.addEventListener("load", function() {
+        const button01 = document.getElementById("button01");
+        if (button01) {
+          button01.addEventListener("click", function() {
+            window.location.assign("https://www.google.com");
+          });
+        }
+      });
+
+    </script>
+  </head>
+  <body>
+    <button id="button01">
+      window.location.assign("https://www.google.com");
+    </button>
+  </body>
+</html>
