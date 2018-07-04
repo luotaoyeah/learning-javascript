@@ -1,0 +1,26 @@
+<!-- Example 14-3. Browser sniffing using navigator.userAgent -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example 14-3</title>
+    <script>
+      var browser = (function() {
+        var userAgentStr = navigator.userAgent.toLowerCase();
+
+        var match = /(webkit)[\/]([\w.]+)/.exec(userAgentStr) ||
+          /(opera)(?:.*version)?[\/]([\w.]+)/.exec(userAgentStr) ||
+          /(msie) ([\w.]+)/.exec(userAgentStr) ||
+          !/compatible/.test(userAgentStr) && /(mozilla)(?:.*? rv:([\w.]+))?/.exec(userAgentStr) ||
+          [];
+
+        return {
+          name: match[1] || "",
+          version: match[2] || "0"
+        };
+      }());
+
+      console.log(browser);
+    </script>
+  </head>
+  <body></body>
+</html>
