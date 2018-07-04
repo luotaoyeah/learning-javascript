@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-03</title>
+    <script>
+      window.addEventListener("load", function() {
+        const button01 = document.getElementById("button01");
+        const button02 = document.getElementById("button02");
+        const button03 = document.getElementById("button03");
+        const button04 = document.getElementById("button04");
+
+        button01.addEventListener("click", function() {
+          /* window.history.back() 跳转到上一个页面 */
+          window.history.back();
+        });
+        button02.addEventListener("click", function() {
+          /* window.history.forward() 跳转到下一个页面 */
+          window.history.forward();
+        });
+        button03.addEventListener("click", function() {
+          /* window.history.go(n) 跳转到下 n 个页面 */
+          window.history.go(2);
+        });
+        button04.addEventListener("click", function() {
+          /* window.history.go(-n) 跳转到上 n 个页面 */
+          window.history.go(-2);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href="#01">#01</a>
+      <a href="#02">#02</a>
+      <a href="#03">#03</a>
+    </p>
+    <p>
+      <button id="button01">window.history.back()</button>
+      <button id="button02">window.history.forward()</button>
+      <button id="button03">window.history.go(2)</button>
+      <button id="button04">window.history.go(-2)</button>
+    </p>
+  </body>
+</html>
