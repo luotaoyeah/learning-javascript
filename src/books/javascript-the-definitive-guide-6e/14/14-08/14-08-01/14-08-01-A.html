@@ -1,0 +1,24 @@
+<!-- 14.8.1 Open and Close Windows -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-08-01</title>
+    <script>
+      /*
+       * 可以使用 window.open() 打开一个新的窗口或者标签；
+       * 第一个参数表示 URL，默认为 "about:blank"；
+       * 第二个参数表示 window.name，如果这个 name 的 window 已经存在，
+       *     且当前 JS 可以访问它，则直接使用它，否则创建一个新的 window，
+       *     并设置 window.name 为指定的参数；
+       * 第三个参数表示额外的窗口参数以及要启用的特性；
+       */
+
+      window.open(
+        "https://www.google.com",
+        "google",
+        "width=400,height=350,status=yes,resizable=yes"
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
