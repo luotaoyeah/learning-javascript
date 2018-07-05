@@ -15,7 +15,7 @@
        *     不允许存在多个元素，具有相同的 id 属性；
        *     允许多个元素存在相同的 name 属性，
        *         且 window 上对应的属性是一个 array-like 的对象，
-       *         包含了所有的元素；
+       *         包含了所有的元素（id 或 name 相同）；
        */
 
       window.onload = function() {
@@ -32,6 +32,10 @@
     <form
         action="#02"
         name="form01"
+    ></form>
+    <form
+        action="#02"
+        id="form01"
     ></form>
   </body>
 </html>
