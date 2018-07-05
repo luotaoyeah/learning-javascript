@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-05</title>
+    <script>
+      do {
+        /* 第二个参数为：输入框默认值 */
+        var name = window.prompt("Please enter your name:", "foo");
+        var result = window.confirm("Your name is " + name + " ?");
+      } while (!result);
+
+      window.alert("hello " + name);
+
+      /*
+       * 这三个弹窗方法现在主要用来调试程序；
+       */
+    </script>
+  </head>
+  <body></body>
+</html>
