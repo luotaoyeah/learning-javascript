@@ -10,15 +10,28 @@
        * 第二个参数表示 window.name，如果这个 name 的 window 已经存在，
        *     且当前 JS 可以访问它，则直接使用它，否则创建一个新的 window，
        *     并设置 window.name 为指定的参数；
-       * 第三个参数表示额外的窗口参数以及要启用的特性；
+       * 第三个参数表示额外的窗口参数以及要启用的窗口特性；
+       *     如果设置了 width 和 height，则会打开新的窗口，
+       *     否则打开新的标签；
        */
 
       window.open(
         "https://www.google.com",
         "google",
-        "width=400,height=350,status=yes,resizable=yes"
+        "width=600,height=400,status=no,resizable=no"
       );
     </script>
   </head>
-  <body></body>
+  <body>
+    <!--
+        <a> 标签的 target 属性，可以设置为某个 window 的 name 属性，
+        这样就会在指定的 window 中打开链接；
+        可以指定为 _blank 在新标签页打开链接；
+    -->
+    <a
+        href="https://www.github.com"
+        target="google"
+    >https://www.github.com
+    </a>
+  </body>
 </html>
