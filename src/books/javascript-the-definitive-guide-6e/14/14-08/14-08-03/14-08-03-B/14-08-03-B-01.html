@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-08-03-B-01</title>
+    <script>
+      var count = 0;
+
+      function fn01() {
+        count++;
+      }
+
+      window.onload = function() {
+        const button01 = document.getElementById("button01");
+        if (button01) {
+          button01.onclick = function() {
+            alert("count=" + count);
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">alert count</button>
+  </body>
+</html>
