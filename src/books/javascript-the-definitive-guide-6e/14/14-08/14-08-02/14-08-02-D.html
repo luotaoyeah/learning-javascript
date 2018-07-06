@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-08-02</title>
+    <script>
+      /*
+       * <iframe> 标签的 name 属性会成为它的 window 对象的 name 属性；
+       */
+
+      window.addEventListener("load", function() {
+        /* frame01 */
+        console.log(window.frames.frame01.name);
+      });
+    </script>
+  </head>
+  <body>
+    <iframe
+        name="frame01"
+        src="http://localhost:63342"
+        frameborder="1"
+        width="100%"
+        height="200px"
+    ></iframe>
+  </body>
+</html>
