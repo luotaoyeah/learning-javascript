@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-08-03-C-02</title>
+    <script>
+      /*
+       * 因为不同的 frame 拥有自己的 window 对象，
+       * 所以，一个 frame 里面的对象，不是另一个 frame 里面对应的类的实例；
+       */
+
+      /* false */
+      console.log(new Date() instanceof window.parent.frames[0].Date);
+      /* true */
+      console.log(new Date() instanceof window.Date);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
