@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-08-03-A-02</title>
+    <script>
+      window.onload = function() {
+        const button01 = document.getElementById("button01");
+        if (button01) {
+          button01.onclick = function() {
+            /* 访问其他 frame 的对象 */
+            const button0101 = window.parent.frames[0].document.getElementById("button01");
+            if (button0101) {
+              button0101.style.color = "#ff0000";
+              button0101.innerText = window.parent.frames[0].count++;
+            }
+          };
+        }
+
+        const button02 = document.getElementById("button02");
+        if (button02) {
+          button02.onclick = function() {
+            const button0101 = window.parent.frames[0].document.getElementById("button01");
+            if (button0101) {
+              button0101.style.color = "#00ff00";
+              button0101.innerText = window.parent.frames[0].count--;
+            }
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">+</button>
+    <button id="button02">-</button>
+  </body>
+</html>
