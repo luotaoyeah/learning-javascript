@@ -1,0 +1,23 @@
+<!-- 15.2.1 Selecting Elements By ID -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-02-01</title>
+    <script>
+      /*
+       * 任何 HTML 元素都可以设置 id 属性；
+       * 在同一个文档内，id 属性必须是唯一的；
+       */
+
+      window.onload = function() {
+        const button01 = document.getElementById("button01");
+        button01.onclick = function() {
+          alert(button01.innerText);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">foo</button>
+  </body>
+</html>
