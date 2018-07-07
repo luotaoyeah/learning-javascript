@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-01</title>
+    <script>
+      window.onload = function() {
+        const commentNode = document.body.childNodes[0];
+        const textNode = document.body.childNodes[1];
+
+        /*
+         * 表示注释的对象为：Comment
+         * 表示文本的对象为：Text
+         */
+        console.log("\n-------------------------------------------------- 01");
+        /* true */
+        console.log(commentNode instanceof Comment);
+        /* true */
+        console.log(textNode instanceof Text);
+
+        /*
+         * Comment 和 Text 都属于 CharacterData
+         */
+        console.log("\n-------------------------------------------------- 02");
+        console.log(Object.getPrototypeOf(Comment) === CharacterData);
+        console.log(Object.getPrototypeOf(Text) === CharacterData);
+      };
+    </script>
+  </head>
+  <body><!-- foo -->bar</body>
+</html>
