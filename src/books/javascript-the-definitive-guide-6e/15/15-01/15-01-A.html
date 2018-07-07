@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-01</title>
+    <script>
+      /*
+       * DOM（Document Object Model）表示文档对象模型
+       */
+
+
+      window.onload = function() {
+        /*
+         * DOM 中的第一类对象：Document
+         */
+        console.log("\n-------------------------------------------------- 01");
+        /* true */
+        console.log(Object.getPrototypeOf(document) === HTMLDocument.prototype);
+        /* true */
+        console.log(Object.getPrototypeOf(HTMLDocument) === Document);
+
+        /*
+         * DOM 中的第二类对象：Element
+         */
+        console.log("\n-------------------------------------------------- 02");
+        /* true */
+        console.log(Object.getPrototypeOf(document.body) === HTMLBodyElement.prototype);
+        /* true */
+        console.log(Object.getPrototypeOf(HTMLBodyElement) === HTMLElement);
+        /* true */
+        console.log(Object.getPrototypeOf(HTMLElement) === Element);
+
+        /*
+         * DOM 中的第三类对象：Text
+         */
+        console.log("\n-------------------------------------------------- 03");
+        const textNode = document.body.childNodes[0];
+        /* true */
+        console.log(textNode instanceof Text);
+        /* foo */
+        console.log(textNode.textContent.trim());
+      };
+    </script>
+  </head>
+  <body>
+    foo
+  </body>
+</html>
