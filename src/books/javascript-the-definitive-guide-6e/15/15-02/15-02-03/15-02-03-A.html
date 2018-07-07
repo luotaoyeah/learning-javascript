@@ -1,0 +1,29 @@
+<!-- 15.2.3 Selecting Elements by Type -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-02-03</title>
+    <script>
+      /*
+       * document.getElementsByTagName() 根据标签名查找所有元素；
+       * 返回一个 HTMLCollection 类型的 array-like 对象；
+       */
+
+      window.onload = function() {
+        const elements = document.getElementsByTagName("span");
+        console.log(elements);
+
+        /*
+         * 可以使用通配符（*）查找所有元素：
+         */
+        const allElements = document.getElementsByTagName("*");
+        console.log(allElements);
+      };
+    </script>
+  </head>
+  <body>
+    <span>span01</span>
+    <p>p01</p>
+    <span>span02</span>
+  </body>
+</html>
