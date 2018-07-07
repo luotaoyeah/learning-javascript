@@ -1,0 +1,34 @@
+<!-- Example 15-1. Looking up multiple elements by ID -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example 15-1</title>
+    <script>
+      /**
+       * 根据多个 id 获取对应的 HTML 元素对象；
+       */
+      function getElements() {
+        const elements = {};
+        for (var i = 0, length = arguments.length; i < length; i++) {
+          var id = arguments[i];
+          if (!id) {
+            continue;
+          }
+
+          elements[id] = document.getElementById(id);
+        }
+
+        return elements;
+      }
+
+      window.onload = function() {
+        var elements = getElements("button01", "button02");
+        console.log(elements);
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">button01</button>
+    <button id="button02">button02</button>
+  </body>
+</html>
