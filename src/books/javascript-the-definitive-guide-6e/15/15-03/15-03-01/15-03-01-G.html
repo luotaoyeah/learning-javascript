@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-03-01</title>
+    <script>
+      window.onload = function() {
+        /*
+         * Node.prototype.nodeName
+         * 节点的标签名（大写形式）；
+         */
+
+        /* #document */
+        console.log(document.nodeName);
+        /* BODY */
+        console.log(document.body.nodeName);
+        /* #text */
+        console.log(document.body.childNodes[0].nodeName);
+        /* #comment */
+        console.log(document.body.childNodes[1].nodeName);
+        /* P */
+        console.log(document.body.childNodes[3].nodeName);
+      };
+    </script>
+  </head>
+  <body>
+    <!-- commment -->
+    <p>foo</p>
+  </body>
+</html>
