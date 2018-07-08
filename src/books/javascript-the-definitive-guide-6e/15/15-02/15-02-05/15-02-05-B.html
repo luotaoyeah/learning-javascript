@@ -4,9 +4,10 @@
     <title>15-02-05</title>
     <script>
       /*
-       * 除了 Document 之外，Element 上面也定义了 querySelectorAll() 方法；
-       * Element.querySelectorAll() 依然会查找整个文档，
-       * 但是返回的 NodeList 对象中只包含该元素的子元素；
+       * 除了 Document.prototype.querySelectorAll()，
+       * 也有 Element.prototype.querySelectorAll()；
+       * Element.prototype.querySelectorAll() 依然会查找整个文档，
+       * 但是返回的 NodeList 对象会被过滤，只包含该元素下的子元素；
        */
       window.onload = function() {
         const pEl = document.getElementById("p01");
