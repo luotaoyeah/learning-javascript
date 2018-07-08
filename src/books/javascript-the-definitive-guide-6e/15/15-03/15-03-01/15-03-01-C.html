@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-03-01</title>
+    <script>
+      window.onload = function() {
+        /*
+         * Node.prototype.firstChild
+         * 第一个子节点
+         *
+         * Node.prototype.lastChild
+         * 最后一个子节点
+         */
+
+        const pEl = document.getElementById("p01");
+        console.log(pEl.firstChild);
+        console.log(pEl.lastChild);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01"><span id="span01">a</span><span id="span02">b</span><span id="span03">c</span></p>
+  </body>
+</html>
