@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-03-01</title>
+    <script>
+      window.onload = function() {
+        /*
+         * Node.prototype.nodeType
+         * 节点类型
+         */
+
+        /* Element 的节点类型为 1 */
+        console.log(document.body.nodeType);
+        /* Text 的节点类型为 3 */
+        console.log(document.body.childNodes[2].nodeType);
+        /* Comment 的节点类型为 8 */
+        console.log(document.body.childNodes[1].nodeType);
+        /* Document 的节点类型为 9 */
+        console.log(document.nodeType);
+      };
+    </script>
+  </head>
+  <body>
+    <!-- comment -->text
+  </body>
+</html>
