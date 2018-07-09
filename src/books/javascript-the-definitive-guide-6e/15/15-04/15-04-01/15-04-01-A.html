@@ -1,0 +1,41 @@
+<!-- 15.4.1 HTML Attributes As Element Properties -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-04-01</title>
+    <script>
+      /*
+       * HTMLElement 对象上定义了很多的属性，用来映射 HTML 标签上面的属性；
+       * 其中有一些是通用的属性，比如：id，title，lang，dir，onclick，
+       * 有一些是不同的元素类型所特有的，比如：HTMLImageElement.prototype.src 属性；
+       */
+
+      window.onload = function() {
+        const imgEl = document.getElementById("img01");
+        if (imgEl) {
+          console.log(imgEl.src);
+          console.log(imgEl.id);
+        }
+
+        /*
+         * HTMLElement 对象的某些属性是可写的，
+         * 更改这些属性的值，会对应更改 HTML 标签的属性值；
+         */
+        const buttonEl = document.getElementById("button01");
+        if (buttonEl) {
+          buttonEl.onclick = function() {
+            imgEl.src = "https://cdn.wccftech.com/wp-content/uploads/2018/02/Google-2060x904.jpg";
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <img
+        id="img01"
+        src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+        style="width: 134px;height: 46px;"
+    >
+    <button id="button01">change src</button>
+  </body>
+</html>
