@@ -1,0 +1,26 @@
+<!-- 15.3.2 Documents As Trees of Elements -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-03-02</title>
+    <script>
+      /*
+       * document 的 element tree 相比于 node tree，
+       * 排除了 text node 和 comment node，只关注 element node；
+       */
+
+      window.onload = function() {
+        /*
+         * Element.prototype.children
+         * 类似 Node.prototype.childNodes，是一个 HTMLCollection 对象；
+         * 但是只包含 element node，不包含 text node 和 comment node；
+         */
+        console.log(document.body.childNodes);
+        console.log(document.body.children);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">foo</p>
+  </body>
+</html>
