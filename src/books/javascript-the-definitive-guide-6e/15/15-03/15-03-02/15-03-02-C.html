@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-03-02</title>
+    <script>
+      /*
+       * Element.prototype.firstElementChild
+       * 第一个子元素节点
+       *
+       * Element.prototype.lastElementChild
+       * 最后一个子元素节点
+       */
+
+      window.onload = function() {
+        console.log(document.body.firstElementChild);
+        console.log(document.body.lastElementChild);
+
+        console.log(document.body.firstChild);
+        console.log(document.body.lastChild);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">A</p>
+    <p id="p02">B</p>
+    <p id="p03">C</p>
+  </body>
+</html>
