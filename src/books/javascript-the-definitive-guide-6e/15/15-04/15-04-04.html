@@ -1,0 +1,49 @@
+<!-- 15.4.4 Attributes As Attr Nodes -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-04-04</title>
+    <script>
+      /*
+       * Element.prototype.attributes
+       *
+       * 表示元素上所有的 attributes，是一个只读的 array-like 对象；
+       */
+      window.onload = function() {
+        const pEl = document.getElementById("p01");
+        if (pEl) {
+          console.log("\n-------------------------------------------------- 01");
+          /* 可以通过索引获取属性 */
+          console.log(pEl.attributes[2]);
+          /*
+           * 可以通过名称获取属性，
+           * 注意此处的属性名称必须跟标签上的属性名称保持一致；
+           */
+          console.log(pEl.attributes["data-bar"]);
+
+          console.log("\n-------------------------------------------------- 02");
+          /*
+           * attributes 对象的每一个属性都是一个 Attr 对象；
+           * 其 name 属性表示属性名称，value 属性表示属性值；
+           */
+          const barAtrr = pEl.attributes["data-bar"];
+          /* true */
+          console.log(barAtrr instanceof Attr);
+          /* true */
+          console.log(barAtrr instanceof Node);
+          /* data-bar */
+          console.log(barAtrr.name);
+          /* bar */
+          console.log(barAtrr.value);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p
+        id="p01"
+        foo="foo"
+        data-bar="bar"
+    ></p>
+  </body>
+</html>
