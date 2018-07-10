@@ -1,0 +1,31 @@
+<!-- 15.4.3 DataSet Attributes -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-04-03</title>
+    <script>
+      /*
+       * 在 H5 之前，可以在标签添加自定义的 attribute，
+       * 然后通过 Element.prototype.getAttribute() 和 Element.prototype.setAttribute()，
+       * 来获取和设置自定义属性的值；
+       */
+
+      window.onload = function() {
+        const pEl = document.getElementById("p01");
+        if (pEl) {
+          console.log(pEl.getAttribute("foo"));
+          console.log(pEl.getAttribute("bar"));
+          pEl.setAttribute("bar", "baz");
+          console.log(pEl.getAttribute("bar"));
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p
+        id="p01"
+        foo="foo"
+        bar="bar"
+    ></p>
+  </body>
+</html>
