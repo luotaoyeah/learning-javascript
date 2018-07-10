@@ -1,0 +1,35 @@
+<!-- 15.5.1 Element Content As HTML -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-05-01</title>
+    <script>
+      window.onload = function() {
+        /*
+         * Element.prototype.innerHTML
+         *
+         * 表示元素标签中间的 HTML 的字符串形式；
+         */
+        console.log("\n-------------------------------------------------- 01");
+        const pEl = document.getElementById("p01");
+        if (pEl) {
+          console.log(pEl.innerHTML);
+        }
+
+        console.log("\n-------------------------------------------------- 02");
+        /*
+         * 当设置该属性的值时，浏览器会对字符串进行解析，
+         * 然后替换掉元素当前的内容；
+         */
+        pEl.innerHTML = "<b>hello</b><i>world</i>";
+        console.log(pEl.innerHTML);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">
+      hello
+      <i>world</i>
+    </p>
+  </body>
+</html>
