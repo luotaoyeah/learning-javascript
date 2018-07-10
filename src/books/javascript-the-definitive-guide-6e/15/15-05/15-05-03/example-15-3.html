@@ -1,0 +1,47 @@
+<!-- Example 15-3. Finding all Text node descendants of an element -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example 15-3</title>
+    <script>
+      /**
+       * 获取元素的文本内容，
+       * 返回的结果跟 Node.prototype.textContent 属性值一致；
+       * @param element
+       */
+      function textContent(element) {
+        var content = "";
+        for (var child = element.firstChild; child !== null; child = child.nextSibling) {
+          /*
+           * 对于 Text 节点和 CDATASection 节点，直接获取其 nodeValue 的属性值；
+           */
+          if (child.nodeType === 3 || child.nodeType === 4) {
+            content += child.nodeValue;
+          } else if (child.nodeType === 1) {
+            /*
+             * 对于 Element 节点，继续查找其子节点的文本内容；
+             */
+            content += textContent(child);
+          }
+        }
+
+        return content;
+      }
+
+      window.onload = function() {
+        const pEl = document.getElementById("p01");
+        if (pEl) {
+          console.log(pEl.textContent);
+          console.log(textContent(pEl));
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">
+      A
+      <b>B</b>
+      C
+    </p>
+  </body>
+</html>
