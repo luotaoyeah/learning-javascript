@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-06-02</title>
+    <script>
+      /**
+       * 在父节点的指定位置插入一个子节点
+       * @param parentNode 父节点
+       * @param childNode 子节点
+       * @param index 索引
+       */
+      function insertAt(parentNode, childNode, index) {
+        if (index < 0 || index > parentNode.childNodes.length) {
+          throw new Error("invalid index");
+        }
+
+        if (index === parentNode.childNodes.length) {
+          parentNode.appendChild(childNode);
+        } else {
+          parentNode.insertBefore(childNode, parentNode.childNodes[index]);
+        }
+      }
+
+      window.onload = function() {
+        const pEl = document.getElementById("p01");
+        if (pEl) {
+          insertAt(pEl, document.createTextNode("D"), 1);
+          insertAt(pEl, document.createTextNode("C"), 5);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">
+      <span>A</span>
+      <span>B</span>
+    </p>
+  </body>
+</html>
