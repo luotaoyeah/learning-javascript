@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-06-03</title>
+    <script>
+      /*
+       * Node.prototype.replaceChild()
+       * 替换一个子节点
+       */
+      window.onload = function() {
+        const pEl = document.getElementById("p01");
+        const spanEl = document.getElementById("span01");
+        setTimeout(function() {
+          pEl.replaceChild(document.createTextNode("b"), spanEl);
+        }, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">
+      <span>A</span>
+      <span id="span01">B</span>
+      <span>C</span>
+    </p>
+  </body>
+</html>
