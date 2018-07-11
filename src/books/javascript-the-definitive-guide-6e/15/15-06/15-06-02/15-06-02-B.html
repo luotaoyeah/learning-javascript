@@ -1,19 +1,18 @@
-<!-- 15.6.2 Inserting Nodes -->
 <!DOCTYPE html>
 <html>
   <head>
     <title>15-06-02</title>
     <script>
       /*
-       * Node.prototype.appendChild()
-       * 插入一个子节点，使之成为父节点的最后一个子节点；
+       * Node.prototype.insertBefore()
+       * 在某个子节点的前面插入一个新的子节点；
        */
       window.onload = function() {
         const pEl = document.getElementById("p01");
         if (pEl) {
           const spanEl = document.createElement("span");
           spanEl.textContent = "C";
-          pEl.appendChild(spanEl);
+          pEl.insertBefore(spanEl, pEl.childNodes[2]);
         }
       };
     </script>
