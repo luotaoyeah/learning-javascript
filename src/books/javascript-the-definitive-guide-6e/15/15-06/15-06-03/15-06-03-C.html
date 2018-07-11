@@ -3,15 +3,23 @@
   <head>
     <title>15-06-03</title>
     <script>
-      /*
-       * Node.prototype.replaceChild()
-       * 替换一个子节点
+      /**
+       * 将指定的节点用 <b></b> 包裹起来
+       * @param node 节点
        */
+      function embolden(node) {
+        if (typeof node === "string") {
+          node = document.getElementById(node);
+        }
+        const bEl = document.createElement("b");
+        node.parentNode.replaceChild(bEl, node);
+        bEl.appendChild(node);
+      }
+
       window.onload = function() {
-        const pEl = document.getElementById("p01");
         const spanEl = document.getElementById("span01");
         setTimeout(function() {
-          pEl.replaceChild(document.createTextNode("[ REPLACED ]"), spanEl);
+          embolden(spanEl);
         }, 1000);
       };
     </script>
