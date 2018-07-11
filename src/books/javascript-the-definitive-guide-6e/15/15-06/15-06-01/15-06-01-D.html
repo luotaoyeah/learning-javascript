@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-06-01</title>
+    <script>
+      /*
+       * Node.prototype.cloneNode()
+       */
+      window.onload = function() {
+        const pEl = document.getElementById("p01");
+        const h3El = document.createElement("h3");
+        h3El.textContent = new Date().toISOString();
+        if (pEl) {
+          setInterval(function() {
+            pEl.insertAdjacentElement("beforeend", h3El.cloneNode(true));
+          }, 1000);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01"></p>
+  </body>
+</html>
