@@ -1,0 +1,26 @@
+<!-- 15.6.3 Removing and Replacing Nodes -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-06-03</title>
+    <script>
+      /*
+       * Node.prototype.removeChild()
+       * 移除一个子节点
+       */
+      window.onload = function() {
+        const spanEl = document.getElementById("span01");
+        setTimeout(function() {
+          spanEl.parentNode.removeChild(spanEl);
+        }, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">
+      <span>A</span>
+      <span id="span01">B</span>
+      <span>C</span>
+    </p>
+  </body>
+</html>
