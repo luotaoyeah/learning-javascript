@@ -1,0 +1,25 @@
+<!-- Example 15-7. An automatically generated table of contents -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>example 15-7</title>
+    <script>
+      window.onload = function() {
+        /* 查找或创建 TOD 容器元素 */
+        var tocEl = document.getElementById("TOC");
+        if (!tocEl) {
+          tocEl = document.createElement("div");
+          tocEl.id = "TOC";
+          document.body.insertBefore(tocEl, document.body.firstChild);
+        }
+
+        /* 查找所有标题元素 */
+        var headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6");
+
+        /* TODO */
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
