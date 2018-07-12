@@ -1,0 +1,51 @@
+<!-- Example 15-8. Querying the scrollbar positions of a window -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-08-01</title>
+    <script>
+      /**
+       * 获取滚动条位置
+       */
+      function getScrollOffset() {
+        if (window.scrollX != null) {
+          return {
+            x: window.scrollX,
+            y: window.scrollY
+          };
+        } else if (window.pageXOffset != null) {
+          return {
+            x: window.pageXOffset,
+            y: window.pageYOffset
+          };
+        } else if (document.compatMode === "CSS1Compat") {
+          return {
+            x: document.documentElement.scrollLeft,
+            y: document.documentElement.scrollTop
+          };
+        } else if (document.compatMode === "BackCompat") {
+          return {
+            x: document.body.scrollLeft,
+            y: document.body.scrollTop
+          };
+        }
+      }
+
+      window.onload = function() {
+        const divEl = document.getElementById("div01");
+        divEl.onclick = function() {
+          console.log(getScrollOffset());
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+        style="width: 3840px;height: 2160px;background: cornflowerblue;overflow: scroll;"
+    >
+      foo
+    </div>
+  </body>
+</html>
