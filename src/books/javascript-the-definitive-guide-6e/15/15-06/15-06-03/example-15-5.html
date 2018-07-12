@@ -1,0 +1,55 @@
+<!-- Example 15-5. Implementing the outerHTML property using innerHTML -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example 15-5</title>
+    <script>
+      (function() {
+        Object.defineProperty(Element.prototype, "outerHTML02", {
+          get: function() {
+            const containerEl = document.createElement("div");
+            containerEl.appendChild(this.cloneNode(true));
+            return containerEl.innerHTML;
+          },
+          set: function(value) {
+            const containerEl = document.createElement("div");
+            containerEl.innerHTML = value;
+
+            while (containerEl.firstChild) {
+              this.parentNode.insertBefore(containerEl.firstChild, this);
+            }
+
+            this.parentNode.removeChild(this);
+          },
+          enumerable: false,
+          configurable: true
+        });
+      })();
+
+      window.onload = function() {
+        const buttonEl01 = document.getElementById("button01");
+        const buttonEl02 = document.getElementById("button02");
+        const pEl01 = document.getElementById("p01");
+        const pEl02 = document.getElementById("p02");
+
+
+        buttonEl01.onclick = function() {
+          console.log(pEl01.outerHTML);
+          console.log(pEl02.outerHTML02);
+        };
+
+        buttonEl02.onclick = function() {
+          pEl01.outerHTML = "<p><i>foo</i></p>";
+          pEl02.outerHTML02 = "<p><i>foo</i></p>";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">get outerHTML</button>
+    <button id="button02">set outerHTML</button>
+
+    <p id="p01">foo</p>
+    <p id="p02">foo</p>
+  </body>
+</html>
