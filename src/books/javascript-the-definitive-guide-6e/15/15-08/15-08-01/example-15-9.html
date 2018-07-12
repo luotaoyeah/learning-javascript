@@ -1,33 +1,28 @@
-<!-- Example 15-8. Querying the scrollbar positions of a window -->
+<!-- Example 15-9. Querying the viewport size of a window -->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>example 15-8</title>
+    <title>example 15-9</title>
     <script>
       /**
-       * 获取滚动条位置
+       * 获取可视区域尺寸
        */
-      function getScrollOffset() {
-        if (window.scrollX != null) {
+      function getViewportSize() {
+        if (window.innerWidth != null) {
           return {
-            x: window.scrollX,
-            y: window.scrollY
-          };
-        } else if (window.pageXOffset != null) {
-          return {
-            x: window.pageXOffset,
-            y: window.pageYOffset
+            w: window.innerWidth,
+            h: window.innerHeight
           };
         } else if (document.compatMode === "CSS1Compat") {
           return {
-            x: document.documentElement.scrollLeft,
-            y: document.documentElement.scrollTop
+            w: document.documentElement.clientWidth,
+            h: document.documentElement.clientHeight
           };
         } else if (document.compatMode === "BackCompat") {
           return {
-            x: document.body.scrollLeft,
-            y: document.body.scrollTop
+            w: document.body.clientWidth,
+            h: document.body.clientHeight
           };
         }
       }
@@ -35,7 +30,7 @@
       window.onload = function() {
         const divEl = document.getElementById("div01");
         divEl.onclick = function() {
-          console.log(getScrollOffset());
+          console.log(getViewportSize());
         };
       };
     </script>
