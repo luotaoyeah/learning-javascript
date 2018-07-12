@@ -1,0 +1,45 @@
+<!-- 15.8.2 Querying the Geometry of an Element -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-08-02</title>
+    <script>
+      /*
+       * Element.getBoundingClientRect()
+       * 获取元素的尺寸和可视区域（viewport）坐标
+       */
+      window.onload = function() {
+        const divEl01 = document.getElementById("div01");
+        const divEl02 = document.getElementById("div02");
+
+        divEl01.onclick = function() {
+          /*
+           *  {
+           *    "x": -883,
+           *    "y": -592,
+           *    "width": 202,
+           *    "height": 202,
+           *    "top": -592,
+           *    "right": -681,
+           *    "bottom": -390,
+           *    "left": -883
+           *  }
+           */
+          console.log(JSON.stringify(divEl02.getBoundingClientRect(), null, 2));
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+        style="width: 3840px;height: 2160px;background: cornflowerblue;overflow: scroll;"
+    >
+      <div
+          id="div02"
+          style="display: inline-block;width: 200px;height: 200px;border: 1px solid red;"
+      ></div>
+    </div>
+  </body>
+</html>
