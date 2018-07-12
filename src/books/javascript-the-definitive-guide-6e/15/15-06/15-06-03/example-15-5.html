@@ -4,6 +4,9 @@
   <head>
     <title>example 15-5</title>
     <script>
+      /*
+       * 使用 innerHTML 模拟 outerHTML 的实现；
+       */
       (function() {
         Object.defineProperty(Element.prototype, "outerHTML02", {
           get: function() {
