@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-08-05</title>
+    <script>
+      /*
+       * Element.clientLeft 和 Element.clientTop
+       * 表示 offsetWidth 和 clientWidth 的差值，通常左边框宽度一致；
+       */
+
+      window.onload = function() {
+        const divEl = document.getElementById("div01");
+        console.log(divEl.clientLeft, divEl.clientTop);
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+        style="width: 100px;height: 100px;border: 10px solid red;overflow: auto;border-top-width: 20px;"
+    >
+      <div style="width: 150px;height: 150px;"></div>
+    </div>
+  </body>
+</html>
