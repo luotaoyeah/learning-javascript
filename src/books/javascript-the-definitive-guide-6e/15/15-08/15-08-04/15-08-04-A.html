@@ -1,0 +1,26 @@
+<!-- 15.8.4 Scrolling -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-08-04</title>
+    <script>
+      /*
+       * Window.scrollTo()，Window.scroll()
+       * 将文档（document）滚动到指定的坐标，即指定的坐标会成为文档的左上角的点；
+       * 这儿的坐标指的是文档坐标（document coordinates）；
+       */
+
+      window.onload = function() {
+        const documentHeight = document.documentElement.offsetHeight;
+        const viewportHeight = window.innerHeight;
+        setTimeout(function() {
+          window.scrollTo(0, documentHeight - viewportHeight);
+        }, 1000);
+      };
+    </script>
+  </head>
+  <body>
+    <div style="height: 10000px;">foo</div>
+  </body>
+</html>
