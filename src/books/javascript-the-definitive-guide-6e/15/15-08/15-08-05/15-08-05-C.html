@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-08-05</title>
+    <script>
+      /*
+       * 每个 HTML 元素都可以出现滚动条，
+       * 此时，元素的内容的尺寸大于元素实际的尺寸；
+       *
+       * Element.clientWidth 和 HTMLElement.offsetWidth 的区别是：
+       * Element.clientWidth 不包括 border 和 scrollbar 的宽度；
+       */
+
+      window.onload = function() {
+        const divEl = document.getElementById("div01");
+        console.log("clientWidth:", divEl.clientWidth);
+        console.log("offsetWidth:", divEl.offsetWidth);
+
+        /*
+         * 对于行内元素（inline），clientWidth 始终为 0；
+         */
+        const spanEl = document.getElementById("span01");
+        console.log(spanEl.clientWidth);
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+        style="width: 100px;height: 100px;border: 10px solid red;overflow: auto;"
+    >
+      <div style="width: 150px;height: 150px;"></div>
+    </div>
+    <span id="span01">foo</span>
+  </body>
+</html>
