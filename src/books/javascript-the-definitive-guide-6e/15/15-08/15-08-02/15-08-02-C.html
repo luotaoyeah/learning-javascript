@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-08-02</title>
+    <script>
+      /*
+       * 对于行内元素（inline），有可能会跨越多行，
+       * 此时 Element.getBoundingClientRect() 返回的矩形，
+       * 包含了元素所在的所有行；
+       */
+
+      window.onload = function() {
+        const spanEl = document.getElementById("span01");
+        console.log(spanEl.getBoundingClientRect());
+      };
+    </script>
+  </head>
+  <body>
+    <span>OOOOOOOOOOOOOOOOOOOO</span>
+    <i
+        id="span01"
+        style="background: red;"
+    >
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+      foofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoofoo
+    </i>
+    <span>OOOOOOOOOOOOOOOOOOOO</span>
+  </body>
+</html>
