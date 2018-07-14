@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-08-05</title>
+    <script>
+      /*
+       * Element.scrollLeft 和 Element.scrollTop
+       * 表示元素的滚动条的位置；
+       */
+
+      window.onload = function() {
+        const divEl = document.getElementById("div01");
+        divEl.onclick = function() {
+          console.log(divEl.scrollLeft + ", " + divEl.scrollTop);
+        };
+
+        /*
+         * 可以通过设置 scrollLeft 和 scrollTop 属性，设置滚动条的位置；
+         */
+        const buttonEl01 = document.getElementById("button01");
+        buttonEl01.onclick = function() {
+          divEl.scrollLeft += 10;
+          divEl.scrollTop += 10;
+        };
+
+        /*
+         * Element.scrollBy()
+         */
+        const buttonEl02 = document.getElementById("button02");
+        buttonEl02.onclick = function() {
+          divEl.scrollBy(10, 10);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+        style="width: 100px;height: 100px;border: 10px solid red;overflow: auto;border-top-width: 20px;"
+    >
+      <div style="width: 150px;height: 150px;"></div>
+    </div>
+    <button id="button01">scroll</button>
+    <button id="button02">scroll</button>
+  </body>
+</html>
