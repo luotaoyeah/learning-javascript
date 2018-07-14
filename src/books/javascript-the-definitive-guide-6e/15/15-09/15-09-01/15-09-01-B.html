@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-09-01</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 可以通过 form 对象访问下面的表单元素；
+         */
+        console.log("\n-------------------------------------------------- 01");
+        const formEl = document.forms.form01;
+        console.log(formEl.username);
+        console.log(formEl.input_username);
+        console.log(formEl.adult);
+        console.log(formEl.input_adult);
+
+        /*
+         * HTMLFormElement.elements
+         * 可以通过 form.elements 对象访问下面的表单元素；
+         */
+        console.log("\n-------------------------------------------------- 02");
+        console.log(formEl.elements.username);
+        console.log(formEl.elements);
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <input
+          id="input_username"
+          type="text"
+          name="username"
+      />
+      <input
+          id="input_adult"
+          type="radio"
+          name="adult"
+      />
+    </form>
+  </body>
+</html>
