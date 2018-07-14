@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-08-05</title>
+    <script>
+      /*
+       * Element.scrollWidth 和 Element.scrollHeight
+       * 与 clientWidth 的区别是：包含了溢出内容的宽度；
+       */
+
+      window.onload = function() {
+        const divEl = document.getElementById("div01");
+        console.log(divEl.clientWidth, divEl.scrollWidth);
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+        style="width: 100px;height: 100px;border: 10px solid red;overflow: auto;border-top-width: 20px;"
+    >
+      <div style="width: 150px;height: 150px;"></div>
+    </div>
+  </body>
+</html>
