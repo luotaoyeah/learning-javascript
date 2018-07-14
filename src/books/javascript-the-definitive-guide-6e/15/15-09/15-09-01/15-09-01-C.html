@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-09-01</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 多个表单元素可以拥有相同的 name 属性；
+         */
+        console.log("\n-------------------------------------------------- 01");
+        const methodEls = document.forms.shipping.elements.method;
+        console.log(methodEls);
+
+        const buttonEl01 = document.getElementById("button01");
+        buttonEl01.onclick = function() {
+          for (var i = 0; i < methodEls.length; i++) {
+            if (methodEls[i].checked) {
+              buttonEl01.innerHTML = methodEls[i].value;
+            }
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <form name="shipping">
+      <fieldset>
+        <legend>Shipping Method</legend>
+        <label>
+          <input
+              type="radio"
+              name="method"
+              value="1st"
+          >
+          First-class
+        </label>
+        <label>
+          <input
+              type="radio"
+              name="method"
+              value="2day"
+          >
+          2-day Air
+        </label>
+        <label>
+          <input
+              type="radio"
+              name="method"
+              value="overnite"
+          >
+          Overnight
+        </label>
+      </fieldset>
+    </form>
+    <button id="button01">get value</button>
+  </body>
+</html>
