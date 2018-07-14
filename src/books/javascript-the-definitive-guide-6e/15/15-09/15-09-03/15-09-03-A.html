@@ -1,0 +1,63 @@
+<!-- 15.9.3 Form and Element Event Handlers -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-09-03</title>
+    <script>
+      window.onload = function() {
+        console.log("\n-------------------------------------------------- 01");
+
+        /*
+         * <form> 的 onsubmit 事件处理函数，
+         * 在点击 submit 按钮之后，表单被提交之前执行；
+         *
+         * <form> 的 onreset 事件处理函数，
+         * 在点击 reset 按钮之后，表单被重置之前执行；
+         */
+        document.forms.form01.onsubmit = function() {
+          alert("onsubmit");
+          /* 返回 false，则会取消提交 */
+          return false;
+        };
+        document.forms.form01.onreset = function() {
+          alert("onreset");
+          /* 返回 false，则会取消重置 */
+          return false;
+        };
+
+        const buttonSubmit = document.getElementById("button01");
+        const buttonReset = document.getElementById("button02");
+        buttonSubmit.onclick = function() {
+          document.forms.form01.submit();
+        };
+        buttonReset.onclick = function() {
+          document.forms.form01.reset();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <input
+          id="input_username"
+          type="text"
+          name="username"
+      />
+      <input
+          id="input_adult"
+          type="radio"
+          name="adult"
+      />
+      <button type="submit">submit</button>
+      <button type="reset">reset</button>
+
+      <button id="button01">submit()</button>
+      <button id="button02">reset()</button>
+    </form>
+  </body>
+</html>
