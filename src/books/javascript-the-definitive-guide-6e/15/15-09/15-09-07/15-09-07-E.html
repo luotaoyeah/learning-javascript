@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-09-07</title>
+    <script>
+      window.onload = function() {
+        console.log("\n-------------------------------------------------- 01");
+        const selectEl01 = document.getElementById("select01");
+
+        /*
+         * HTMLOptionElement.text 用来获取和设置选项的显示文本；
+         */
+        selectEl01.options[1].text = "BB";
+        console.log(Array.prototype.map.call(selectEl01.options, item => item.text));
+
+        /*
+         * HTMLOptionElement.value 用来获取和设置选项的值；
+         */
+        console.log(Array.prototype.map.call(selectEl01.options, item => item.value));
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <button id="button01">select B</button>
+      <select id="select01">
+        <option value="a">A</option>
+        <option value="b">B</option>
+        <option value="c">C</option>
+      </select>
+    </form>
+  </body>
+</html>
