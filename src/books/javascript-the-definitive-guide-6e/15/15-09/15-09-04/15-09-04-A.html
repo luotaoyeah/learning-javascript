@@ -1,0 +1,59 @@
+<!-- 15.9.4 Push Buttons -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-09-04</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 普通的按钮没有默认的行为，需要绑定 onclick 事件；
+         * <button type="submit"> 的默认行为为提交表单，
+         * <button type="reset"> 的默认行为为重置表单；
+         *
+         * 如果在 <button type="submit"> 的 onclick 事件函数中返回 false，
+         * 则不会触发默认行为；
+         */
+        console.log("\n-------------------------------------------------- 01");
+
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <input
+          id="input_username"
+          type="text"
+          name="username"
+      />
+      <input
+          id="input_adult"
+          type="radio"
+          name="adult"
+      />
+      <button
+          type="submit"
+          onclick="return false;"
+      >submit
+      </button>
+      <button type="reset">reset</button>
+
+      <!--
+          按钮可以使用 <button> 元素，也可以使用 <input type="button"> 元素；
+          当使用 <button> 时，标签中间的内容会作为按钮的显示文本，
+          当使用 <input> 时，标签的 value 属性值会作为按钮的显示文本；
+      -->
+      <button type="button">
+        <i>button01</i>
+      </button>
+      <input
+          type="button"
+          value="button02"
+      >
+    </form>
+  </body>
+</html>
