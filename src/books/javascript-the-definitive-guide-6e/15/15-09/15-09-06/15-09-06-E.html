@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-09-06</title>
+    <script>
+      window.onload = function() {
+        console.log("\n-------------------------------------------------- 01");
+        const inputEl01 = document.getElementById("input01");
+
+        /*
+         * 文本控件支持 onkeydown，onkeypress，onkeyup 事件，
+         * 如果在 onkeydown 和 onkeypress 回调函数中返回 false，
+         * 则会阻止用户的输入；
+         */
+        inputEl01.onkeydown = function(e) {
+          console.log("onkeydown");
+          return !Number.isNaN(Number(e.key));
+        };
+        inputEl01.onkeypress = function(e) {
+          console.log("onkeypress");
+          return !Number.isNaN(Number(e.key));
+        };
+        inputEl01.onkeyup = function() {
+          console.log("onkeyup");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <input
+          id="input01"
+          type="text"
+      >
+    </form>
+  </body>
+</html>
