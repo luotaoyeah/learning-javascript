@@ -1,0 +1,79 @@
+<!-- 15.9.4 Toggle Buttons -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-09-05</title>
+    <script>
+      window.onload = function() {
+        /*
+         *
+         */
+        console.log("\n-------------------------------------------------- 01");
+        const checkboxEls = document.querySelectorAll("input[type=\"checkbox\"]");
+
+        document.forms.form01.onsubmit = function() {
+          /* HTMLInputElement.checked：表示 checkbox 是否勾选 */
+          console.log(Array.prototype.map.call(checkboxEls, function(item) {
+            return item.checked;
+          }));
+
+          /* HTMLInputElement.defaultChecked：表示 checkbox 是否默认勾选 */
+          console.log(Array.prototype.map.call(checkboxEls, function(item) {
+            return item.defaultChecked;
+          }));
+
+          return false;
+        };
+
+        /* 勾选（或者取消勾选）时，触发 onchange 事件 */
+        checkboxEls[2].onchange = function(e) {
+          console.log(e.target.checked);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <p>
+        <label>
+          <input
+              type="checkbox"
+              name="check01"
+              value="A"
+          >
+          A
+        </label>
+      </p>
+      <p>
+        <label>
+          <input
+              type="checkbox"
+              name="check01"
+              value="B"
+              checked
+          >
+          B
+        </label>
+      </p>
+      <p>
+        <label>
+          <input
+              type="checkbox"
+              name="check01"
+              value="C"
+          >
+          C
+        </label>
+      </p>
+      <input
+          type="submit"
+          value="submit"
+      >
+    </form>
+  </body>
+</html>
