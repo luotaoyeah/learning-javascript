@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-09-07</title>
+    <script>
+      window.onload = function() {
+        console.log("\n-------------------------------------------------- 01");
+        const selectEl01 = document.getElementById("select01");
+        const selectEl02 = document.getElementById("select02");
+
+        /* select-one */
+        console.log(selectEl01.type);
+        /* select-multiple */
+        console.log(selectEl02.type);
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <!--
+          默认情况，<select> 支持单选，
+          此时，其 type 属性为 select-one；
+      -->
+      <select id="select01">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+      <!--
+          如果设置了 multiple 属性，则支持多选，
+          此时，其 type 属性为 select-multiple；
+      -->
+      <select
+          id="select02"
+          multiple
+      >
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+    </form>
+  </body>
+</html>
