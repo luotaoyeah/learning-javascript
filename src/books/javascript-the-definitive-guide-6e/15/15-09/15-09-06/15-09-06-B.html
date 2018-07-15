@@ -1,4 +1,3 @@
-<!-- 15.9.6 Text Fields -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,17 +6,17 @@
     <script>
       window.onload = function() {
         console.log("\n-------------------------------------------------- 01");
-        const inputEl01 = document.getElementById("input01");
+        const textareaEl01 = document.getElementById("textarea01");
         const buttonEl01 = document.getElementById("button01");
 
-        /* 通过 value 属性，可以获取和设置文本框的值 */
         buttonEl01.onclick = function() {
-          inputEl01.value = new Date().toISOString();
+          /* 通过 value 属性，获取和设置文本框的值 */
+          textareaEl01.value = new Date().toISOString();
         };
 
-        /* onchange 事件在用户输入文本，文本框失去焦点之后触发 */
-        inputEl01.onchange = function() {
-          console.log(inputEl01.value);
+        /* 用户输入，文本框失去焦点后，触发 onchange 事件 */
+        textareaEl01.onchange = function() {
+          console.log(textareaEl01.value);
         };
       };
     </script>
@@ -28,12 +27,11 @@
         name="form01"
         action="#"
     >
-      <input
-          id="input01"
-          type="text"
-          style="width: 200px;"
-          placeholder="YYYY-MM-DDTHH:mm:ss.SSSZ"
-      >
+      <textarea
+          id="textarea01"
+          cols="50"
+          rows="10"
+      ></textarea>
       <button
           id="button01"
           type="button"
