@@ -1,0 +1,25 @@
+<!-- 15.10.2 The document.write() Method -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-10-02</title>
+    <script>
+      window.onload = function() {
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>document properties</legend>
+      <script>
+        document.write("cookie：" + document.cookie);
+        document.write("<br/>domain：" + document.domain);
+        document.write("<br/>lastModified：" + document.lastModified);
+        document.write("<br/>referrer：" + document.referrer);
+        document.write("<br/>title：" + document.title);
+        document.write("<br/>URL：" + document.URL);
+      </script>
+    </fieldset>
+  </body>
+</html>
