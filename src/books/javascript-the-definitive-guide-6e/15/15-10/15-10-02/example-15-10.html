@@ -1,0 +1,51 @@
+<!-- Example 15-10. A streaming API for the innerHTML property -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>example 15-10</title>
+    <script>
+      /**
+       *
+       * @param el
+       * @constructor
+       */
+      function ElementStream(el) {
+        if (typeof el === "string") {
+          el = document.getElementById(el);
+        }
+
+        this.el = el;
+        this.buffer = "";
+      }
+
+
+      ElementStream.prototype.write = function() {
+        this.buffer += Array.prototype.join.call(arguments, "");
+      };
+
+      ElementStream.prototype.writeln = function() {
+        this.buffer += Array.prototype.join.call(arguments, "") + "\n";
+      };
+
+      ElementStream.prototype.close = function() {
+        this.el.innerHTML = this.buffer;
+        this.buffer = "";
+      };
+
+      window.onload = function() {
+        const elementStream = new ElementStream("div01");
+        elementStream.write("<br/>foo");
+        elementStream.write("<br/>bar");
+        elementStream.writeln("<br/>baz");
+
+        setTimeout(function() {
+          elementStream.close();
+        }, 2000);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="div01"></div>
+  </body>
+</html>
