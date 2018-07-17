@@ -1,0 +1,23 @@
+<!-- 15.10.3 Querying Selected Text -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-10-03</title>
+    <script>
+      window.onload = function() {
+        const buttonEl01 = document.getElementById("button01");
+        buttonEl01.onclick = function() {
+          console.log(window.getSelection().toString());
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Window.getSelection()</legend>
+      <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+      <button id="button01">Window.getSelection()</button>
+    </fieldset>
+  </body>
+</html>
