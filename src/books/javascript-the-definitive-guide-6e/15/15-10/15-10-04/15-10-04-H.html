@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-10-04</title>
+    <script>
+      window.onload = function() {
+        /*
+         * H5 规范定义了下面这些命令：
+         *
+         * bold               加粗
+         * createLink         创建链接
+         * delete             删除
+         * backColor          修改背景颜色
+         */
+        console.log("\n-------------------------------------------------- 01");
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>commands</legend>
+      <p
+          contenteditable="true"
+          style="border: 2px solid red;border-radius: 3px;padding: 10px;"
+      >The quick brown fox jumps over the lazy dog</p>
+      <p>
+        <button onclick="document.execCommand('delete');">delete</button>
+        <button onclick="document.execCommand('backColor',false,'yellow');">backColor</button>
+      </p>
+    </fieldset>
+  </body>
+</html>
