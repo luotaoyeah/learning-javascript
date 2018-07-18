@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-10-04</title>
+    <script>
+      window.onload = function() {
+        /*
+         * Document.queryCommandSupported()
+         * 检查浏览器是否支持某个命令；
+         */
+        console.log("\n-------------------------------------------------- 01");
+        console.log(document.queryCommandSupported("bold"));
+        console.log(document.queryCommandSupported("italic"));
+        console.log(document.queryCommandSupported("createlink"));
+        /* fasle */
+        console.log(document.queryCommandSupported("foo"));
+
+        /*
+         * Document.queryCommandEnabled()
+         * 检查某个命令当前是否可用，
+         * 比如 bold 命令在选中文本时才可用；
+         */
+        console.log("\n-------------------------------------------------- 02");
+        /* true */
+        console.log(document.queryCommandEnabled("selectAll"));
+        const buttonEl01 = document.getElementById("button01");
+        buttonEl01.onclick = function() {
+          console.log(document.queryCommandEnabled("bold"));
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Document.queryCommandSupported()</legend>
+      <p
+          contenteditable="true"
+          style="border: 2px solid red;border-radius: 3px;padding: 10px;"
+      >The quick brown fox jumps over the lazy dog</p>
+      <p>
+        <button id="button01">document.queryCommandEnabled("bold")</button>
+      </p>
+    </fieldset>
+  </body>
+</html>
