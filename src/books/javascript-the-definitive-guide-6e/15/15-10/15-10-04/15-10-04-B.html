@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-10-04</title>
+    <script>
+      /*
+       * spellcheck 属性用来启用或者禁用拼写检查，
+       * 对于表单元素或者启用了 contenteditable 的元素有效；
+       */
+      window.onload = function() {
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>contenteditable</legend>
+      <p>
+        <input
+            type="text"
+            spellcheck="true"
+        />
+      </p>
+      <p
+          contenteditable="true"
+          spellcheck="true"
+      >foo</p>
+    </fieldset>
+  </body>
+</html>
