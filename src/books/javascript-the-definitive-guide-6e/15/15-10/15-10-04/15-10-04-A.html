@@ -1,0 +1,25 @@
+<!-- 15.10.4 Editable Content -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-10-04</title>
+    <script>
+      window.onload = function() {
+        const pEl02 = document.getElementById("p02");
+        /* 设置元素的 contentEditable 属性，启用编辑 */
+        pEl02.contentEditable = true;
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>contenteditable</legend>
+      <!--
+          设置标签的 contenteditable 属性，启用编辑；
+      -->
+      <p contenteditable="true">foo</p>
+      <p id="p02">bar</p>
+    </fieldset>
+  </body>
+</html>
