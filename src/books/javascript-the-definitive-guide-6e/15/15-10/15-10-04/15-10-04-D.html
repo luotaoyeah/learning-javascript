@@ -5,10 +5,9 @@
     <title>15-10-04</title>
     <script>
       /*
-       * Document.designMode 获取或者设置文档是否启用了编辑模式，
-       * 值为 on 表示开启，值为 off 表示关闭；
-       *
-       * Document.designMode 属性没有对应的 attribute；
+       * 在编辑模式下，不同的浏览器可能会有不同的编辑行为，
+       * 比如，可能支持某些快捷键：CTRL+B 表示加粗（bold），CTRL+I 表示斜体（italic），
+       * 比如，回车时，可能添加一个新的 <p> 标签，也可能添加一个 <br/> 标签；
        */
       window.onload = function() {
         document.designMode = "on";
