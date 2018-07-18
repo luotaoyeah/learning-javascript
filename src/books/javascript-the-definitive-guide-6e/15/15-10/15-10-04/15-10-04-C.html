@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>15-10-04</title>
+    <script>
+      /*
+       * Document.designMode 获取或者设置文档是否启用了编辑模式，
+       * 值为 on 表示开启，值为 off 表示关闭；
+       *
+       * Document.designMode 属性没有对应的 attribute；
+       */
+      window.onload = function() {
+        document.designMode = "on";
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>designMode</legend>
+      <p>foo</p>
+    </fieldset>
+  </body>
+</html>
