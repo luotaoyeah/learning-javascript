@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.1 Positioning Elements with CSS</title>
+    <style>
+      div {
+        border: 5px solid red;
+        border-radius: 3px;
+        padding: 10px;
+        height: 1000px;
+      }
+
+      /*
+       * 当 position 属性为 absolute，fixed，relative 时，
+       * 可以通过 top，left 或者 bottom，right 指定元素距离容器元素的距离；
+       */
+      .a {
+        position: fixed;
+        left: 100px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <div class="a">A</div>
+  </body>
+</html>
