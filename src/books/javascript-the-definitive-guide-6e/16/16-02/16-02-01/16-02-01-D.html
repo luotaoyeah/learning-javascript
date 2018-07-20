@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.1 Positioning Elements with CSS</title>
+    <style>
+      p {
+        border: 5px solid red;
+        padding: 10px;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <!--
+        可以通过 width 属性指定元素的宽度，
+        可以通过 height 属性指定元素的高度；
+    -->
+    <p style="width: 200px;height: 200px;"></p>
+
+    <!--
+        也可以通过同时指定 left 和 right 来指定元素的宽度，
+        或者通过同时指定 top 和 bottom 来指定元素的高度；
+    -->
+    <p style="position: absolute;left: 100px;right: 100px;top:100px;bottom:100px;"></p>
+  </body>
+</html>
