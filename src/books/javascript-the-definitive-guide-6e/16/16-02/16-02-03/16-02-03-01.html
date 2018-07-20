@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.3.1 The border-box model and the box-sizing property</title>
+    <!--
+        默认情况下，width 不包括 border 和 padding，
+        这是由 box-sizing 属性决定的，box-sizing 默认值为 content-box，
+        如果设置为 border-box，则 width 将包括 border 和 padding；
+    -->
+    <style>
+      div {
+        border-radius: 3px;
+      }
+
+      .container {
+        border: 5px solid red;
+        width: 400px;
+        height: 800px;
+        margin: 100px;
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+
+      .child01 {
+        border: 5px solid green;
+        width: 100px;
+        height: 100px;
+        padding: 50px;
+        box-sizing: content-box;
+      }
+
+      .child02 {
+        border: 5px solid purple;
+        width: 210px;
+        height: 210px;
+        padding: 50px;
+        box-sizing: border-box;
+
+        position: absolute;
+        top: 300px;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <div class="container">
+      <div class="child01"></div>
+      <div class="child02"></div>
+    </div>
+  </body>
+</html>
