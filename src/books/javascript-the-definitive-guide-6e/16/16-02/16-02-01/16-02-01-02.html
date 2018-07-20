@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.1.2 CSS positioning example: Shadowed text</title>
+    <!--
+        使用 position 和 z-index 模拟 text-shadow 的效果；
+    -->
+    <style></style>
+  </head>
+  <body style="margin: 0;">
+    <p>
+      <span style="text-shadow: 3px 3px 1px #888888;">foo</span>
+    </p>
+    <p>
+      <span style="position: relative;top:0;left:0;">
+        foo
+        <span style="position: absolute;top: 3px;left: 3px;z-index: -1;color: #888888;">foo</span>
+      </span>
+    </p>
+  </body>
+</html>
