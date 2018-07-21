@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.6 Partial Visibility: overflow and clip</title>
+    <!--
+        overflow 属性用于指定，当元素的内容区域尺寸大于元素盒子的尺寸时，
+        内容区域应该如何显示；
+    -->
+    <style>
+      div {
+        border: 5px solid red;
+        border-radius: 3px;
+        width: 300px;
+        height: 100px;
+        margin-bottom: 10px;
+        background: #FFFFFF;
+      }
+
+      p {
+        border: 5px solid green;
+        border-radius: 3px;
+        width: 400px;
+        height: 50px;
+        margin: 0;
+        background: #FFFFFF;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <!--
+        默认值为 visible，表示超出盒子的内容区域依然会显示；
+    -->
+    <div style="overflow: visible;">
+      <p></p>
+    </div>
+    <!--
+        hidden 表示超出盒子的内容区域不会显示，直接被隐藏；
+    -->
+    <div style="overflow: hidden;">
+      <p></p>
+    </div>
+    <!--
+        scroll 表示元素始终显示水平的和垂直的滚动条，
+        当内容区域没有超出盒子时，滚动条不可滚动，
+        当内容区域超出盒子时，可以通过对应的滚动条滚动显示内容区域；
+    -->
+    <div style="overflow: scroll;">
+      <p></p>
+    </div>
+    <!--
+        auto 表示，当元素内容区域没有超出盒子时，不会显示滚动条，
+        当内容区域超出盒子时，对应的滚动条会显示，从而可以滚动显示内容区域；
+    -->
+    <div style="overflow: auto;">
+      <p></p>
+    </div>
+  </body>
+</html>
