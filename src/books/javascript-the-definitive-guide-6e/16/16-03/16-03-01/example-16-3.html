@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 16-3. CSS animations</title>
+    <!--
+        使用 JS 操作元素的样式属性，
+        实现各种动画效果；
+    -->
+    <script>
+      /**
+       * 抖动元素
+       * @param el 元素
+       * @param distance 距离
+       * @param time 时间
+       */
+      function shake(el, distance, time) {
+        distance = distance || 5;
+        time = time || 500;
+
+        var originalStyle = el.style.cssText;
+        el.style.position = "relative";
+        var start = new Date().getTime();
+
+        animate();
+
+        function animate() {
+          var now = new Date().getTime();
+          var elapsed = now - start;
+          var fraction = elapsed / time;
+
+          if (fraction < 1) {
+            var x = distance * Math.sin(fraction * 4 * Math.PI);
+            el.style.left = x + "px";
+            setTimeout(animate, Math.min(25, time - elapsed));
+          } else {
+            el.style.cssText = originalStyle;
+          }
+        }
+      }
+
+      /**
+       *
+       * @param el
+       * @param time
+       */
+      function fadeOut(el, time) {
+        time = time || 500;
+
+        const start = new Date().getTime();
+        animate();
+
+        function animate() {
+          const now = new Date().getTime();
+          var elapsed = now - start;
+          var fraction = elapsed / time;
+          if (fraction < 1) {
+            el.style.opacity = String(1 - Math.sqrt(fraction));
+            setTimeout(animate, Math.min(25, time - elapsed));
+          } else {
+            el.style.opacity = "0";
+          }
+        }
+      }
+
+      window.onload = function() {
+        const buttonEl01 = document.getElementById("button01");
+        const buttonEl02 = document.getElementById("button02");
+        const buttonEl03 = document.getElementById("button03");
+        buttonEl01.onclick = function() {
+          shake(buttonEl02);
+          fadeOut(buttonEl03);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <button id="button02">shaking</button>
+    </p>
+    <p>
+      <button id="button03">fading</button>
+    </p>
+    <button id="button01">shake & fade</button>
+  </body>
+</html>
