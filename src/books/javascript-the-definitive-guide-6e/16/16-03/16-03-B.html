@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.3 Scripting Inline Styles</title>
+    <!--
+        CSSStyleDeclaration 对象属性的属性值都是字符串类型；
+    -->
+    <script>
+      window.onload = function() {
+        const buttonEl = document.getElementById("button01");
+        buttonEl.style.width = "100px";
+        buttonEl.style.left = "100px";
+        /* 数值也需要使用字符串的形式 */
+        buttonEl.style.zIndex = "100";
+        /* rgba() 也要使用字符串的形式 */
+        buttonEl.style.color = "rgba(0, 0, 0, 0.5)";
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">button</button>
+  </body>
+</html>
