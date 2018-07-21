@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.5 Color, Transparency, and Translucency</title>
+    <!--
+        color 属性用于指定文本的颜色，
+        background-color 用于指定元素的背景颜色；
+
+        颜色的值可以使用预定义的一些颜色，如 red，green，yellow，
+        也可以使用十六进制的颜色值，如 #f0f0f0，
+        也可以使用 RGBA 形式，如 rgba(255, 255, 255, 0.5)
+            r 代表 red
+            g 代表 green
+            b 代表 blue
+            a 代表 alpha（透明度）
+        也可以使用 HSLA 形式，如 hsla(170, 50%, 45%, 1)
+            h 代表 hue（色调）
+            s 代表 saturation（饱和度）
+            l 代表 lightness（亮度）
+            a 代表 alpha（透明度）
+    -->
+    <style>
+      div {
+        display: inline-block;
+        border-radius: 3px;
+        border: 5px solid red;
+        width: 200px;
+        padding: 10px;
+
+        color: red;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <div>
+      foo
+    </div>
+  </body>
+</html>
