@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.5 Color, Transparency, and Translucency</title>
+    <!--
+        默认情况下，大多数元素的背景都是透明的，
+        即下层元素的内容会透过上层元素显示出来；
+    -->
+    <style>
+      .container {
+        display: inline-block;
+        border-radius: 3px;
+        border: 5px solid red;
+        width: 400px;
+        height: 400px;
+        /*padding: 10px;*/
+        color: red;
+        position: relative;
+      }
+
+      .content {
+        border: 5px solid green;
+        border-radius: 3px;
+        width: 100px;
+        height: 100px;
+        padding: 10px;
+        position: absolute;
+        color: green;
+        left: 0;
+        top: 0;
+
+        /*
+         * 可以通过设置 background-color 指定元素背景的颜色和透明度；
+         */
+        background-color: rgba(0, 0, 0, 0.5);
+
+        /*
+         * 可以通过设置 opacity 指定元素整体的透明度，
+         * 包括元素的内容区域，padding，border 和 background；
+         */
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <div class="container">
+      foo
+      <div class="content">bar</div>
+    </div>
+  </body>
+</html>
