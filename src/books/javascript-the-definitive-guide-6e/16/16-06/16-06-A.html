@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.6 Scripting Stylesheets</title>
+    <script>
+      /*
+       * Document.styleSheets
+       * 当前文档中的 <style> 和 <link> 元素所表示的样式表单对象；
+       */
+      window.onload = function() {
+        console.log(document.styleSheets);
+      };
+    </script>
+    <style id="style01">
+      button {
+        color: red;
+      }
+    </style>
+    <style id="style02">
+      button {
+        border: 1px solid red;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button01">button</button>
+  </body>
+</html>
