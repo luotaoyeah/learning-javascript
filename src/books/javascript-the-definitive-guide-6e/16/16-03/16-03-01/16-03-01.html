@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.3.1 CSS Animations</title>
+    <!--
+        CSS3 的 transition 模块，定义了很多动画效果，
+        即可以直接通过设置样式属性来实现动画效果，
+        而不再需要通过 JS 来实现；
+    -->
+    <script>
+      window.onload = function() {
+        const buttonEl = document.getElementById("button01");
+        buttonEl.onclick = function() {
+          /*
+           * 根据样式属性 transition 的定义，
+           * 当元素的 opacity 变更时，
+           * 从旧值变化到新值的这个过程中，
+           * 元素会被应用动画效果，动画持续的时间为 0.5 秒，
+           * 动画的类型为 ease-in；
+           */
+          this.style.opacity = 0;
+        };
+      };
+    </script>
+    <style>
+      .fade {
+        transition: opacity 0.5s ease-in;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      <button
+          id="button01"
+          class="fade"
+      >fading
+      </button>
+    </p>
+  </body>
+</html>
