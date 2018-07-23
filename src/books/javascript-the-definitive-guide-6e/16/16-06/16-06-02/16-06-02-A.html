@@ -9,8 +9,9 @@
        * 表示样式表单的所有样式规则；
        *
        * 每一个元素是一个 CSSStyleRule 对象，
-       * 其 selectorText 属性表示当前规则的选择器，
-       * 其 style 属性是一个 CSSStyleDeclaration 对象；
+       *     其 selectorText 属性表示当前规则的选择器，
+       *     其 style 属性是一个 CSSStyleDeclaration 对象，
+       *         可以通过修改该 style 属性实现样式的修改；
        */
       window.onload = function() {
         const cssRules = document.styleSheets[0].cssRules;

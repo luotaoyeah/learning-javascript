@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.6.2 Querying, Inserting and Deleting Stylesheet Rules</title>
+    <script>
+      /*
+       * CSSStyleSheet.insertRule(rule: string, index?: number)
+       * 插入一条规则到指定位置；
+       *
+       * CSSStyleSheet.deleteRule(index?: number)
+       * 删除指定位置的规则；
+       */
+      window.onload = function() {
+        const styleSheet = document.styleSheets[0];
+
+        window.button02.onclick = function() {
+          styleSheet.insertRule("button { border-color: green !important; }", 1);
+        };
+
+        window.button03.onclick = function() {
+          styleSheet.deleteRule(0);
+        };
+      };
+    </script>
+    <style>
+      button {
+        color: red;
+      }
+
+      .highlight {
+        border: 1px solid red;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+        id="button01"
+        class="highlight"
+    >button
+    </button>
+    <button id="button02">CSSStyleSheet.insertRule()</button>
+    <button id="button03">CSSStyleSheet.deleteRule()</button>
+  </body>
+</html>
