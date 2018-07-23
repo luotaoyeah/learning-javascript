@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.6.1 Enabling and Disabling Stylesheets</title>
+    <script>
+      window.onload = function() {
+        window.button02.onclick = function() {
+          /*
+           * HTMLStyleElement.disabled
+           * HTMLLinkElement.disabled
+           */
+          window.style01.disabled = true;
+        };
+
+        window.button03.onclick = function() {
+          /*
+           * StyleSheet.disabled
+           */
+          document.styleSheets[2].disabled = true;
+        };
+      };
+    </script>
+    <style>
+      button {
+        border-radius: 3px;
+        outline: none;
+      }
+    </style>
+    <style id="style01">
+      button {
+        color: red;
+      }
+    </style>
+    <style id="style02">
+      button {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button01">button</button>
+    <button id="button02">HTMLStyleElement.disabled</button>
+    <button id="button03">StyleSheet.disabled</button>
+  </body>
+</html>
