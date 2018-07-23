@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 16-6. Creating a new stylesheet</title>
+    <script>
+      /*
+       * 通过添加 <style> 标签的方式，添加样式表单；
+       */
+      window.onload = function() {
+        window.button01.onclick = function() {
+          const htmlStyleElement = document.createElement("style");
+          document.head.insertAdjacentElement("beforeend", htmlStyleElement);
+          htmlStyleElement.innerText = "button {padding: 7px;outline: none;color: red;border-radius: 3px;}";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button
+        id="button01"
+    >button
+    </button>
+  </body>
+</html>
