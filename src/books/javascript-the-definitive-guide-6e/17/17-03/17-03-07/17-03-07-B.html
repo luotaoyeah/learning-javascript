@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.3.7 Event Cancellation</title>
+    <script>
+      /*
+       * Event.stopPropagation()
+       * 用于阻止事件冒泡；
+       */
+      window.onload = function() {
+        window.div01.onclick = function() {
+          console.log("div01");
+        };
+        window.div02.onclick = function() {
+          console.log("div02");
+        };
+        window.div03.onclick = function(e) {
+          console.log("div03");
+          e.stopPropagation();
+        };
+
+        /*
+         * 该方法可以用在任何一个阶段，
+         * 比如如果在 capture 阶段调用了 stopPropagation()，
+         * 则该事件的第二阶段和第三阶段将不再触发；
+         */
+        window.div04.addEventListener("click", function(e) {
+          console.log("div04 capture");
+          e.stopPropagation();
+        }, true);
+        window.div05.addEventListener("click", function() {
+          console.log("div05 capture");
+        }, true);
+        window.div06.addEventListener("click", function() {
+          console.log("div06 capture");
+        }, true);
+      };
+    </script>
+  </head>
+  <body>
+    <div id="div01">
+      <div id="div02">
+        <div id="div03">
+          click me
+        </div>
+      </div>
+    </div>
+    <div id="div04">
+      <div id="div05">
+        <div id="div06">
+          click me
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
