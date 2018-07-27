@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.3.7 Event Cancellation</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 使用对象属性或者 HTML 属性的方式注册回调函数时，
+         * 如果回调函数返回 false，则会阻止默认行为的执行；
+         *
+         * 如果使用 addEventListener() 注册回调函数，
+         * 则需要调用 Event.preventDefault() 来阻止默认行为；
+         */
+
+        window.anchor01.onclick = function() {
+          return false;
+        };
+        window.anchor02.addEventListener("click", function(e) {
+          e.preventDefault();
+          /*
+           * Event.defaultPrevented
+           * 标识事件的默认行为是否被阻止；
+           */
+          console.log("e.defaultPrevented", e.defaultPrevented);
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <a
+          id="anchor01"
+          href="https://www.google.com"
+      >https://www.google.com
+      </a>
+    </p>
+    <p>
+      <a
+          href="https://www.google.com"
+          onclick="return false;"
+      >https://www.google.com
+      </a>
+    </p>
+    <p>
+      <a
+          id="anchor02"
+          href="https://www.google.com"
+      >https://www.google.com
+      </a>
+    </p>
+    <div id="div01">
+      <div id="div02">
+        <div id="div03">
+          click me
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
