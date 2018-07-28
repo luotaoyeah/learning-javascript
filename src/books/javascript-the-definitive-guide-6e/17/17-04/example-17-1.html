@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 17-1. Invoking functions when the document is ready</title>
+    <script>
+      var whenReady = (
+        function() {
+          var ready = false;
+          var funcs = [];
+
+          function handler(e) {
+            if (ready) {
+              return;
+            }
+
+            if (e.type === "readystatechange" && document.readyState !== "complete") {
+              return;
+            }
+
+            for (var i = 0; i < funcs.length; i++) {
+              funcs[i].call(document);
+            }
+
+            ready = false;
+            funcs = [];
+          }
+
+          document.addEventListener("DOMContentLoaded", handler, false);
+          document.addEventListener("readystatechange", handler, false);
+          window.addEventListener("laod", handler, false);
+
+          return function whenReady(fn) {
+            if (ready) {
+              fn.call(document);
+            } else {
+              funcs.push(fn);
+            }
+          };
+        }
+      )();
+    </script>
+  </head>
+  <body></body>
+</html>
