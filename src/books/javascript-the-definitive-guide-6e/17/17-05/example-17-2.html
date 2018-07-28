@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 17-2. Dragging document elements</title>
+    <script>
+      function drag(el, e) {
+        var deltaX = e.clientX + window.scrollX - el.offsetLeft;
+        var deltaY = e.clientY + window.scrollY - el.offsetTop;
+
+
+        /*
+         * 事件注册到 capture 阶段；
+         */
+        el.addEventListener("mousemove", handleMouseMove, true);
+        el.addEventListener("mouseup", handleMouseUp, true);
+
+        e.stopPropagation();
+        e.preventDefault();
+
+        /**
+         *
+         * @param e
+         */
+        function handleMouseMove(e) {
+          el.style.left = e.clientX + window.scrollX - deltaX + "px";
+          el.style.top = e.clientY + window.scrollY - deltaY + "px";
+          e.stopPropagation();
+        }
+
+        /**
+         *
+         * @param e
+         */
+        function handleMouseUp(e) {
+          el.removeEventListener("mousemove", handleMouseMove, true);
+          el.removeEventListener("mouseup", handleMouseUp, true);
+          e.stopPropagation();
+        }
+      }
+
+
+      window.onload = function() {
+        window.button01.onmousedown = function(e) {
+          if (e.metaKey) {
+            drag(this, e);
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button
+        id="button01"
+        style="position: absolute;"
+    >drag me
+    </button>
+  </body>
+</html>
