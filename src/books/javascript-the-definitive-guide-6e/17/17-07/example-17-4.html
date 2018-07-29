@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 17-4. A custom drag source</title>
+    <style>
+      textarea {
+        border-radius: 3px;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        window.button01.ondragstart = function(e) {
+          const image = new Image();
+          image.src = "./17-07.png";
+          e.dataTransfer.setDragImage(image, 64, 64);
+          e.dataTransfer.setData("text", new Date().toISOString() + "\n");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <button
+          id="button01"
+          draggable="true"
+      >time
+      </button>
+    </p>
+    <textarea
+        cols="100"
+        rows="10"
+    ></textarea>
+  </body>
+</html>
