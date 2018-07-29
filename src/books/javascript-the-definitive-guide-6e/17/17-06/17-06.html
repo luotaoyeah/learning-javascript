@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.6 Mousewheel Events</title>
+    <style>
+      div {
+        border: 1px solid red;
+        border-radius: 3px;
+        padding: 10px;
+        text-align: center;
+        font-size: 50px;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        /*
+         * wheel 事件表示鼠标滚轮滚动事件；
+         */
+        window.div01.addEventListener("wheel", function(e) {
+          var num = Number.parseInt(this.innerText, 10);
+          this.innerText = num + Number.parseInt(e.deltaY / 4, 10);
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+    >0
+    </div>
+  </body>
+</html>
