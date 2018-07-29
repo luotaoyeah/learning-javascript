@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.7 Drag and Drop Events</title>
+    <style>
+      div {
+        border: 1px solid red;
+        border-radius: 3px;
+        padding: 10px;
+        margin-top: 100px;
+        position: absolute;
+        width: 100%;
+      }
+    </style>
+    <script>
+      /*
+       * drag-and-drop 通常简称为 DnD；
+       * 当 HTML 标签的 draggable 属性设置为 true 时，
+       * 该标签成为一个拖拽源；
+       */
+
+      window.onload = function() {
+        window.button01.addEventListener("dragstart", function(e) {
+
+          var delta = {
+            left: e.clientX + window.scrollX - this.offsetLeft,
+            top: e.clientY + window.scrollY - this.offsetTop
+          };
+
+          /*
+           * 通过 DataTransfer.setData() 方法设置拖拽信息，
+           * 包括拖拽信息的格式和内容；
+           */
+          e.dataTransfer.setData("text/json", JSON.stringify(delta));
+
+
+          /*
+           * 默认情况下，浏览器会将拖拽标签生成一张透明的图片，
+           * 作为拖拽时的效果图片；
+           * 可以通过 DataTransfer.setDragImage() 方法，
+           * 设置自定义的效果图片；
+           */
+          const image = new Image();
+          image.src = "./17-07.png";
+          e.dataTransfer.setDragImage(image, 64, 64);
+        });
+
+        /*
+         * 在拖拽过程中会触发 drag 事件，
+         * 通常我们不会关注这个事件；
+         */
+        window.button01.addEventListener("drag", function(e) {
+          console.log("ondrag");
+        });
+
+
+        window.button01.addEventListener("dragend", function(e) {
+          this.style.left = e.clientX + "px";
+          this.style.top = e.clientY + "px";
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <!--
+        当 HTML 标签的 draggable 属性设置为 true 时，
+        表示该标签可以拖拽，成为一个拖拽源（drag source）；
+    -->
+    <button
+        id="button01"
+        draggable="true"
+        style="position: absolute;"
+    >drag me
+    </button>
+    <div id="div01"></div>
+  </body>
+</html>
