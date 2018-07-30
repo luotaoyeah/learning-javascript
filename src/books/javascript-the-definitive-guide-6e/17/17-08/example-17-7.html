@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 17-7. Using the propertychange event to detect text input</title>
+    <style>
+      input {
+        border-radius: 3px;
+        padding: 5px;
+      }
+    </style>
+    <script>
+      /*
+       * textinput 事件会在文本插入到输入框之前触发，
+       * 而 input 事件会在文本插入到输入框之后触发；
+       */
+      window.onload = function() {
+        window.input01.addEventListener("textInput", function() {
+          console.log("textinput");
+        });
+
+        window.input01.addEventListener("input", function(e) {
+          console.log("input");
+          this.value = this.value.toUpperCase();
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <input
+        id="input01"
+        type="text"
+    >
+  </body>
+</html>
