@@ -10,7 +10,7 @@ http
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*"
     });
-    response.end("{message: 'hello word'}");
+    response.end(JSON.stringify({ name: "foo" }));
   })
   .listen(8888);
 
