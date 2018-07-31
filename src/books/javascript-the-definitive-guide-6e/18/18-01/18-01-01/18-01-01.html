@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>18.1.1 Specifying the Request</title>
+    <style></style>
+    <script>
+      /*
+       * 使用 XMLHttpRequest 简历 HTTP 请求；
+       */
+      window.onload = function() {
+        /*
+         * 第一步：创建一个 XMLHttpRequest 对象实例；
+         */
+        const xmlHttpRequest = new XMLHttpRequest();
+
+        /*
+         * 第二步：调用 XMLHttpRequest.open() 方法，
+         *     第一个参数表示'请求方法'；
+         *         通常在以下情况下使用 GET：
+         *             1. 没有请求体；
+         *             2. 请求没有 side effects；
+         *             3. 请求的数据可以被缓存；
+         *     第二个参数表示'请求地址'；
+         *
+         * XMLHttpRequest 支持一下的请求方法：
+         *     GET，POST，HEAD，DELETE，OPTIONS，PUT；
+         */
+        xmlHttpRequest.open("GET", "http://localhost:8888");
+
+        /*
+         * 第三步：设置请求头（可选）；
+         * XMLHttpRequest.setRequestHeader()
+         *
+         * 部分请求头是浏览器自动进行设置的，
+         * 是不允许用户设置的，如：Cookie，Date，User-Agent；
+         */
+        xmlHttpRequest.setRequestHeader("Content-Type", "text/plain");
+
+        /*
+         * 第四步：设置请求体（可选）以及发送请求；
+         * XMLHttpRequest.send()
+         */
+        xmlHttpRequest.send();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
