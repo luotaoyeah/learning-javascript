@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>18. Scripted HTTP</title>
+    <script>
+      /*
+       * AJAX（Asynchronous JavaScript And XML）
+       * 实现了在不刷新页面的情况下，使用 JS 向服务器发起 HTTP 请求，获取数据；
+       *
+       * AJAX 是指浏览器主动向服务器请求数据，
+       * Comet 是指服务器主动向浏览器推送数据，
+       * Comet 又称为 Server Push，AJAX Push，HTTP Streaming；
+       */
+
+      /*
+       * 使用 JS 设置 <img> 标签的 src 属性时，
+       * 实际上是发起了一个 HTTP GET 请求；
+       *
+       * 也可以使用 <iframe> 标签，通过设置 src 属性，
+       * 发起一个 GET 请求，服务器返回一个包含数据的 HTML 文档，
+       * 然后浏览器通过读取文档内容来获取服务器返回的数据；
+       *
+       *
+       * 也可以使用 <script> 标签，通过设置 src 属性，
+       * 发起一个 GET 请求，这种请求不受 same-origin policy 的限制，
+       * 可以实现跨域请求；
+       * 通常服务器会返回 JSON 数据，这种请求称为 JSONP；
+       */
+
+      /*
+       * XMLHttpRequest 对象专门用来发起 AJAX 请求，
+       */
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
