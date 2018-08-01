@@ -8,9 +8,11 @@ http
   .createServer((request, response) => {
     response.writeHead(200, {
       "Access-Control-Allow-Origin": "*",
-      "Content-Type": "application/json"
+      "Content-Type": "application/xhtml+xml"
     });
-    response.end(JSON.stringify({ name: "foo" }));
+    response.end(
+      "<html><head><title>foo</title></head><body>bar</body></html>"
+    );
   })
   .listen(8888);
 
