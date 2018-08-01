@@ -7,8 +7,8 @@ var http = require("http");
 http
   .createServer((request, response) => {
     response.writeHead(200, {
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": "*",
+      "Content-Type": "application/json"
     });
     response.end(JSON.stringify({ name: "foo" }));
   })
