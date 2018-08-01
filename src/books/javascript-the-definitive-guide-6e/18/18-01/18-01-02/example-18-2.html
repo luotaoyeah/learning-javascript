@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 18-2. Getting an HTTP response onreadystatechange</title>
+    <style>
+      div {
+        color: red;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        const xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("GET", "http://localhost:8888");
+        xmlHttpRequest.onreadystatechange = function() {
+          if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+            window.div01.innerHTML = xmlHttpRequest.responseText;
+          }
+        };
+        xmlHttpRequest.send();
+      };
+    </script>
+  </head>
+  <body>
+    <div id="div01"></div>
+  </body>
+</html>
