@@ -10,6 +10,7 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
+    "@types/node": "^8.10.25",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.4",

@@ -30,7 +30,7 @@
          * 将响应头 Content-Type 的值覆盖为 text/plain，
          * 浏览器将不会再将响应数据解析到 XMLHttpRequest.responseXML 属性中；
          */
-        xmlHttpRequest.overrideMimeType("text/plain");
+        xmlHttpRequest.overrideMimeType("text/plain; chartset=utf-8");
         xmlHttpRequest.send();
       };
     </script>
