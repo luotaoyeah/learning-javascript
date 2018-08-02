@@ -2,24 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>18.1.2.2 Decoding the response</title>
+    <title>18.1.2.1 Synchronous responses</title>
     <style></style>
     <script>
       window.onload = function() {
         /*
-         * 当响应头 Content-Type 为 application/xhtml+xml 时，
-         * XMLHttpRequest.responseXML 属性的值，
-         * 为响应数据经过浏览器解析之后的 DOM 对象；
+         * XMLHttpRequest 请求默认是异步的，
+         * 如果 XMLHttpRequest.open() 方法的第三个参数为 false，
+         * 则该请求为同步的；
          */
         const xmlHttpRequest = new XMLHttpRequest();
-        xmlHttpRequest.open("GET", "http://localhost:8888");
-        xmlHttpRequest.onreadystatechange = function() {
-          if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
-            /* true */
-            console.log(xmlHttpRequest.responseXML instanceof Document);
-          }
-        };
+        xmlHttpRequest.open("GET", "http://localhost:8888", false);
         xmlHttpRequest.send();
+        if (xmlHttpRequest.status === 200 && xmlHttpRequest.readyState === 4) {
+          document.body.innerText = xmlHttpRequest.responseText;
+        }
       };
     </script>
   </head>
