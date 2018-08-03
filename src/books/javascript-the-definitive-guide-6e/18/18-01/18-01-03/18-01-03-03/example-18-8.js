@@ -1,7 +1,3 @@
-/*
- * 简单后台服务
- */
-
 var http = require("http");
 
 http

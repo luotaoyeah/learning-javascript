@@ -11,12 +11,7 @@ http
     }
 
     if (request.method === "POST") {
-      var requestBody = "";
-
-      request.on("data", function(data) {
-        requestBody += data;
-      });
-
+      request.on("data", function(data) {});
       request.on("end", function() {
         response.writeHead(200, {
           "Access-Control-Allow-Origin": "*",
