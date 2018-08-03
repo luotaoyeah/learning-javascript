@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 18-8. An HTTP POST request with an XML document as its body</title>
+    <script>
+      /*
+       * XMLHttpRequest.send() 方法的参数，可以是字符串，
+       * 也可以是一个 document 对象；
+       */
+      window.onload = function() {
+        const xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("POST", "http://localhost:8888");
+        xmlHttpRequest.onreadystatechange = function() {
+          if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+            console.log(xmlHttpRequest.response);
+          }
+        };
+
+
+        /*
+         * 构造文档：
+         *   <query>
+         *     <find zipcode="02134" radius="1km">pizza</find>
+         *   </query>
+         */
+        const doc = document.implementation.createDocument("", "query", null);
+        const queryEl = doc.documentElement;
+        const findEl = doc.createElement("find");
+        findEl.setAttribute("zipcode", "02134");
+        findEl.setAttribute("radius", "1km");
+        findEl.appendChild(doc.createTextNode("pizza"));
+        queryEl.appendChild(findEl);
+
+        xmlHttpRequest.send(doc);
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
