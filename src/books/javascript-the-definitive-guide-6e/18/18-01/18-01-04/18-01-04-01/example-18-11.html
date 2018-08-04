@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 18-11. Monitoring HTTP upload progress</title>
+    <style>
+      div {
+        border: 2px solid #000000;
+        border-radius: 3px;
+        padding: 10px;
+        height: 200px;
+      }
+    </style>
+    <script>
+      window.onload = function() {
+        window.div01.ondragenter = function(e) {
+          this.style.borderColor = "#00ff00";
+          e.preventDefault();
+        };
+        window.div01.ondragover = function(e) {
+          e.preventDefault();
+        };
+        window.div01.ondragleave = function() {
+          this.style.borderColor = "#000000";
+        };
+        window.div01.ondrop = function(e) {
+          this.style.borderColor = "#000000";
+          const file = e.dataTransfer.files[0];
+          if (file) {
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const xmlHttpRequest = new XMLHttpRequest();
+            xmlHttpRequest.open("POST", "http://localhost:8888");
+
+            /*
+             * FIXME 事件监听不生效
+             */
+            /*
+                        xmlHttpRequest.upload.addEventListener("progress", function(e) {
+                          if (e.lengthComputable) {
+                            console.log(e.lengthComputable, e.loaded, e.total);
+                          }
+                          return true;
+                        });
+                        xmlHttpRequest.upload.addEventListener("load", function() {
+                          if (xmlHttpRequest.status === 200) {
+                            console.log(xmlHttpRequest.response);
+                          }
+                        });
+            */
+
+            xmlHttpRequest.send(formData);
+          }
+          e.preventDefault();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div id="div01"></div>
+  </body>
+</html>
