@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 18-14. Making a JSONP request with a script element</title>
+    <style></style>
+    <script>
+      /**
+       *
+       * @param url
+       * @param callback
+       */
+      function getJSONP(url, callback) {
+        var cbNum = "cb" + getJSONP.counter++;
+        var cbName = "getJSONP." + cbNum;
+
+        if (url.indexOf("?") === -1) {
+          url += "?jsonp=" + cbName;
+        } else {
+          url += "&jsonp=" + cbName;
+        }
+
+        const scriptEl = document.createElement("script");
+
+        getJSONP[cbNum] = function(response) {
+          try {
+            callback(response);
+          } finally {
+            delete getJSONP[cbName];
+            scriptEl.parentNode.removeChild(scriptEl);
+          }
+        };
+
+        scriptEl.src = url;
+        document.body.appendChild(scriptEl);
+      }
+
+      getJSONP.counter = 0;
+
+      window.onload = function() {
+        getJSONP("http://localhost:8888", function(data) {
+          console.log(data);
+        });
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
