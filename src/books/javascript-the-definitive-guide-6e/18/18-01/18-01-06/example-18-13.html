@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 18-13. Requesting link details with HEAD and CORS</title>
+    <style></style>
+    <script>
+      window.onload = function() {
+        const anchorEls = document.querySelectorAll("a");
+        for (var i = 0; i < anchorEls.length; i++) {
+          const anchorEl = anchorEls[i];
+
+          const xmlHttpRequest = new XMLHttpRequest();
+          xmlHttpRequest.open("HEAD", anchorEl.href);
+          xmlHttpRequest.onreadystatechange = function() {
+            if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+              anchorEl.title = xmlHttpRequest.getResponseHeader("Content-Type");
+            }
+          };
+          xmlHttpRequest.send();
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <a href="http://localhost:8888/json">json</a>
+    </p>
+    <p>
+      <a href="http://localhost:8888/xml">xml</a>
+    </p>
+  </body>
+</html>
