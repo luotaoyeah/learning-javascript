@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>20.1.1 Storage Lifetime and Scope</title>
+    <script>
+      window.onload = function() {
+        /*
+         * localStorage 和 sessionStorage 的区别在于：有效期和作用域；
+         * localStorage 的有效期是永久的，
+         * 除非应用删除或者用户手动清除，否则不会过期；
+         * localStorage 的作用域是当前文档所属的源（origin），
+         * origin 包括三部分：protocol，host，port；
+         * 即同源文档中的代码，访问的是同一个 localStorage 数据；
+         */
+
+        /*
+         * sessionStorage 的有效期，跟所在的浏览器窗口（或者浏览器标签页）一样，
+         * 即，当窗口关闭时，sessionStorage 的数据会自动被删除；
+         * sessionStorage 的作用域，除了要满足同源策略之外，
+         * 不同标签页的文档，即使是同源的，也拥有各自的 sessionStorage 数据，
+         * 不会共享；
+         * 当然，如果是同一个标签页中的不同 iframe 之间，如果它们是同源的，
+         * 则它们是会共享 sessionStorage 数据的；
+         */
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
