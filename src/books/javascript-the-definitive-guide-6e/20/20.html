@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>20. Client-Side Storage</title>
+    <script>
+      window.onload = function() {
+        /*
+         * web 应用可以使用浏览器提供的 API 在用户的电脑上存储数据，
+         * 不同应用之间的数据是相互隔离的，但是同一应用的不同页面之间可以共享数据；
+         * 存储的数据可以设置有效时间；
+         *
+         * 客户端存储有下面几种方式：
+         *     1. web storage：
+         *         最初是包含在 HTML5 中，后来成为一个独立的规范，
+         *         该规范定义了两个对象 localStorage 和 sessionStorage，
+         *         可以用来存储键值对数据，其中键和值都是字符串；
+         *     2. cookie：
+         *         cookie 最初是给服务端脚本用来存储少量数据的，
+         *         在每次 HTTP 请求中，cookie 中的数据都会被传递到后端；
+         *         cookie 只能用来存储少量的文本数据；
+         *     3. offline web application：
+         *         离线应用是 H5 定义的 API，它允许应用缓存应用的所有资源，
+         *         包括：页面，JS，CSS，图片等；
+         *         即它存储的不仅仅是应用的数据，而是应用本身；
+         *     4. web database：
+         *         indexed database API 在浏览器是实现了一个对象数据库，
+         *         该数据库使用基于事件的异步模式；
+         *     5. filesystem API：
+         *         浏览器支持 File 对象，用来上传用户选择的文件，
+         *         相关的规范定义了一个 API 用来获取一个私有的本地的文件系统，
+         *         用来读取和写入文件；
+         */
+
+        /*
+         * 本地存储的数据是没有加密的，
+         * 一般不应该用来存储隐私数据，比如用户的密码等；
+         */
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
