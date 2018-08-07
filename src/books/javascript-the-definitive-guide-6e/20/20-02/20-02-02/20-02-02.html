@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>20.2.2 Storing Cookies</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 添加 COOKIE；
+         *
+         * 创建一个 cookie，
+         * 直接设置 document.cookie 的属性值为一个 name=value 字符串，
+         * cookie 值中不能包含分号，逗号，空格，
+         * 所以可以使用 encodeURIComponent() 方法进行转义；
+         */
+        console.log("\n-------------------------------------------------- 01");
+        document.cookie = "version=" + encodeURIComponent(document.lastModified);
+        document.cookie = "username=luotao";
+
+        /*
+         * cookie 的默认有效期为当前会话，
+         * 当用户关闭浏览器之后就会失效；
+         * 可以通过设置 max-age 属性，指定有效时间，单位为秒（s）；
+         */
+        document.cookie = "age=18; max-age=60";
+
+        /*
+         * path，domain 属性跟 max-age 属性的设置方式一样；
+         */
+        document.cookie = "p=123456; path=/; domain=localhost; max-age=60;";
+
+        /*
+         * 更改 COOKIE；
+         *
+         * 如果要更改 cookie 的 value 或者 max-age，则需要重新设置该 cookie，
+         * 并且此时的 name，path，domain 必须保持一致，
+         * 即（path，domain）属性不能更改；
+         */
+        console.log("\n-------------------------------------------------- 02");
+        document.cookie = "p=123; path=/; domain=localhost; max-age=60;";
+
+        /*
+         * 删除 COOKIE；
+         *
+         * 如果要删除一个 cookie，则需要重新设置该 cookie，
+         * 并且此时的 name，path，domain 必须保持一致，
+         * 同时 max-age 的值必须 <= 0；
+         */
+        console.log("\n-------------------------------------------------- 03");
+        document.cookie = "p=123; path=/; domain=localhost; max-age=0;";
+      };
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
