@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>20.1.3 Storage Events</title>
+    <script>
+      window.onload = function() {
+        window.addEventListener("storage", function(e) {
+          /*
+           * StorageEvent 对象包含几个重要的属性；
+           */
+
+          /*
+           * StorageEvent.key 属性，
+           * 对于 Storage.setItem() 和 Storage.removeItem() 来说，
+           * 该属性的值为当前操作的属性值；
+           * 对于 Storage.clear() 来说，
+           * 该属性的值为 null；
+           */
+          console.log("StorageEvent.key", e.key);
+
+          /*
+           * StorageEvent.newValue 属性，
+           * 对于 Storage.setItem() 来说，
+           * 该属性的值为新的值；
+           * 对于 Storage.removeItem() 来说，
+           * 该属性的值为 null；
+           */
+          console.log("StorageEvent.newValue", e.newValue);
+
+          /*
+           * StorageEvent.oldValue 属性，
+           * 对于 Storage.setItem() 来说，
+           * 该属性的值为旧的值或者 null；
+           * 对于 Storage.removeItem() 来说，
+           * 该属性的值为旧的值；
+           */
+          console.log("StorageEvent.oldValue", e.oldValue);
+
+          /*
+           * StorageEvent.storageArea 属性，
+           * 当前 localStorageg 属性或者 sessionStorage 属性；
+           */
+          console.log("StorageEvent.storageArea", e.storageArea);
+
+          /*
+           * StorageEvent.url 属性，
+           * 当前文档地址；
+           */
+          console.log("StorageEvent.url", e.url);
+
+          /*
+           * storage 事件的这种机制，
+           * 可以用来实现多个窗口之间的通信；
+           */
+        });
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
