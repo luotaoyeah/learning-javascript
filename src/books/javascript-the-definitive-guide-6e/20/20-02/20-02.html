@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>20.2 Cookies</title>
+    <script>
+      window.onload = function() {
+        /*
+         * cookie 是浏览器保存在本地的少量数据，
+         * cookie 最初是给服务端的脚本使用的，
+         * 每次请求会自动将 cookie 传递到后端；
+         * 在客户端，可以通过 Document.cookie 属性操作 cookie 数据；
+         */
+
+        /*
+         * 可以通过 navigator.cookieEnabled 属性，
+         * 判断浏览器是否启用了 cookie 功能；
+         */
+        console.log(navigator.cookieEnabled);
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
