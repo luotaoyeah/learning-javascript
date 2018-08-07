@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>20.2.1 Cookie Attributes: Lifetime and Scope</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 默认情况下，当浏览器关闭时，
+         * cookie 就会被删除；
+         * 可以通过 max-age 属性，设置 cookie 的有效时间；
+         */
+
+        /*
+         * cookie 的作用域可以通过 path 和 domain 属性来设置，
+         * 默认情况下，cookie 的作用域为：
+         *     创建该 cookie 的页面所在的文件夹下面的所有页面，
+         *     以及该文件夹的子文件夹下面的所有页面，以此类推；
+         *
+         * 如果设置了 path 属性，则 path 属性指定的文件夹下面的所有页面，
+         * 以及该文件夹的子文件夹下面的所有页面，以此类推，都可以访问该 cookie；
+         *
+         * 例如，如果 path 属性设置为 / ，则任何页面都可以访问该 cookie；
+         */
+
+        /*
+         * 默认情况下，domain 属性的值为当前页面地址所在的域名，如：www.google.com，
+         * 如果设置为如 google.com ，则该域名下面的所有子域名的页面都可以访问该 cookie，
+         * 如：x.google.com，y.google.com，z.google.com；
+         * 但是你不能设置为其他域名，如不能设置为 github.com；
+         */
+
+        /*
+         * secure 属性，如果设置为 true，则只有在使用 HTTPS 等安全的协议时，
+         * 该 cookie 才会被传送；
+         * 默认为 false，即可以通过 HTTP 协议进行传送；
+         */
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
