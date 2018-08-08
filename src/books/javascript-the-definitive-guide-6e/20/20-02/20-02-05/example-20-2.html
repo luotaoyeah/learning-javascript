@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 20-2. Implementing the Storage API using cookies</title>
+    <script>
+      /**
+       * 使用 cookie 模拟 Storage API
+       * @param maxAge
+       * @param path
+       */
+      function CookieStorate(maxAge, path) {
+        var cookieObj = (function() {
+          var obj = {};
+          const cookies = document.cookie;
+          for (var i = 0; i < cookies.length; i++) {
+            const pairs = cookies[i].split("; ");
+            obj[pairs[0]] = decodeURIComponent(pairs[1]);
+          }
+          return obj;
+        })();
+
+        var keys = Object.keys(cookieObj);
+
+        this.length = keys.length;
+
+        /**
+         *
+         * @param index
+         * @return {*}
+         */
+        this.key = function(index) {
+          if (index < 0 || index >= this.length) {
+            return null;
+          }
+          return keys[index];
+        };
+
+        /**
+         *@param key
+         */
+        this.getItem = function(key) {
+          return cookieObj[key] || null;
+        };
+
+        /**
+         * @param key
+         * @param value
+         */
+        this.setItem = function(key, value) {
+          if (!(key in cookieObj)) {
+            keys.push(key);
+            this.length++;
+          }
+
+          cookieObj[key] = value;
+
+          var cookie = key + "=" + encodeURIComponent(value);
+          if (maxAge) {
+            cookie += "; max-age=" + maxAge;
+          }
+          if (path) {
+            cookie += "; path=" + path;
+          }
+
+          document.cookie = cookie;
+        };
+
+        /**
+         * @param key
+         */
+        this.removeItem = function(key) {
+          if (!(key in cookieObj)) {
+            return;
+          }
+
+          keys.splice(keys.indexOf(key), 1);
+          this.length--;
+          delete cookieObj[key];
+
+          document.cookie = key + "=; max-age=0";
+        };
+
+        /**
+         *
+         */
+        this.clear = function() {
+          keys.forEach(key => {
+            document.cookie = key + "=; max-age=0";
+          });
+
+          cookieObj = {};
+          keys = [];
+          this.length = 0;
+        };
+      }
+
+      window.onload = function() {
+        const cookieStorate = new CookieStorate(60, "/");
+        cookieStorate.setItem("name", "luotao");
+        cookieStorate.setItem("age", "18");
+
+        console.log(cookieStorate.length);
+        console.log(cookieStorate.getItem("name"));
+        cookieStorate.removeItem("name");
+        console.log(cookieStorate.length);
+        cookieStorate.clear();
+        console.log(cookieStorate.getItem("age"));
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
