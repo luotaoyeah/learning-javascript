@@ -1,0 +1,10 @@
+CACHE MANIFEST
+
+CACHE:
+20-04-01-01.html
+
+NETWORK:
+*
+
+FALLBACK:
+video/ ../20-04-01.html
