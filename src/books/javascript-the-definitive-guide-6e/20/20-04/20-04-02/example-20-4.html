@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html manifest="20-04-02.appcache">
+  <head>
+    <meta charset="utf-8">
+    <title>Example 20-4. Handling application cache events</title>
+    <script>
+      window.onload = function() {
+        window.applicationCache.onchecking = function() {
+          console.log("onchecking");
+        };
+        window.applicationCache.ondownloading = function() {
+          console.log("ondownloading");
+        };
+        window.applicationCache.onprogress = function() {
+          console.log("onprogress");
+        };
+        window.applicationCache.onupdateready = function() {
+          console.log("onupdateready");
+        };
+        window.applicationCache.oncached = function() {
+          console.log("oncached");
+        };
+        window.applicationCache.onerror = function() {
+          console.log("onerror");
+        };
+        window.applicationCache.onnoupdate = function() {
+          console.log("onnoupdate");
+        };
+        window.applicationCache.onobsolete = function() {
+          console.log("onobsolete");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    DDD
+  </body>
+</html>
