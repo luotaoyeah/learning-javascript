@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html manifest="20-04-02.appcache">
+  <head>
+    <meta charset="utf-8">
+    <title>20.4.2 Cache Updates</title>
+    <script>
+      window.onload = function() {
+        /*
+         * ApplicationCache.swapCache() 方法，
+         * 用于废弃旧版的缓存；
+         *
+         * 当 manifest 有更改时，用户需要加载两次才能刷新内容，
+         * 第一次加载会检查 manifest 文件，并下载更新；
+         * 第二次加载会从新的缓存中获取数据；
+         *
+         * 如果第一次加载之后用户没有刷新，
+         * 此时，资源仍然是从旧版本的缓存中获取的，
+         * 相当于此时同时存在旧版缓存和新版缓存，
+         * 此时，如果调用 ApplicationCache.swapCache() 方法，
+         * 则旧版缓存会被废弃，以后会从新版缓存中获取数据；
+         */
+
+        /*
+         * 只用当 ApplicationCache.status 属性为
+         * ApplicationCache.UPDATEREADY 或者 ApplicationCache.OBSOLETE 时，
+         * 才可以调用 ApplicationCache.swapCache() 方法，
+         * 否则会报错；
+         */
+
+        window.button01.onclick = function() {
+          applicationCache.swapCache();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">swapCache()</button>
+  </body>
+</html>
