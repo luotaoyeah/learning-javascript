@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.1 Scripting Images</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 跟其他的标签一样，<img> 标签也可以通过 JS 进行操作，
+         * 比如通过改变它的 src 属性，让浏览器重新加载图片；
+         */
+
+        window.img01.onmouseenter = function() {
+          this.src = "./21-01-b.png";
+        };
+        window.img01.onmouseleave = function() {
+          this.src = "./21-01-a.png";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <img
+        id="img01"
+        src="./21-01-a.png"
+        style="
+          width: 128px;
+          height: 128px;
+          cursor: pointer;
+          border: 2px solid red;
+          border-radius: 3px;
+        "
+    >
+  </body>
+</html>
