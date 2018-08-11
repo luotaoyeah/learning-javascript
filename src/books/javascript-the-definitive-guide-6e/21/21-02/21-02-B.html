@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.2 Scripting Audio and Video</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 跟 Image() 类似，可以使用 Audio() 创建一个音频对象；
+         */
+        const audio = new Audio("./21-02.mp3");
+        window.button01.onclick = function() {
+          audio.play();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">play</button>
+    <!--
+        HTMLMediaElement.controls 属性，
+        用于指定是否显示播放控件，默认不显示；
+
+        <video> 标签支持 width 和 height 属性，
+        用于指定视频的宽度和高度；
+        除此之外，<video> 和 <audio> 的 API 基本是一样的；
+    -->
+    <p>
+      <video
+          src="./21-02.mp4"
+          width="400"
+          controls
+      ></video>
+    </p>
+  </body>
+</html>
