@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.1 Scripting Images</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 如果直接将 <img> 的 src 设置为图片的 url 地址，
+         * 则每次都会重新加载图片；
+         *
+         * 可以使用 Image 对象缓存图片，
+         * 通过创建一个 Image 实例，然后设置它的 src 属性，
+         * 这样下次再访问这个图片时，就会直接通过从缓存中获取；
+         */
+
+        (new Image()).src = "./21-01-a.png";
+        (new Image()).src = "./21-01-b.png";
+        window.img01.onmouseenter = function() {
+          this.src = "./21-01-b.png";
+        };
+        window.img01.onmouseleave = function() {
+          this.src = "./21-01-a.png";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <img
+        id="img01"
+        src="./21-01-a.png"
+        style="
+          width: 128px;
+          height: 128px;
+          cursor: pointer;
+          border: 2px solid red;
+          border-radius: 3px;
+        "
+    >
+  </body>
+</html>
