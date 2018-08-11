@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.1.1 Unobtrusive Image Rollovers</title>
+    <script src="./example-21-1.js"></script>
+    <script>
+      window.onload = function() {
+        rollover();
+      };
+    </script>
+  </head>
+  <body>
+    <img
+        src="../21-01-a.png"
+        data-rollover="../21-01-b.png"
+        style="
+          width: 128px;
+          height: 128px;
+          cursor: pointer;
+          border: 2px solid red;
+          border-radius: 3px;
+        "
+    >
+    <img
+        src="../21-01-b.png"
+        data-rollover="../21-01-a.png"
+        style="
+          width: 128px;
+          height: 128px;
+          cursor: pointer;
+          border: 2px solid red;
+          border-radius: 3px;
+        "
+    >
+  </body>
+</html>
