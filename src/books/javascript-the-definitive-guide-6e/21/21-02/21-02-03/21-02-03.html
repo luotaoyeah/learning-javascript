@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.2.3 Querying Media Status</title>
+    <script>
+      window.onload = function() {
+        /*
+         * HTMLMediaElement.paused 是否暂停；
+         */
+        console.log("paused:", window.audio01.paused);
+        /*
+         * HTMLMediaElement.seeking 是否正在重新定位；
+         */
+        console.log("seeking:", window.audio01.seeking);
+        /*
+         * HTMLMediaElement.ended 是否播放完毕并停止；
+         * 如果 loop 为 true，则 ended 始终为 false；
+         */
+        console.log("ended:", window.audio01.ended);
+        /*
+         * HTMLMediaElement.duration 播放时长；
+         * 对于在线音视频流，值为 Infinity，
+         * 对于尚未加载元数据信息的，值为 NaN；
+         */
+        console.log("duration:", window.audio01.duration);
+        /*
+         * HTMLMediaElement.played 已经播放的时长；
+         */
+        console.log("played:", window.audio01.played);
+        /*
+         * HTMLMediaElement.buffered 已经缓存的时长；
+         */
+        console.log("buffered:", window.audio01.buffered);
+        /*
+         * HTMLMediaElement.seekable 可以定位的时长；
+         */
+        console.log("seekable:", window.audio01.seekable);
+
+        /*
+         * TimeRanges.start() 和 TimeRanges.end() 方法，
+         * 用于获取某个时间范围的开始时刻和结束时刻；
+         */
+        console.log(window.audio01.buffered.start(0), window.audio01.buffered.end(0));
+        console.log(window.audio01.seekable.start(0), window.audio01.seekable.end(0));
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <audio
+          id="audio01"
+          src="../file/21-02-b.mp3"
+          controls="controls"
+          style="width: 50%;"
+      ></audio>
+    </p>
+    <p></p></body>
+</html>
