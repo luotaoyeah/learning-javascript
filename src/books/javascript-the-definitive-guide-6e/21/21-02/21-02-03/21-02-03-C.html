@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.2.3 Querying Media Status</title>
+    <script>
+      window.onload = function() {
+        /*
+         * HTMLMediaElement.networkState 属性，
+         * 用于表示当前媒体使用网络的情况；
+         */
+        console.log(window.audio01.networkState);
+
+        /*
+         * HTMLMediaElement.NETWORK_EMPTY
+         * 尚未开始使用网络，比如还没有设置 src 属性；
+         */
+        console.log(HTMLMediaElement.NETWORK_EMPTY);
+        /*
+         * HTMLMediaElement.NETWORK_IDLE
+         * 暂未使用网络；
+         */
+        console.log(HTMLMediaElement.NETWORK_IDLE);
+        /*
+         * HTMLMediaElement.NETWORK_LOADING
+         * 正在使用网络；
+         */
+        console.log(HTMLMediaElement.NETWORK_LOADING);
+        /*
+         * HTMLMediaElement.NETWORK_NO_SOURCE
+         * 无法找到媒体源；
+         */
+        console.log(HTMLMediaElement.NETWORK_NO_SOURCE);
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <audio
+          id="audio01"
+          src="../file/21-02-b.mp3"
+          controls="controls"
+          style="width: 50%;"
+      ></audio>
+    </p>
+    <p></p></body>
+</html>
