@@ -1,1 +1,2 @@
-require("./books/javascript-the-definitive-guide-6e/13/13-01/13-01-E.js");
+console.log("--------------------------------------------------\n");
+require("./books/es6-for-humans/01/01-05/01-05.js");

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: ["babel-polyfill", "./src/index.js"]
+    app: ["@babel/polyfill", "./src/index.js"]
   },
   output: {
     path: path.resolve("dist/"),
