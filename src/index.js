@@ -1,2 +1,1 @@
-console.log("--------------------------------------------------\n");
-require("./books/es6-for-humans/01/01-05/01-05.js");
+require("./books/es6-for-humans/02/02-01/02-01.js");

@@ -2,9 +2,9 @@
   "name": "learning-javascript",
   "version": "0.0.1",
   "scripts": {
-    "precommit": "lint-staged",
     "build": "rimraf ./dist && webpack",
-    "dev": "npm run build && node $NODE_DEBUG_OPTION ./dist/index.js"
+    "dev": "npm run build && node $NODE_DEBUG_OPTION ./dist/index.js",
+    "precommit": "lint-staged"
   },
   "dependencies": {
     "lodash": "^4.17.11"
