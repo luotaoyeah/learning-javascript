@@ -1,1 +1,1 @@
-require("./books/es6-for-humans/02/02-01/02-01-04.js");
+require("./books/es6-for-humans/02/02-02/02-02");
