@@ -1,7 +1,7 @@
 /*
  * New Syntax in ES6
  *     Rest and Spread Operators
- *         rest symbol
+ *         rest operator
  */
 
 console.log("\n-------------------------------------------------- 01");
