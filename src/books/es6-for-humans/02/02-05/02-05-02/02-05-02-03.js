@@ -21,4 +21,8 @@ console.log("\n-------------------------------------------------- 01");
   for (let i of arr01) {
     console.log(i);
   }
+
+  for (let s of "hello") {
+    console.log(s);
+  }
 }
