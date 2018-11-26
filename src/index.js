@@ -1,1 +1,1 @@
-require("./books/es6-for-humans/03/03-05/03-05-01/03-05-01-02");
+require("./books/es6-for-humans/03/03-05/03-05-01/03-05-01-03");
