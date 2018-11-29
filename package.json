@@ -4,8 +4,8 @@
   "scripts": {
     "build": "rimraf ./dist && webpack",
     "dev": "npm run build && node %NODE_DEBUG_OPTION% ./dist/index.js",
-    "dev:node": "node ./src/index.js",
-    "dev:node:debug": "node %NODE_DEBUG_OPTION% ./src/index.js",
+    "dev:node": "node --harmony ./src/index.js",
+    "dev:node:debug": "node --harmony %NODE_DEBUG_OPTION% ./src/index.js",
     "precommit": "lint-staged"
   },
   "dependencies": {
