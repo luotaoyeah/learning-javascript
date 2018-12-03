@@ -26,7 +26,7 @@ console.log("\n-------------------------------------------------- 02");
 let name = "foo";
 
 function getMore() {
-  console.log('more');
+  console.log("more");
 }
 
 class Boy {}
