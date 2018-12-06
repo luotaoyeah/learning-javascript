@@ -1,4 +1,4 @@
-import("./books/es6-for-humans/05-modules/05-08/05-08-01/05-08-01-04")
+import("./books/es6-for-humans/06-symbols/06-01/06-01-01/06-01-01-01")
   .then(() => {})
   .catch(e => {
     console.error(e);
