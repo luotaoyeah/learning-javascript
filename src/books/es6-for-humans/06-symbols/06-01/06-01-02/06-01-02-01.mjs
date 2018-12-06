@@ -20,3 +20,6 @@ console.log("\n-------------------------------------------------- 02");
  * 则该属性是 non-enumerable 的
  */
 console.log(JSON.stringify({ [Symbol()]: "ANONYMOUS" })); // {}
+for (let k in { [Symbol()]: "ANONYMOUS" }) {
+  console.log(key);
+}
