@@ -16,10 +16,9 @@ console.log(obj); // { name: 'FOO', say: [Function: say], [Symbol()]: [Function]
 
 console.log("\n-------------------------------------------------- 02");
 /*
- * 如果一个属性名称是 symbol
- * 则该属性是 non-enumerable 的
+ * 如果一个属性名称是一个 symbol
+ * 则该属性不会被 for...in 遍历
  */
-console.log(JSON.stringify({ [Symbol()]: "ANONYMOUS" })); // {}
 for (let k in { [Symbol()]: "ANONYMOUS" }) {
   console.log(key);
 }
