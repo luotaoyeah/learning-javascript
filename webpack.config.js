@@ -10,12 +10,12 @@ module.exports = {
     filename: "index.js"
   },
   resolve: {
-    extensions: [".js", ".json"]
+    extensions: [".mjs", ".js", ".json"]
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.m?js$/,
         loader: "eslint-loader",
         enforce: "pre",
         include: [path.resolve("src")],
@@ -24,7 +24,7 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
+        test: /\.m?js$/,
         loader: "babel-loader",
         include: [path.resolve("src")]
       }
