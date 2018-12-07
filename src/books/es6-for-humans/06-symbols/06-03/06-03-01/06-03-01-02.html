@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>06-03-01-02</title>
+    <script type="module">
+      /*
+       * 当前页面跟下面所有的 iframe 共享同一个 global symbol registry
+       */
+      const htmlElement = document.createElement("iframe");
+      document.body.appendChild(htmlElement);
+      console.log(
+        window.Symbol.for("FOO") === htmlElement.contentWindow.Symbol.for("FOO")
+      ); // true
+    </script>
+  </head>
+  <body></body>
+</html>
