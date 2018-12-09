@@ -14,16 +14,16 @@ console.log("\n-------------------------------------------------- 01");
  *     如果不是整数，会四舍五入取最近的整数
  */
 
-const uint8ClampedArray01 = new Uint8ClampedArray(new ArrayBuffer(3));
-uint8ClampedArray01[0] = -1;
-uint8ClampedArray01[1] = 256;
-uint8ClampedArray01[2] = 1.5;
-console.log(uint8ClampedArray01); // Uint8ClampedArray [ 0, 255, 2 ]
+const uint8ClampedArray = new Uint8ClampedArray(new ArrayBuffer(3));
+uint8ClampedArray[0] = -1;
+uint8ClampedArray[1] = 256;
+uint8ClampedArray[2] = 1.5;
+console.log(uint8ClampedArray); // Uint8ClampedArray [ 0, 255, 2 ]
 
-const uint8ClampedArray02 = new Uint8Array(new ArrayBuffer(3));
-uint8ClampedArray02[0] = -1;
-uint8ClampedArray02[1] = 256;
-uint8ClampedArray02[2] = 1.5;
-console.log(uint8ClampedArray02); // Uint8Array [ 255, 0, 1 ]
+const uint8Array = new Uint8Array(new ArrayBuffer(3));
+uint8Array[0] = -1;
+uint8Array[1] = 256;
+uint8Array[2] = 1.5;
+console.log(uint8Array); // Uint8Array [ 255, 0, 1 ]
 
 export {};
