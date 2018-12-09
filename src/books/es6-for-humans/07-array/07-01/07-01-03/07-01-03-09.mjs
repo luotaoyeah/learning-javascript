@@ -6,7 +6,7 @@
 console.log("\n-------------------------------------------------- 01");
 /*
  * Array.prototype.copyWithin() 方法，
- * 将数组中某一截拷贝到数组中其他位置
+ * 将数组中某一截元素拷贝到数组中其他位置
  */
 const arr01 = ["a", "b", "c", "d", "e", "f"];
 console.log(arr01.copyWithin(3)); // [ 'a', 'b', 'c', 'a', 'b', 'c' ]
