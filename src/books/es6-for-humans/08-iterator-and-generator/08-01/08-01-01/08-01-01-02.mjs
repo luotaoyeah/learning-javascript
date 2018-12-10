@@ -28,7 +28,8 @@ const obj = {
 };
 
 /*
- * 当使用 for...of 循环时，会调用对象的 [Symbol.iterator] 方法，获取默认的 iterator
+ * 当使用 for...of 循环时，会调用对象的 [Symbol.iterator] 方法，
+ * 获取默认的 iterator
  */
 for (const i of obj) {
   console.log(i);
