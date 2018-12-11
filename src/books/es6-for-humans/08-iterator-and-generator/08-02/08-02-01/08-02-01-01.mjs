@@ -1,6 +1,7 @@
 /*
  * Iterators and Generators
  *     Iteration Protocols
+ *         Iterable Protocol
  */
 
 console.log("\n-------------------------------------------------- 01");
