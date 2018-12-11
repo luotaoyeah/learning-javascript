@@ -20,4 +20,8 @@ const valueIterator = map.values();
 console.log(valueIterator.next()); // { value: 'a', done: false }
 console.log(valueIterator.next()); // { value: 'b', done: false }
 
+const defaultIterator = map[Symbol.iterator]();
+console.log(defaultIterator.next()); // { value: [ 1, 'a' ], done: false }
+console.log(defaultIterator.next()); // { value: [ 2, 'b' ], done: false }
+
 export {};
