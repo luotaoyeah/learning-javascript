@@ -5,7 +5,8 @@
 
 console.log("\n-------------------------------------------------- 01");
 /*
- * 调用 iterator 的 return() 方法，可以提前中止遍历
+ * 调用 iterator 的 return() 方法，会将返回的对象的 done 设置为 true
+ * 从而提前中止遍历
  */
 
 function* gen() {
