@@ -55,7 +55,8 @@ console.log(iterator03.next()); // { value: 'FOO', done: false }
 
 /*
  * 当调用 return() 方法时，finally 中的代码会先执行，
- * 然后才会返回 return() 的参数
+ * 然后才会返回 return() 的参数，
+ * 相当于将一条 return 语句，放到 finally 块的最后面
  */
 // FINALLY
 // { value: 'DONE', done: true }
