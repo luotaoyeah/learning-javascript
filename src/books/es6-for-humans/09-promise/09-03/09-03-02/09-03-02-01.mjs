@@ -7,7 +7,7 @@
 console.log("\n-------------------------------------------------- 01");
 /*
  * Promise.race() 接收一个 promise 数组，返回一个新的 promise 对象，
- * 只要数组中某一个 promise 被 fulfilled 时，返回的 promise 就会 fulfilled
+ * 只要数组中某一个 promise 被 resolve（fulfilled 或者 rejected） 时，返回的 promise 就会被 resolve
  * 而不像 Promis.all() 需要等所有 promise 都 fulfilled
  * 其他 pending 状态的 promise 会继续执行，但是它们的结果不影响最终结果
  */
