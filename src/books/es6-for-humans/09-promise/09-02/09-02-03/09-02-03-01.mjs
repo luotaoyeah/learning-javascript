@@ -1,6 +1,7 @@
 /*
  * Promise
- *     Chaining of Promises
+ *     Creating a Promise
+ *         Chaining of Promises
  */
 
 console.log("\n-------------------------------------------------- 01");
