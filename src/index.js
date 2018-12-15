@@ -1,4 +1,4 @@
-import("./books/es6-for-humans/09-promise/09-02/09-02-04/09-02-04-02")
+import("./books/es6-for-humans/09-promise/09-03/09-03-01/09-03-01-01")
   .then(() => {})
   .catch(e => {
     console.error(e);
