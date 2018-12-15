@@ -22,8 +22,10 @@ console.log("\n-------------------------------------------------- 02");
  *         instanceof
  *         typeof
  *     self-modification（自我修改）
+ *         Reflection
  *         Object.defineProperty()
  *     intercession
+ *         Proxy
  */
 
 export {};
