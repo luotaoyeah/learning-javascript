@@ -1,7 +1,7 @@
 /*
  * Meta Programming
  *     Traps in Proxy Handler
- *         has
+ *         has()
  */
 
 console.log("\n-------------------------------------------------- 01");

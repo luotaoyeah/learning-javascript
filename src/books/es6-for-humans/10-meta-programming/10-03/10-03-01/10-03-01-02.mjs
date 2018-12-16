@@ -1,7 +1,7 @@
 /*
  * Meta Programming
  *     Traps in Proxy Handler
- *         set
+ *         set()
  */
 
 console.log("\n-------------------------------------------------- 01");

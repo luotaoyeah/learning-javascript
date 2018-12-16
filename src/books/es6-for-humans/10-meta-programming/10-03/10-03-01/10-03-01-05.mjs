@@ -1,7 +1,7 @@
 /*
  * Meta Programming
  *     Traps in Proxy Handler
- *         ownKeys
+ *         ownKeys()
  */
 
 console.log("\n-------------------------------------------------- 01");
