@@ -1,4 +1,4 @@
-import("./books/es6-for-humans/10-meta-programming/10-04/10-04-02/10-04-02-03")
+import("./books/es6-for-humans/10-meta-programming/10-04/10-04-02/10-04-02-04")
   .then(() => {})
   .catch(e => {
     console.error(e);
