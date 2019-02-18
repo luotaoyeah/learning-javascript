@@ -4,7 +4,7 @@
 
 console.log("\n-------------------------------------------------- 01");
 /*
- * 可以使用 reduce() + concat() 来模式 flatMap() 的效果
+ * 可以使用 reduce() + concat() 来模拟 flatMap() 的效果
  */
 
 const arr01 = [1, 2, 3];
