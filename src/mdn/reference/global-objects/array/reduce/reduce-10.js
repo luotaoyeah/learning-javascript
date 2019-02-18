@@ -14,8 +14,18 @@ const pipe = (...functions) => {
 };
 
 /* 3 */
-console.log(pipe(double, add)(1));
+console.log(
+  pipe(
+    double,
+    add
+  )(1)
+);
 /* 4 */
-console.log(pipe(add, double)(1));
+console.log(
+  pipe(
+    add,
+    double
+  )(1)
+);
 
 export {};
