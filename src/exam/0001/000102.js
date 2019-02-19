@@ -35,17 +35,16 @@ function fn0001(n) {
   return arr.reverse().join(",");
 }
 
-console.log(fn0001(null));
-console.log(fn0001(undefined));
-console.log(fn0001(true));
-console.log(fn0001(false));
-console.log(fn0001("foo"));
-console.log(fn0001({}));
+console.assert(fn0001(null) === null);
+console.assert(fn0001(undefined) === undefined);
+console.assert(fn0001(true) === true);
+console.assert(fn0001(false) === false);
+console.assert(fn0001("foo") === "foo");
 
-console.log(fn0001(10));
-console.log(fn0001(100));
-console.log(fn0001(1000));
-console.log(fn0001(10000));
-console.log(fn0001(100000));
-console.log(fn0001(1000000));
-console.log(fn0001(10000000));
+console.assert(fn0001(10) === "10");
+console.assert(fn0001(100) === "100");
+console.assert(fn0001(1000) === "1,000");
+console.assert(fn0001(10000) === "10,000");
+console.assert(fn0001(100000) === "100,000");
+console.assert(fn0001(1000000) === "1,000,000");
+console.assert(fn0001(10000000) === "10,000,000");
