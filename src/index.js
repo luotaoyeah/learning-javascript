@@ -1,4 +1,4 @@
-import("./mdn/reference/global-objects/array/flat/03")
+import("./exam/0001/0001.js")
   .then(() => {})
   .catch(e => {
     console.error(e);
