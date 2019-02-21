@@ -1,4 +1,4 @@
-import("./exam/0008/000801.mjs")
+import("./exam/0009/000901.mjs")
   .then(() => {})
   .catch(e => {
     console.error(e);
