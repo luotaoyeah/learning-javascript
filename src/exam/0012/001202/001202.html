@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>001202</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        console.log("DOMContentLoaded");
+      });
+    </script>
+    <script type="module" src="./001202.mjs"></script>
+    <script>
+      /*
+       * <script> 标签会阻塞文档树的解析，
+       * 包括外部脚本（通过src引入）的下载和执行，内联脚本的执行，都会阻塞
+       */
+      console.log("INLINE SCRIPT");
+    </script>
+  </head>
+  <body></body>
+</html>
