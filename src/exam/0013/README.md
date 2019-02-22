@@ -1,1 +1,1 @@
-## 模拟实现 Array.prototype.bind() 方法；
+## 模拟实现 Array.prototype.bind()；

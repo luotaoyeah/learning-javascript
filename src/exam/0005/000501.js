@@ -17,8 +17,9 @@ function fn0005(str) {
     }
   }
 
-  let max = 0;
   let maxChar = "";
+  let max = 0;
+
   for (let char in count) {
     if (count[char] > max) {
       max = count[char];
