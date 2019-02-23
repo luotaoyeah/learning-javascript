@@ -17,15 +17,18 @@ console.log({ x: "x" }.valueOf());
  * 通过覆写 valueOf()，返回有用的信息；
  */
 console.log("\n-------------------------------------------------- 03");
+
 function Foo(number) {
   this.number = number;
 }
+
 /* e { number: 1 } */
 console.log(new Foo(1).valueOf());
 
 function Bar(number) {
   this.number = number;
 }
+
 Bar.prototype.valueOf = function() {
   return this.number;
 };

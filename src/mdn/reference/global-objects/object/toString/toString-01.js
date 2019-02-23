@@ -4,7 +4,9 @@
  * 其中 Class 表示对象的类型；
  */
 console.log("\n-------------------------------------------------- 01");
+
 function Foo() {}
+
 /* [object Object] */
 console.log(new Foo().toString());
 

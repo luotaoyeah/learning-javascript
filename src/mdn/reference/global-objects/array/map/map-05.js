@@ -11,7 +11,10 @@ console.log(
   array.map(item => {
     const key = _.get(_.keys(item), "[0]");
     if (!_.isUndefined(key)) {
-      return { name: key, age: item[key] };
+      return {
+        name: key,
+        age: item[key]
+      };
     }
 
     return item;

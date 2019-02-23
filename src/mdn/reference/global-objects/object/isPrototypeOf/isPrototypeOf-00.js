@@ -15,6 +15,7 @@ console.log(Object.prototype.isPrototypeOf(obj02));
 console.log("\n-------------------------------------------------- 02");
 
 function Obj01() {}
+
 function Obj02() {}
 
 Obj02.prototype = Object.create(Obj01.prototype);

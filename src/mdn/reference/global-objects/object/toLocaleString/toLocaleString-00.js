@@ -7,6 +7,7 @@
  * 默认的 Object.prototype.toLocaleString() 直接调用 toString() 方法；
  */
 console.log("\n-------------------------------------------------- 01");
+
 function Foo(name) {
   this.name = name;
 }
