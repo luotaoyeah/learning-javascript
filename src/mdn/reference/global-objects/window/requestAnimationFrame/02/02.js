@@ -3,7 +3,11 @@
  */
 
 /*
- * 使用 window.requestAnimationFrame() 实现动画效果
+ * 使用 window.requestAnimationFrame() 实现动画效果，
+ * window.requestAnimationFrame() 的优势：
+ *     1. 执行频率跟系统的刷新频率保持一致，不会因为间隔时间太短导致丢帧，也不会因为间隔时间太长导致动画卡顿，
+ *     2. 当元素被隐藏，或者页面未被激活时，会暂定动画的执行，节约CPU资源，
+ *     3. 浏览器会针对 window.requestAnimationFrame() 进行代码优化，
  */
 window.addEventListener("load", function() {
   const divEl = document.getElementById("box");

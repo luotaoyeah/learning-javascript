@@ -1,4 +1,4 @@
-import("./exam/0013/001301.mjs")
+import("./mdn/typed-arrays/01/01.mjs")
   .then(() => {})
   .catch(e => {
     console.error(e);
