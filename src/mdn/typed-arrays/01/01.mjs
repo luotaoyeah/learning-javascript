@@ -15,7 +15,7 @@ console.log("\n-------------------------------------------------- 01");
 console.log("\n-------------------------------------------------- 02");
 {
   /*
-   * ES6 中新增的 typed array 是一类新的类型，它们不是真正的 array，而是 array-like 对象
+   * ES6 中新增的 typed array 是一种新的类型，它们不是真正的 array，而是 array-like 对象
    */
 
   console.log(Array.isArray(new Array())); // true
