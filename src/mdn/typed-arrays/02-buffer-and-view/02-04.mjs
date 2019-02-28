@@ -1,5 +1,5 @@
-const arrayBuffer = new ArrayBuffer(16);
-const arr01 = new Uint32Array(arrayBuffer);
+const buffer01 = new ArrayBuffer(16);
+const arr01 = new Uint32Array(buffer01);
 
 /*
  * 以 Uint32Array 类型为例，介绍它的一些常用属性
@@ -34,7 +34,7 @@ console.log("\n-------------------------------------------------- 03");
    * Uint32Array.buffer
    *     对下层的 ArrayBuffer 对象的引用
    */
-  console.assert(arr01.buffer === arrayBuffer);
+  console.assert(arr01.buffer === buffer01);
 }
 
 console.log("\n-------------------------------------------------- 04");
