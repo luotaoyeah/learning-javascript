@@ -1,4 +1,4 @@
-import("./mdn/typed-arrays/03-web-apis-using-typed-arrays/03-02/03-02-02.mjs")
+import("./mdn/typed-arrays/04-example/01-using-views-with-buffers/04-01.mjs")
   .then(() => {})
   .catch(e => {
     console.error(e);
