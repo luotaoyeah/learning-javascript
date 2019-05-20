@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.5 Mouse Events</title>
+    <script>
+      /*
+       * 鼠标事件中, mouseenter 和 mouseleave 不支持冒泡；
+       *
+       * click：点击事件；
+       * contextmenu：右键菜单事件, 可以取消；
+       * dbclick：双击事件；
+       * mousedown：鼠标按键按下；
+       * mouseup：鼠标按键松开；
+       * mousemove：鼠标移动；
+       * mouseover：鼠标进入；
+       * mouseout：鼠标离开；
+       * mouseenter：鼠标进入, 类似 mouseover, 区别在于不支持冒泡；
+       * mouseleave：鼠标离开, 类似 mouseout, 区别在于不支持冒泡；
+       */
+
+      window.onload = function() {
+        window.button01.onclick = function(e) {
+          /*
+           * MouseEvent.clientX 和 MouseEvent.clientY
+           * 表示鼠标光标的可视区域坐标；
+           */
+          console.log(e.clientX, e.clientY);
+
+          /*
+           * MouseEvent.altKey
+           * MouseEvent.shiftKey
+           * MouseEvent.ctrlKey
+           * MouseEvent.metaKey
+           * 分表标识这几个功能键是否按下；
+           */
+          console.log("altKey", e.altKey);
+          console.log("shiftKey", e.shiftKey);
+          console.log("ctrlKey", e.ctrlKey);
+          console.log("metaKey", e.metaKey);
+
+          /*
+           * MouseEvent.button
+           * 标识触发当前事件的鼠标按键；
+           */
+          console.log(e.button);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">click me</button>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.3.4 Handler Return Value</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 当使用事件属性的方法注册回调函数时,
+         * 函数返回 false 通常表示阻止默认行为；
+         */
+        window.button01.oncontextmenu = function() {
+          console.log("oncontextmenu");
+          return false;
+        };
+
+        /*
+         * 如果使用 addEventListener() 注册回调函数,
+         * 则需要使用 Event.preventDefault() 方法, 阻止默认行为；
+         */
+        window.anchor01.addEventListener("click", function(e) {
+          e.preventDefault();
+        });
+
+        window.input01.onkeypress = function(e) {
+          return /[0-9.]/.test(e.key);
+        };
+
+      };
+
+      /*
+       * 对于 onbeforeunload 事件,
+       * 函数返回的字符串会作为确认对话框的提示消息；
+       */
+      window.onbeforeunload = function() {
+        return "确认离开 ?";
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">click me</button>
+    <input
+        type="text"
+        id="input01"
+        style="border-radius: 3px;outline: none;"
+    >
+    <a
+        href="https://www.google.com"
+        id="anchor01"
+    >https://www.google.com
+    </a>
+  </body>
+</html>

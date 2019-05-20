@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>18.1.2.2 Decoding the response</title>
+    <style></style>
+    <script>
+      window.onload = function() {
+        /*
+         * 当响应头 Content-Type 为 application/xhtml+xml 时,
+         * XMLHttpRequest.responseXML 属性的值,
+         * 为响应数据经过浏览器解析之后的 DOM 对象；
+         */
+        const xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("GET", "http://localhost:8888");
+        xmlHttpRequest.onreadystatechange = function() {
+          if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+            /* true */
+            console.log(xmlHttpRequest.responseXML instanceof Document);
+          }
+        };
+        xmlHttpRequest.send();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

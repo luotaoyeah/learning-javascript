@@ -1,0 +1,44 @@
+<!-- 15.9.6 Text Fields -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>15-09-06</title>
+    <script>
+      window.onload = function() {
+        console.log("\n-------------------------------------------------- 01");
+        const inputEl01 = document.getElementById("input01");
+        const buttonEl01 = document.getElementById("button01");
+
+        /* 通过 value 属性, 可以获取和设置文本框的值 */
+        buttonEl01.onclick = function() {
+          inputEl01.value = new Date().toISOString();
+        };
+
+        /* onchange 事件在用户输入文本, 文本框失去焦点之后触发 */
+        inputEl01.onchange = function() {
+          console.log(inputEl01.value);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <input
+          id="input01"
+          type="text"
+          style="width: 200px;"
+          placeholder="YYYY-MM-DDTHH:mm:ss.SSSZ"
+      >
+      <button
+          id="button01"
+          type="button"
+      >set value
+      </button>
+    </form>
+  </body>
+</html>

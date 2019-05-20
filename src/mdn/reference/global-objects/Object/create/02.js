@@ -1,5 +1,5 @@
 /*
- * 可以指定第二个参数，表示 property descriptors，类似 Object.defineProperties() 的第二个参数；
+ * 可以指定第二个参数, 表示 property descriptors, 类似 Object.defineProperties() 的第二个参数；
  */
 console.log("\n-------------------------------------------------- 01");
 

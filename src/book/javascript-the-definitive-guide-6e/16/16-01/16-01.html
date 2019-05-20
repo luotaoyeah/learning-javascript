@@ -1,0 +1,45 @@
+<!-- 16.1 Overview of CSS -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16-01</title>
+    <!--
+        使用 <style> 标签定义 CSS 规则；
+    -->
+    <style>
+      p {
+        background: #F0F0F0;
+      }
+    </style>
+
+    <!--
+        引入外部的 CSS 文件需要使用 <link> 标签,
+        通过 href 属性指定文件地址；
+    -->
+    <link
+        rel="stylesheet"
+        href="#"
+        type="text/css"
+    >
+  </head>
+  <body>
+    <fieldset>
+      <legend>16-01</legend>
+      <!--
+          CSS 定义了很多的样式属性, 属性名和属性值使用冒号（:）分隔,
+          多个样式之间使用分号（;）分隔；
+          CSS 支持多行注释（/**/）, 不支持单行注释（//）:
+      -->
+
+      <!--
+          行内样式（inline-style）：
+          通过 HTML 标签的 style 属性设置 CSS 属性；
+      -->
+      <p
+          contenteditable="true"
+          style="border: 2px solid red;/* comment */border-radius: 3px;padding: 10px;"
+      >The quick brown fox jumps over the lazy dog</p>
+    </fieldset>
+  </body>
+</html>

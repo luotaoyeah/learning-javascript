@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>13-06-02</title>
+    <!--
+        防御 XSS 最简单的方法是：对于外部来源的非受信内容, 先对其进行处理,
+        比如过滤掉 < 和 >
+    -->
+    <script>
+      /**
+       *
+       * @param value
+       */
+      function sanitize(value) {
+        /* 将 < 和 > 替换为对应的字符实体（character entity） */
+        return value.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+      }
+
+      window.onload = function() {
+        const input01 = document.getElementById("input01");
+        const btn01 = document.getElementById("button01");
+        const btn02 = document.getElementById("button02");
+
+        btn01.addEventListener("click", function() {
+          document.write(input01.value);
+        });
+
+        btn02.addEventListener("click", function() {
+          document.write(sanitize(input01.value));
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <input
+        type="text"
+        id="input01"
+        value="<script>window.alert('malicious code');</script>"
+        style="width: 300px;padding: 7px;border-radius: 3px;outline: none;"
+    >
+    <button id="button01">XSS</button>
+    <button id="button02">NO XSS</button>
+  </body>
+</html>

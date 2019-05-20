@@ -1,0 +1,27 @@
+<!-- 13.6.4 Cross-Site Scripting -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>13-06-02</title>
+    <!--
+        XSS 指的是外部的 HTML 标签（如 <script> 标签）被注入到目标网站中的一种攻击行为；
+        通常出现这种行为的情况为：
+            网站直接使用外部的内容（如用户输入的内容）, 不经过处理（如移除标签）,
+            动态生成页面内容；
+    -->
+    <!--
+        如下, 从 URL 直接获取参数并动态写入到当前页面,
+        如果参数为类似：%3Cscript%3Ealert('luotao')%3C/script%3E 的值,
+        经过 decodeURIComponent() 之后变为：<script>alert("luotao")</script>,
+        插入到页面中之后会立即执行这段 <script> 标签的代码, 造成安全问题；
+    -->
+    <script>
+      const name = window.location.search.substring(1);
+      document.write("hello " + decodeURIComponent(name));
+    </script>
+    <!--
+        新版的 CHROME 浏览器会自动阻止这类 XSS, 并报错：ERR_BLOCKED_BY_XSS_AUDITOR
+    -->
+  </head>
+  <body></body>
+</html>

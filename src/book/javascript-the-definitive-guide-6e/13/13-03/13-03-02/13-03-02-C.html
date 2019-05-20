@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>13-03-02</title>
+    <!--
+        DOM 元素的事件具有'冒泡（bubbling）'的特性：
+            元素的某个事件触发之后, 如果没有在元素对应的事件处理函数中终止冒泡,
+            则该事件会在元素的上级元素继续触发, 依次类推；
+    -->
+    <script>
+      window.onload = function() {
+        const div01El = document.getElementById("div01");
+        if (div01El) {
+          div01El.onclick = function(event) {
+            console.log("div01", event);
+          };
+        }
+
+        const div02El = document.getElementById("div02");
+        if (div02El) {
+          div02El.onclick = function(event) {
+            console.log("div02", event);
+            /* 使用 Event.prototype.stopPropagation() 终止冒泡 */
+            event.stopPropagation();
+          };
+        }
+
+        const buttonEl = document.getElementById("button01");
+        if (buttonEl) {
+          buttonEl.onclick = function(event) {
+            console.log("button01", event);
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+        style="border: 1px solid red;border-radius: 3px;padding: 15px;"
+    >
+      <h1>DIV01</h1>
+      <div
+          id="div02"
+          style="border: 1px solid red;border-radius: 3px;padding: 15px;"
+      >
+        <h1>DIV02</h1>
+        <button
+            id="button01"
+            style="border: 1px solid red;border-radius: 3px;padding: 15px;"
+        >button
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

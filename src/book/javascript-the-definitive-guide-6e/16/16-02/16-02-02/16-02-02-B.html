@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.2 Borders, Margins and Padding</title>
+    <!--
+        margin 用于指定 border 外面的空间大小, 即外边距,
+        padding 用于指定 border 里面的空间大小, 即内边距；
+
+        在使用 position: absolute 定位时, 会包括 margin 在内；
+    -->
+
+    <script>
+      window.onload = function() {
+        const pEl = document.getElementById("p01");
+        /*
+         * Element.getBoundingClientRect() 返回的矩形,
+         * 包括元素的 padding 和 border, 不包括 margin,
+         * 矩形宽度为：
+         *     元素宽度 +
+         *     padding-left 宽度 +
+         *     padding-right 宽度 +
+         *     border-left-width +
+         *     border-right-width
+         */
+        console.log(pEl.getBoundingClientRect());
+      };
+    </script>
+    <style>
+      p {
+        position: absolute;
+        left: 100px;
+        top: 100px;
+
+        margin: 100px;
+        padding: 100px;
+        width: 200px;
+        height: 200px;
+        border: 5px solid red;
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <p id="p01"></p>
+  </body>
+</html>

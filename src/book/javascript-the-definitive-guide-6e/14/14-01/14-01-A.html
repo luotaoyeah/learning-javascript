@@ -1,0 +1,56 @@
+<!-- 14.1 Timers -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-01</title>
+    <!--
+        window 对象之所以叫 window,
+        是因为它上面很多的属性和方法, 都是跟浏览器窗口相关的；
+        但是 window 对象上也有很多通用的属性和方法, 跟浏览器窗口无关,
+        如 window.setTimeout() 和 window.setInterval()；
+    -->
+
+    <script>
+      console.log("\n-------------------------------------------------- 01");
+
+      /*
+       * window.setTimeout()：
+       * 在指定的毫秒数之后, 执行指定的方法；
+       * 返回计时器的ID, 在方法执行之前, 可以通过 window.clearTimeout(timeid) 取消执行；
+       */
+      const timer01 = window.setTimeout(function() {
+        alert("foo");
+      }, 1000);
+
+      window.clearTimeout(timer01);
+    </script>
+
+    <script>
+      console.log("\n-------------------------------------------------- 02");
+
+      /*
+       * 除了第一个参数（回调函数）, 第二个参数（延迟事件）外,
+       * 其余参数将作为回调函数的参数；
+       */
+      window.setTimeout(function(x, y) {
+        alert(x + ", " + y);
+      }, 1000, "foo", "bar");
+    </script>
+
+    <script>
+      console.log("\n-------------------------------------------------- 03");
+
+      /*
+       * 如果延迟时间为 0, 并不会马上执行,
+       * 而是会将回调函数添加到当前事件循环（event loop）的末尾；
+       * 下面代码的执行顺序为：before, after, timeout
+       */
+      alert("before");
+      window.setTimeout(function() {
+        alert("timeout");
+      }, 0);
+      alert("after");
+    </script>
+  </head>
+  <body></body>
+</html>

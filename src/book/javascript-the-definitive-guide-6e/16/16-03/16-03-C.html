@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.3 Scripting Inline Styles</title>
+    <script>
+      window.onload = function() {
+        const buttonEl01 = document.getElementById("button01");
+        /*
+         * ElementCSSInlineStyle.style 属性只表示元素的 inline style,
+         * 即只表示对应的标签的 style 属性的值；
+         * 假如是通过 CSS 设置了该元素的样式,
+         * 则通过 style 属性是不能获取到这些样式的值的；
+         *
+         * 所以 style 属性通常是用来设置元素的样式,
+         * 获取元素的样式通常需要采用其他的方式；
+         */
+
+        /* "" */
+        console.log(buttonEl01.style.color);
+      };
+    </script>
+    <style>
+      button {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="button01">button01</button>
+  </body>
+</html>

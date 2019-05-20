@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>13-03-02</title>
+    <!--
+       如果要给同一个对象的同一个事件添加多个处理函数,
+       需要使用 EventTarget.prototype.addEventListener() 方法；
+    -->
+    <script>
+      window.addEventListener("load", function() {
+        const buttonEl = document.getElementById("button01");
+        if (buttonEl) {
+          buttonEl.addEventListener("click", function() {
+            alert("foo");
+          });
+          buttonEl.addEventListener("click", function() {
+            alert("bar");
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <button id="button01">button</button>
+  </body>
+</html>

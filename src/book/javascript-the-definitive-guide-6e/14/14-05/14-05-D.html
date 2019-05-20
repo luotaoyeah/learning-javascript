@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-05</title>
+    <script>
+      /*
+       * window.confirm() 和 window.prompt() 在弹出的时候,
+       * 会阻塞代码的执行, 在用户点击按钮关闭弹窗之后, 后面的代码才会继续执行；
+       */
+
+      console.log("A");
+      window.confirm("confirm");
+      console.log("B");
+      window.prompt("prompt");
+      console.log("C");
+
+      /*
+       * 对于 window.alert() 来说, 没有强制规定必须阻塞,
+       * 但是大多数浏览器也都实现了阻塞；
+       */
+      window.alert("alert");
+      console.log("D");
+    </script>
+  </head>
+  <body></body>
+</html>

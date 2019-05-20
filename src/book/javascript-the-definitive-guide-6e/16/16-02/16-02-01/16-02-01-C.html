@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.1 Positioning Elements with CSS</title>
+    <style>
+      div {
+        border: 5px solid red;
+        border-radius: 3px;
+        width: 500px;
+        height: 500px;
+      }
+
+      /*
+       *
+       */
+      .container {
+        margin: 50px;
+
+        position: relative;
+        left: 0;
+        right: 0;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        border-color: green;
+
+        /*
+         * position 属性不为 static 的元素, 称之为 positioned element；
+         * 当一个元素的 position 为 absolute 时,
+         * 它的定位会互对于离它最近的一个上级 positioned element,
+         * 如果没有, 则会相对于 document 元素定位；
+         *
+         * 所以要想一个 position 为 absolute 的子元素相对于它的父元素进行定位,
+         * 需要将父元素的 position 设置为 relative,
+         * 并将父元素怒的 left 和 top 设置为 0；
+         */
+        position: absolute;
+        left: 100px;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <div class="container">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>

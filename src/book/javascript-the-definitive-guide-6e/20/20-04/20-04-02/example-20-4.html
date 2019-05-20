@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html manifest="20-04-02.appcache">
+  <head>
+    <meta charset="utf-8">
+    <title>Example 20-4. Handling application cache events</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 每次刷新页面时, 浏览器会检查 manifest 文件是否有更新,
+         * 此时触发 checing 事件；
+         */
+        window.applicationCache.onchecking = function() {
+          console.log("onchecking");
+          return false;
+        };
+
+        /*
+         * 当检查到 manifest 文件有更新, 浏览器开始下载更新,
+         * 此时触发 downloading 事件；
+         */
+        window.applicationCache.ondownloading = function() {
+          console.log("ondownloading");
+          return false;
+        };
+
+        /*
+         * 浏览器在下载更新的过程中, 会触发 progress 事件；
+         */
+        window.applicationCache.onprogress = function() {
+          console.log("onprogress");
+          return false;
+        };
+
+        /*
+         * 当应用已经被缓存, 且检查到 manifest 文件有更新,
+         * 则当应用重新被缓存之后, 触发 updateready 事件；
+         */
+        window.applicationCache.onupdateready = function() {
+          console.log("onupdateready");
+          return false;
+        };
+
+        /*
+         * 当应用第一次被缓存之后, 触发 cached 事件；
+         */
+        window.applicationCache.oncached = function() {
+          console.log("oncached");
+          return false;
+        };
+
+        /*
+         * 如果应用尚未被缓存, 且对应的 manifest 文件找不到, 则触发 error 事件；
+         * 或者浏览器离线, 无法检查 manifest 文件, 则触发 error 事件；
+         */
+        window.applicationCache.onerror = function() {
+          console.log("onerror");
+          return false;
+        };
+
+        /*
+         * 如果应用已经被缓存, 且 manifest 没有更新, 则触发 noupdate 事件；
+         */
+        window.applicationCache.onnoupdate = function() {
+          console.log("onnoupdate");
+          return false;
+        };
+
+        /*
+         * 如果应用已经被缓存, 且浏览器是联网的,
+         * 如果找不到 manifest 文件（404）, 则触发该事件,
+         * 且应用会从缓存（application cache）中被删除；
+         */
+        window.applicationCache.onobsolete = function() {
+          console.log("onobsolete");
+          return false;
+        };
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

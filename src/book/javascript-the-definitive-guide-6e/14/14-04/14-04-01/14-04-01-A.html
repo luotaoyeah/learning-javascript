@@ -1,0 +1,32 @@
+<!-- 14.4.1 The Navigator Object -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-04-01</title>
+    <script>
+      /*
+       * window.navigator 的名称来源于 NetScape 公司以前的一款浏览器 Navigator,
+       * 以前主要用来检查浏览器的信息, 比如判断是否是 IE, 称之为 browser-sniffing；
+       * 现在更倾向于直接检查浏览器是否支持某个特性, 称之为 feature-testing；
+       */
+
+      /*
+       * window.navigator 的几个重要属性：
+       *     window.navigator.appName
+       *     window.navigator.appVersion
+       *     window.navigator.userAgent
+       *     window.navigator.platform
+       */
+
+      /*
+       * window.navigator.appName 表示浏览器的全称；
+       *
+       * 对于 IE 为 "Microsoft Internet Explorer",
+       * 对于 Firefox 为 "Netscape",
+       * 为了兼容性, 对于其他浏览器都为 "Netscape"；
+       */
+      console.log(window.navigator.appName);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>15-08-04</title>
+    <script>
+      /*
+       * Element.scrollIntoView()
+       * 滚动文档, 使该元素位于可视区域中；
+       */
+
+      window.onload = function() {
+        const buttonEl01 = document.getElementById("button01");
+        const buttonEl02 = document.getElementById("button02");
+        const divEl02 = document.getElementById("div02");
+
+        buttonEl01.onclick = function() {
+          /*
+           * 默认情况下, 会将元素的顶部对齐到 viewport 的顶部；
+           */
+          divEl02.scrollIntoView();
+        };
+
+        buttonEl02.onclick = function() {
+          /*
+           * 如果参数为 false, 会将元素的底部对齐到 viewport 的底部；
+           */
+          divEl02.scrollIntoView(false);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">green top</button>
+    <button id="button02">green buttom</button>
+    <div
+        id="div01"
+        style="height: 2000px;border: 2px solid red;"
+    >
+    </div>
+    <div
+        id="div02"
+        style="height: 2000px;border: 2px solid green;"
+    >
+    </div>
+    <div
+        id="div03"
+        style="height: 2000px;border: 2px solid yellow;"
+    >
+    </div>
+  </body>
+</html>

@@ -5,8 +5,8 @@
 console.log("\n-------------------------------------------------- 01");
 {
   /*
-   * 因为 typed array 是 array-like 对象，
-   * 可以通过下面的方式，将它们转换为真正的 array 对象，
+   * 因为 typed array 是 array-like 对象,
+   * 可以通过下面的方式, 将它们转换为真正的 array 对象,
    */
 
   const buffer01 = new ArrayBuffer(4);

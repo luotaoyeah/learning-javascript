@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-08-02</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 如果元素设置了 id 或者 name 属性, 且 window 对象上没有对应属性,
+         * 则会在 window 对象上自动添加对应的属性, 其属性值为对应的 DOM 对象；
+         *
+         * 对于 <iframe> 来说, 如果设置了 name 属性,
+         * 在 window 对象上自动添加的属性的属性值不是其 DOM 对象,
+         * 而是其 window 对象, 因此 window.frames.frame01 === window.frame01；
+         */
+
+        /* true */
+        console.log(window.frame01 === window.frames.frame01);
+
+        /*
+         * 同时, 因为 window === window.frames, 因此：
+         *     window.frames[0] === window[0]
+         *     window.frames.length === window.length
+         */
+
+        /* frame01 */
+        console.log(window[0].name);
+        /* 1 */
+        console.log(window.length);
+      };
+      log;
+    </script>
+  </head>
+  <body>
+    <iframe
+        name="frame01"
+        src="http://localhost:63342"
+        frameborder="1"
+        width="100%"
+        height="200px"
+    ></iframe>
+  </body>
+</html>

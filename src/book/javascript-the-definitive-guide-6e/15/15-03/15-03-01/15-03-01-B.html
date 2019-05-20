@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-03-01</title>
+    <script>
+      window.onload = function() {
+        /*
+         * Node.prototype.childNodes
+         * 子节点列表, 是一个 NodeList 对象；
+         */
+
+        /* 3 */
+        console.log(document.body.childNodes.length);
+        /* foo */
+        console.log(document.body.childNodes[1].childNodes[0].textContent);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">foo</p>
+  </body>
+</html>

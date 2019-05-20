@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17. Handling Events</title>
+    <!--
+        事件类型（event type）, 也可以称之为事件名称,
+            是一个字符串, 用于标识事件的类型；
+            比如：mouseenter, keydown, load；
+    -->
+    <!--
+        事件目标（event target）, 即触发事件的对象, 或者事件关联的对象；
+            比如 window, document, button 等；
+    -->
+    <!--
+        事件回调（event handler）或者事件监听（event listener）,
+            即事件发生时, 需要执行的函数；
+            通常我们在添加事件回调函数时, 需要指定事件类型和事件目标,
+            然后, 当事件目标上该事件类型的事件触发时,
+            添加的回调函数就会执行；
+    -->
+    <!--
+        事件对象（event object）, 包含了该事件的详细信息；
+            会作为参数传递给回调函数；
+            Event.target 属性表示事件目标,
+            Event.type 属性表示事件类型,
+                不同类型的事件对象定义了不同的事件信息属性；
+    -->
+    <!--
+        事件传播（event propagation）包括事件捕获（event capture）和事件冒泡（event bubbling）,
+            事件捕获：
+                事件在真正触发之前, 会有一个从上往下的传递过程,
+                即根据 DOM 节点树, 从最上面的元素一直往下级节点传递,
+                在这个过程中, 可以捕获（capture）这个事件, 从而阻止它继续往下级元素传递,
+                称之为事件捕获；
+            事件冒泡：有些事件（如：click 事件）在某个元素上触发之后,
+                会按照 DOM 节点树, 继续向上级元素传播, 即一次在上级元素上触发,
+                称之为事件冒泡；
+                在事件回调中可以阻止事件冒泡；
+    -->
+    <!--
+        某些事件具有默认行为, 比如 <a> 标签的 click 事件的默认行为是：
+            加载对应地址的文档；
+    -->
+    <script></script>
+  </head>
+  <body>
+  </body>
+</html>

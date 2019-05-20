@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.1 Positioning Elements with CSS</title>
+    <!--
+        position 属性用于指定元素的位置, 有四个可选的属性值：
+            static：默认值, 根据文档内容自然流动定位；
+            absolute：绝对定位, 即相对于容器元素进行定位,
+                相对于最近的父元素或者 document 元素；
+            fixed：固定定位, 即相对于 viewport 进行定位,
+                不会随着文档的滚动而移动；
+            relative：相对定位；
+    -->
+    <style>
+      div {
+        border: 5px solid red;
+        border-radius: 3px;
+        height: 1000px;
+      }
+
+      .a {
+        position: static;
+        border-color: red;
+      }
+
+      .b {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        border-color: yellow;
+      }
+
+      .c {
+        position: fixed;
+        left: 100px;
+        top: 100px;
+        border-color: green;
+      }
+
+      .d {
+        position: relative;
+        border-color: purple;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <div class="a">A</div>
+    <div class="b">B</div>
+    <div class="c">C</div>
+    <div class="d">D</div>
+  </body>
+</html>

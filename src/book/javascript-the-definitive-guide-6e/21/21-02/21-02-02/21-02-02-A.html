@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.2.2 Controlling Media Playback</title>
+    <script>
+      window.onload = function() {
+        /*
+         * HTMLMediaElement.play() 方法,
+         * 用于加载并播放媒体文件；
+         */
+        window.button01.onclick = function() {
+          window.audio01.play();
+        };
+
+        /*
+         * HTMLMediaElement.pause() 方法,
+         * 用于暂停播放；
+         */
+        window.button02.onclick = function() {
+          window.audio01.pause();
+        };
+
+        /*
+         * HTMLMediaElement.currentTime 属性,
+         * 用于获取和设置当前播放进度, 单位为秒；
+         */
+        window.button03.onclick = function() {
+          window.audio01.currentTime = 2;
+        };
+
+        /*
+         * HTMLMediaElement.volume 属性,
+         * 用于获取和设置音量, 范围为 [0, 1]；
+         */
+        window.button04.onclick = function() {
+          if (window.audio01.volume <= 0.9) {
+            window.audio01.volume += 0.1;
+          } else {
+            window.audio01.volume = 1;
+          }
+        };
+        window.button05.onclick = function() {
+          if (window.audio01.volume >= 0.1) {
+            window.audio01.volume -= 0.1;
+          } else {
+            window.audio01.volume = 0;
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <audio
+          id="audio01"
+          src="../file/21-02-b.mp3"
+          controls="controls"
+          style="width: 50%;"
+      ></audio>
+    </p>
+    <p>
+      <button id="button01">play()</button>
+      <button id="button02">pause()</button>
+      <button id="button03">currentTime</button>
+      <button id="button04">volume +</button>
+      <button id="button05">volume -</button>
+    </p>
+  </body>
+</html>

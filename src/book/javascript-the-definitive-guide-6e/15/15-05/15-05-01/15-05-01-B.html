@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-05-01</title>
+    <script>
+      window.onload = function() {
+        /*
+         * Element.prototype.outerHTML
+         * 跟 Element.prototype.innerHTML 的区别在于：
+         * 返回的字符串中, 包含了元素的开始标签和结束标签；
+         */
+        const pEl = document.getElementById("p01");
+        if (pEl) {
+          console.log("\n-------------------------------------------------- 01");
+          /* foo */
+          console.log(pEl.innerHTML);
+          /* <p id="p01">foo</p> */
+          console.log(pEl.outerHTML);
+
+          /*
+           * 设置该属性的值时, 元素整个会被替换；
+           */
+          console.log("\n-------------------------------------------------- 02");
+          pEl.outerHTML = "<span id='span01'>bar</span>";
+          /* foo */
+          console.log(pEl.innerHTML);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">foo</p>
+  </body>
+</html>

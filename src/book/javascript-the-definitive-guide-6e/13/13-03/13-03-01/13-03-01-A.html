@@ -1,0 +1,38 @@
+<!-- 13.3.1 Synchronous, Asynchronous, and Deferred Scripts -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>13-03-01</title>
+  </head>
+  <!--
+      <script> 标签支持 defer 和 async 属性, 它们都是 boolean 类型；
+      HTML5 规定它们需要跟 src 属性一起使用才有意义；
+      它们的共同点是：
+          告诉浏览器它们引入的 JS 文件不会调用 document.write() 生成文档内容,
+          浏览器可以在下载 JS 文件的同时, 继续解析后面的元素, 不需要等待 JS 下载并执行完成；
+
+      defer 会在 JS 文件下载完成之后, 在文档加载和解析完成之后执行；
+      async 会在 JS 文件下载完成之后, 在不影响文档加载和解析的情况下, 尽早地执行；
+
+      defer 会按照 <script> 标签出现的顺序执行；
+      async 不能保证执行顺序；
+  -->
+  <script>
+    window.onload = function() {
+      alert("onload");
+    };
+  </script>
+  <body>
+    <p>A</p>
+    <script
+        src="./13-03-01-A-02.js"
+        async
+    ></script>
+    <p>B</p>
+    <script
+        src="./13-03-01-A-01.js"
+        defer
+    ></script>
+    <p>C</p>
+  </body>
+</html>

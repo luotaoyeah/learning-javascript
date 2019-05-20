@@ -1,0 +1,45 @@
+<!-- 14.6 Error Handling -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-06</title>
+    <script>
+      window.addEventListener("load", function() {
+        const button01 = document.getElementById("button01");
+        button01.addEventListener("click", function() {
+          throw new Error("error01");
+        });
+        button01.addEventListener("click", function() {
+          /* 被捕获的异常, 不会再往上传递, 不会被 window.onerror 捕获 */
+          try {
+            throw new Error("error02");
+          } catch (e) {
+            console.log(e.message);
+          }
+        });
+      });
+
+      /**
+       *
+       * @param event 错误消息
+       * @param source URL
+       * @param fileno 行号
+       * @param columnNumber 列号
+       * @param error 错误对象
+       * @return {boolean} 如果返回 true 则不会在控制台打印该错误
+       */
+      window.onerror = function(event, source, fileno, columnNumber, error) {
+        console.log("event:", event);
+        console.log("source:", source);
+        console.log("fileno:", fileno);
+        console.log("columnNumber:", columnNumber);
+        console.log(error.message);
+
+        return true;
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">error</button>
+  </body>
+</html>

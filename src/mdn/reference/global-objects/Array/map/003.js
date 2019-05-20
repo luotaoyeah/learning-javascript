@@ -10,7 +10,7 @@ console.log(array01.map(item => item * item));
 console.log(array01);
 
 /*
- * 在回调函数中，原始数组可能会被修改;
+ * 在回调函数中, 原始数组可能会被修改;
  */
 console.log("\n-------------------------------------------------- 02");
 const array02 = [1, 2, 3];

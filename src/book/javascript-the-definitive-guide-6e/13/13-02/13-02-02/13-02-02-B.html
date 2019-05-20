@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>13-02-02</title>
+    <!--
+        使用 src 引入外部 JS 文件的优势：
+            1. 分离 HTML 和 JS, 即内容和行为分离；
+            2. 复用代码, 多个 HTML 可以引入同一个 JS 文件；
+            3. 多个 HTML 引入同一个 JS 文件时, JS 文件只会下载一次, 然后会从浏览器缓存中加载；
+            4. 通过 src 可以引入其他服务器上的 JS 文件；
+    -->
+    <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"
+    ></script>
+    <script>
+      $(function() {
+        $("body").html("hello world");
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

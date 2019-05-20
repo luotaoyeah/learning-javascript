@@ -1,7 +1,7 @@
 /*
  * Array.prototype.flatMap()
- * 相当于先调用 Array.prototype.map() 方法，再调用 Array.prototype.flat() 方法，
- * 其中，flat 的深度为 1
+ * 相当于先调用 Array.prototype.map() 方法, 再调用 Array.prototype.flat() 方法,
+ * 其中, flat 的深度为 1
  */
 
 console.log("\n-------------------------------------------------- 01");
@@ -14,7 +14,7 @@ console.log(arr01.map(i => [i * 2])); // [ [ 2 ], [ 4 ], [ 6 ] ]
 console.log(arr01.flatMap(i => [i * 2])); // [ 2, 4, 6 ]
 
 /*
- * 等价于先调用 map() 方法，再调用 flat() 方法（深度为1）
+ * 等价于先调用 map() 方法, 再调用 flat() 方法（深度为1）
  */
 console.log(arr01.map(i => [i * 2]).flat(1)); // [ 2, 4, 6 ]
 

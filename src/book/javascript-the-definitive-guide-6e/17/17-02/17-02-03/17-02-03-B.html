@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.2.3 addEventListener()</title>
+    <script>
+      /*
+       * removeEventListener()
+       * 用于删除一个事件回调, 跟 addEventListener() 接收相同的参数；
+       */
+      window.onload = function() {
+        function handleClick() {
+          console.log("onclick");
+          this.removeEventListener("click", handleClick);
+        }
+
+        window.button01.addEventListener("click", handleClick);
+      };
+    </script>
+  </head>
+  <body>
+    <button
+        id="button01"
+    >click me
+    </button>
+  </body>
+</html>

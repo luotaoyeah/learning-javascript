@@ -1,8 +1,8 @@
 /**
- * debounce 是一个 higher order function，返回的是一个新的函数
+ * debounce 是一个 higher order function, 返回的是一个新的函数
  * @param fn 原始函数
  * @param wait 延时（毫秒）
- * @param leading 是否在 leading edge 执行，否则在 trailing edge 执行
+ * @param leading 是否在 leading edge 执行, 否则在 trailing edge 执行
  * @return {*}
  */
 function myDebounce(fn, wait, leading) {
@@ -27,7 +27,7 @@ function myDebounce(fn, wait, leading) {
     const invokeNow = leading && !timer;
 
     /*
-     * 每次触发函数执行时，都要重新开始延迟计时器
+     * 每次触发函数执行时, 都要重新开始延迟计时器
      */
     window.clearTimeout(timer);
     timer = window.setTimeout(later, wait);

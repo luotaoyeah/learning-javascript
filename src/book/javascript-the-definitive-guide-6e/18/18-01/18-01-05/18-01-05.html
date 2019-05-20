@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>18.1.5 Aborting Requests and Timeouts</title>
+    <style></style>
+    <script>
+      window.onload = function() {
+        /*
+         * XMLHttpRequest.abort() 方法,
+         * 用于终止一个 XHR 请求,
+         * 调用之后会触发 abort 事件；
+         */
+        const xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("POST", "http://localhost:8888");
+        xmlHttpRequest.onload = function() {
+          if (xmlHttpRequest.status === 200) {
+            console.log(xmlHttpRequest.response);
+          }
+        };
+        xmlHttpRequest.onabort = function() {
+          console.log("onabort");
+        };
+        xmlHttpRequest.send();
+
+
+        setTimeout(function() {
+          if (xmlHttpRequest.readyState < 4) {
+            xmlHttpRequest.abort();
+          }
+        }, 2000);
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

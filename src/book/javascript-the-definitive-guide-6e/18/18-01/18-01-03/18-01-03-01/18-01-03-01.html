@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>18.1.3.1 Form-encoded requests</title>
+    <style></style>
+    <script>
+      window.onload = function() {
+        /*
+         * POST 请求通常包含请求体, 请求体中的数据可以是简单的文本,
+         * 可以是 form 表单数据, 也可以是其他复杂的数据类型, 比如：图片, 文件；
+         */
+
+        /*
+         * form 表单数据的请求体是一个经过编码的字符串, 如：name=foo&age=18,
+         * 其中每个表单元素之间使用 & 分隔（name=foo 和 age=18）,
+         * 表单的名称和值之间使用 = 分隔（name 和 foo）,
+         * 同时, 所有的名称和值都会使用 encodeURIComponent() 方法进行编码；
+         *
+         * form 表单数据的请求头 Content-Type 的值必须为 application/x-www-form-urlencoded；
+         */
+        const xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("POST", "http://localhost:8888");
+        xmlHttpRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlHttpRequest.onreadystatechange = function() {
+          if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+            console.log(xmlHttpRequest.response);
+          }
+        };
+        xmlHttpRequest.send("name=foo&age=18");
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

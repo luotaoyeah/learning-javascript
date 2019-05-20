@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.3.5 Invocation Order</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 回调函数的执行顺序：
+         *     如果同时使用对象属性和 HTML 属性的方法定义了回调函数,
+         *         则 HTML 属性的回调函数会被覆盖；
+         *     对象属性的回调方法（或者 HTML 属性的回调函数）先执行,
+         *     使用 addEventListener() 注册的回调函数后执行,
+         *     使用 addEventListener() 注册的多个回调函数, 按照注册顺序依次执行；
+         */
+        window.button01.addEventListener("click", function() {
+          console.log("click 02");
+        });
+        window.button01.onclick = function() {
+          console.log("click 03");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button
+        id="button01"
+        onclick="console.log('click 01')"
+    >click me
+    </button>
+  </body>
+</html>

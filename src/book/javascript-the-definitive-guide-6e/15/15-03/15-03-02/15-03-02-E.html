@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-03-02</title>
+    <script>
+      /*
+       * Element.prototype.childElementCount
+       * 子元素节点的个数, 等价于：
+       * Element.prototype.children.length
+       */
+
+      window.onload = function() {
+        /* 3 */
+        console.log(document.body.childElementCount);
+        /* 3 */
+        console.log(document.body.children.length);
+      };
+    </script>
+  </head>
+  <body>
+    <p id="p01">A</p>
+    <p id="p02">B</p>
+    <p id="p03">C</p>
+  </body>
+</html>

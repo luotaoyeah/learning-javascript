@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>15-09-05</title>
+    <script>
+      window.onload = function() {
+        /*
+         *
+         */
+        console.log("\n-------------------------------------------------- 01");
+        const checkboxEls = document.querySelectorAll("input[type=\"radio\"]");
+
+        document.forms.form01.onsubmit = function() {
+          /* HTMLInputElement.checked：表示 radio 是否勾选 */
+          console.log(Array.prototype.map.call(checkboxEls, function(item) {
+            return item.checked;
+          }));
+
+          /* HTMLInputElement.defaultChecked：表示 radio 是否默认勾选 */
+          console.log(Array.prototype.map.call(checkboxEls, function(item) {
+            return item.defaultChecked;
+          }));
+
+          return false;
+        };
+
+        /* 当点击某个 radio 时, 同一分组中的其他 radio 不会触发 onchange 事件 */
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <p>
+        <label>
+          <input
+              type="radio"
+              name="radio01"
+              value="A"
+          >
+          A
+        </label>
+      </p>
+      <p>
+        <label>
+          <input
+              type="radio"
+              name="radio01"
+              value="B"
+              checked
+          >
+          B
+        </label>
+      </p>
+      <p>
+        <label>
+          <input
+              type="radio"
+              name="radio01"
+              value="C"
+          >
+          C
+        </label>
+      </p>
+      <input
+          type="submit"
+          value="submit"
+      >
+    </form>
+  </body>
+</html>

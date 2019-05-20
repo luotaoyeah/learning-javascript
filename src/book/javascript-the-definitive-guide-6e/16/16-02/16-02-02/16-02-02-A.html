@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.2.2 Borders, Margins and Padding</title>
+    <!--
+        border 属性用于指定元素的边框；
+
+        可以通过
+            border-left
+            border-right
+            border-top
+            border-bottom
+        分别指定四个边框；
+
+        可以通过
+            border-width
+            border-style
+            border-color
+        分别指定边框的宽度, 样式, 颜色；
+
+        可以通过
+            border-radius
+        指定边框的圆角弧度；
+    -->
+    <style>
+      p {
+        margin: 100px;
+        width: 200px;
+        height: 200px;
+
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: red;
+
+        border-top-width: 5px;
+        border-top-style: dashed;
+        border-top-color: green;
+
+        border-right-width: 10px;
+        border-right-style: dotted;
+        border-right-color: purple;
+
+        border-bottom-width: 20px;
+        border-bottom-style: double;
+        border-bottom-color: cornflowerblue;
+
+        border-top-left-radius: 10px;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 80px;
+      }
+    </style>
+  </head>
+  <body style="margin: 0;">
+    <p></p>
+  </body>
+</html>

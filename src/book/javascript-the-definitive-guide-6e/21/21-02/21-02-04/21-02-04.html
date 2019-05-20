@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.2.4 Media Events</title>
+    <script>
+      window.onload = function() {
+        /*
+         * <audio> 和 <video> 支持的事件很多,
+         * 这些事件没有对应的事件属性, 需要使用 addEventListener() 方法注册回调函数；
+         */
+        const audioEl = document.getElementById("audio01");
+        audioEl.addEventListener("loadstart", function() {
+          console.log("loadstart");
+        });
+        audioEl.addEventListener("progress", function() {
+          console.log("progress");
+        });
+        audioEl.addEventListener("loadedmetadata", function() {
+          console.log("loadedmetadata");
+        });
+        audioEl.addEventListener("loadeddata", function() {
+          console.log("loadeddata");
+        });
+        audioEl.addEventListener("canplay", function() {
+          console.log("canplay");
+        });
+        audioEl.addEventListener("canplaythrough", function() {
+          console.log("canplaythrough");
+        });
+        audioEl.addEventListener("suspend", function() {
+          console.log("suspend");
+        });
+        audioEl.addEventListener("stalled", function() {
+          console.log("stalled");
+        });
+        audioEl.addEventListener("play", function() {
+          console.log("play");
+        });
+        audioEl.addEventListener("waiting", function() {
+          console.log("waiting");
+        });
+        audioEl.addEventListener("playing", function() {
+          console.log("playing");
+        });
+        audioEl.addEventListener("timeupdate", function() {
+          console.log("timeupdate");
+        });
+        audioEl.addEventListener("pause", function() {
+          console.log("pause");
+        });
+        audioEl.addEventListener("seeking", function() {
+          console.log("seeking");
+        });
+        audioEl.addEventListener("seeked", function() {
+          console.log("seeked");
+        });
+        audioEl.addEventListener("ended", function() {
+          console.log("ended");
+        });
+        audioEl.addEventListener("durationchange", function() {
+          console.log("durationchange");
+        });
+        audioEl.addEventListener("volumechange", function() {
+          console.log("volumechange");
+        });
+        audioEl.addEventListener("ratechange", function() {
+          console.log("ratechange");
+        });
+        audioEl.addEventListener("abort", function() {
+          console.log("abort");
+        });
+        audioEl.addEventListener("error", function() {
+          console.log("error");
+        });
+        audioEl.addEventListener("emptied", function() {
+          console.log("emptied");
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <audio
+          id="audio01"
+          src="../file/21-02-b.mp3"
+          controls="controls"
+          style="width: 50%;"
+      ></audio>
+    </p>
+  </body>
+</html>

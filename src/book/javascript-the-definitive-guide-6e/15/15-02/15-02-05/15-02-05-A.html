@@ -1,0 +1,41 @@
+<!-- 15.2.5 Selecting Elements with CSS Selectors -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-02-05</title>
+    <script>
+      /*
+       * CSS 选择器支持根据：
+       *     id
+       *     tag name,
+       *     class,
+       *     attribute,
+       *     document structure
+       * 来查找元素, W3C 提供了类似的 API（selectors API）,
+       * 定义了一些 JS 方法, 可以根据选择器来查找元素；
+       */
+
+      window.onload = function() {
+        /*
+         * Document.querySelectorAll()
+         * 参数为 CSS 选择器, 返回所以匹配的元素组成的 NodeList 对象；
+         */
+        const elements = document.querySelectorAll("button#button02");
+        console.log(elements);
+
+        /*
+         * Document.querySelector()
+         * 参数为 CSS 选择器, 返回第一个匹配的元素或者 null；
+         */
+
+        console.log(document.querySelector("button"));
+        /* null */
+        console.log(document.querySelector("p"));
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">a</button>
+    <button id="button02">b</button>
+  </body>
+</html>

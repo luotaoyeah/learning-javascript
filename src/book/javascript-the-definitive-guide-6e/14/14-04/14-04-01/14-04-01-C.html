@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-04-01</title>
+    <script>
+      /*
+       * window.navigator.userAgent 包含了 window.navigator.appVersion 以及其他一些信息,
+       * 会作为请求头 User-Agent 的值传递给后台；
+       *
+       * 通常 browser-sniffing 使用的就是这个属性；
+       */
+
+      /* 5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36 */
+      console.log(window.navigator.appVersion);
+      /* Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36 */
+      console.log(window.navigator.userAgent);
+    </script>
+  </head>
+  <body></body>
+</html>

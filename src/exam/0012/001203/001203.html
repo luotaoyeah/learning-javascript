@@ -4,16 +4,16 @@
     <meta charset="utf-8" />
     <title>001202</title>
     <!--
-        因为 <script> 标签会阻塞文档树的加载，
-        对于外部脚本（使用src引入），可以使用 async 或者 defer 来避免阻塞，
+        因为 <script> 标签会阻塞文档树的加载,
+        对于外部脚本（使用src引入）, 可以使用 async 或者 defer 来避免阻塞,
         区别在于：
-            async 不能保证执行顺序，谁先加载完成，谁就先执行，
+            async 不能保证执行顺序, 谁先加载完成, 谁就先执行,
             defer 可以保证执行顺序
     -->
     <script>
       document.addEventListener("DOMContentLoaded", function() {
         /*
-         * DOMContentLoaded 事件依然会在所有的 <script> 标签加载并执行完成之后才会触发，
+         * DOMContentLoaded 事件依然会在所有的 <script> 标签加载并执行完成之后才会触发,
          * 即使这些 <script> 使用了 async 或者 defer 属性
          */
         console.log("DOMContentLoaded");
@@ -21,16 +21,16 @@
     </script>
 
     <!--
-        对于下面两个 async 的 <script>，
-        其中 00120301.mjs 文件较小，先下载完成，因此会先执行
+        对于下面两个 async 的 <script>,
+        其中 00120301.mjs 文件较小, 先下载完成, 因此会先执行
     -->
     <script src="./00120302.mjs" async></script>
     <script src="./00120301.mjs" async></script>
 
     <!--
-        对于下面两个 defer 的 <script>，
-        虽然 00120303.mjs 文件较小，先下载完成，
-        但是为了保证执行顺序，00120303.mjs 依然是后执行的
+        对于下面两个 defer 的 <script>,
+        虽然 00120303.mjs 文件较小, 先下载完成,
+        但是为了保证执行顺序, 00120303.mjs 依然是后执行的
     -->
     <script src="./00120304.mjs" defer></script>
     <script src="./00120303.mjs" defer></script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-02-03</title>
+    <script>
+      /*
+       * Element 类也定义了 getElementsByTagName() 方法,
+       * 用于根据标签名称查找对应元素下面的子元素；
+       */
+
+      window.onload = function() {
+        const pEl = document.getElementsByTagName("p")[1];
+        const spanEls = pEl.getElementsByTagName("span");
+        console.log(spanEls);
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <span id="span01">span01</span>
+      <span id="span02">span02</span>
+    </p>
+    <p>
+      <span id="span03">span03</span>
+      <span id="span04">span04</span>
+    </p>
+  </body>
+</html>

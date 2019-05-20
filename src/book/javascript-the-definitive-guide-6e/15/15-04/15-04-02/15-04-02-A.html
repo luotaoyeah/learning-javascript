@@ -1,0 +1,44 @@
+<!-- 15.4.2 Getting and Setting Non-HTML Attributes -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-04-02</title>
+    <script>
+      /*
+       * Element.prototype.getAttribute()
+       * Element.prototype.setAttribute()
+       *
+       * 获取及设置 HTML 标签的属性；
+       */
+
+      window.onload = function() {
+        const imgEl = document.images[0];
+        if (imgEl) {
+
+          /*
+           * 方法参数对应的是 HTML 标签的属性, 而不是元素对象的属性,
+           * 因此属性名不区分大小写；
+           */
+          console.log(imgEl.getAttribute("width"));
+          console.log(imgEl.getAttribute("WIDTH"));
+          console.log(imgEl.getAttribute("class"));
+
+
+          /*
+           * 这两个方法获取和设置的属性值的类型都是字符串；
+           */
+          console.log(typeof imgEl.getAttribute("tabindex"));
+          imgEl.setAttribute("style", "width: 200px");
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <img
+        src="https://cdn.wccftech.com/wp-content/uploads/2018/02/Google-2060x904.jpg"
+        width="100"
+        class="avatar"
+        tabindex="5"
+    />
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!-- 14.8.2 Relationships Between Frames -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-08-02</title>
+    <script>
+      /*
+       * window.self 表示自己,
+       * window.parent 表示上级窗口,
+       * window.top 表示顶级窗口；
+       *
+       * 对于顶级窗口, window === window.window === window.self === window.parent === window.top
+       */
+
+      console.log(window === window.window);
+      console.log(window === window.self);
+      console.log(window === window.parent);
+      console.log(window === window.top);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html manifest="20-04-02.appcache">
+  <head>
+    <meta charset="utf-8">
+    <title>20.4.2 Cache Updates</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 当联网时, 浏览器会检查 manifest 文件是否有变化,
+         * 如果有变化, 则浏览器会重新加载该 manifest 文件,
+         * 并重新加载并缓存所有资源；
+         *
+         * 一般为了让浏览器感知到 manifest 文件的变化,
+         * 可以在 manifest 文件中添加一个版本信息,
+         * 通过更新版本信息的方式, 实现 manifest 文件的变更；
+         *
+         * 但是需要注意的是, 浏览器需要加载两次才能实现内容的更新,
+         * 第一次加载, 重新获取 manifest 文件和资源文件, 并缓存它们；
+         * 第二次加载, 从缓存中获取数据, 更新内容；
+         */
+
+        /*
+         * 如果要从缓存中卸载应用, 需要删除 manifest 文件,
+         * 让浏览器无法请求该 manifest 文件；
+         */
+      };
+    </script>
+  </head>
+  <body>
+    DDD
+  </body>
+</html>

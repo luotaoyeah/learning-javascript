@@ -1,0 +1,36 @@
+<!-- 15.2.4 Selecting Elements by CSS Class -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-02-04</title>
+    <script>
+      window.onload = function() {
+        /*
+         * HTML 元素的 class 属性用来指定 CSS 类,
+         * 属性值为空格分隔的 CSS 类名；
+         * 其对应的 HTML 元素对象的属性为 className（因为 class 是 JS 的关键字）；
+         */
+        console.log("\n-------------------------------------------------- 01");
+        const pEl = document.getElementById("p01");
+        if (pEl) {
+          /* c01 c02 c03 */
+          console.log(pEl.className);
+        }
+
+        /*
+         * 可以通过 Document.getElementsByClassName() 根据元素的 class 属性,
+         * 查找匹配的元素, 参数值可以是空格分隔的多个 CSS 类名；
+         */
+        console.log("\n-------------------------------------------------- 02");
+        const elements = document.getElementsByClassName("c03 c01");
+        console.log(elements);
+      };
+    </script>
+  </head>
+  <body>
+    <p
+        id="p01"
+        class="c01 c02 c03"
+    ></p>
+  </body>
+</html>

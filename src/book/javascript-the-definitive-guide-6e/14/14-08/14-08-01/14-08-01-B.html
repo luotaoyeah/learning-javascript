@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-08-01</title>
+    <script>
+      /*
+       * window.open() 的返回值为新打开的窗口的 window 对象；
+       */
+
+      window.addEventListener("load", function() {
+        const button01 = document.getElementById("button01");
+        if (button01) {
+          button01.addEventListener("click", function() {
+            const window01 = window.open(
+              "http://localhost:63342/learning-javascript/src/books/javascript-the-definitive-guide-6e/14/14-08/14-08-01/14-08-01-B.html?_ijt=26e3qabn9hgvfqd6jqdhjnjf7m",
+              "google",
+              "width=600,height=300"
+            );
+            window01.alert(new Date().toISOString());
+
+            /*
+             * window.opener 表示打开该窗口的 window 对象, 默认为 null；
+             */
+            window01.alert("window === window01.opener: " + (window === window01.opener));
+          });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <button id="button01">window.open()</button>
+  </body>
+</html>

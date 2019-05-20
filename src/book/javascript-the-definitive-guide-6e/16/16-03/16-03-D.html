@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.3 Scripting Inline Styles</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 除了使用 style 属性对象, 分别获取各个样式属性之外,
+         * 还可以使用 Element.getAttribute() 获取标签的 style 属性；
+         */
+        console.log("\n-------------------------------------------------- 01");
+        const buttonEl01 = document.getElementById("button01");
+        /* color: #000000; */
+        console.log(buttonEl01.getAttribute("style"));
+
+        /*
+         * 或者通过 CSSStyleDeclaration.cssText 属性,
+         * 获取或者设置 style 属性（以字符串的形式）；
+         */
+        console.log("\n-------------------------------------------------- 02");
+        /* color: rgb(0, 0, 0); */
+        console.log(buttonEl01.style.cssText);
+        buttonEl01.style.cssText = "color: red;";
+        /* color: red; */
+        console.log(buttonEl01.style.cssText);
+      };
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <button
+        id="button01"
+        style="color: #000000;"
+    >button01
+    </button>
+  </body>
+</html>

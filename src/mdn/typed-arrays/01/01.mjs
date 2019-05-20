@@ -1,7 +1,7 @@
 console.log("\n-------------------------------------------------- 01");
 {
   /*
-   * JS 中的普通的 array 大小是动态变化的，并且可以存储任意类型的数据
+   * JS 中的普通的 array 大小是动态变化的, 并且可以存储任意类型的数据
    */
 
   const arr01 = [true, 0, "0", null, undefined, {}, [], () => {}];
@@ -15,7 +15,7 @@ console.log("\n-------------------------------------------------- 01");
 console.log("\n-------------------------------------------------- 02");
 {
   /*
-   * ES6 中新增的 typed array 是一种新的类型，它们不是真正的 array，而是 array-like 对象
+   * ES6 中新增的 typed array 是一种新的类型, 它们不是真正的 array, 而是 array-like 对象
    */
 
   console.log(Array.isArray(new Array())); // true

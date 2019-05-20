@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.2.1 Setting Event Handler Properties</title>
+    <script>
+      /*
+       * 注册事件的方法之一：
+       *     将回调函数设置为目标对象（DOM 元素对象）对应的事件属性；
+       *     事件属性的名称通常为：on + 事件名称, 如：onclick, onchange；
+       *
+       * 这种方法的缺点是：对同一个事件只能注册一个回调函数,
+       * 如果需要对同一个事件注册多个回调函数, 则不能使用该方法；
+       */
+      window.onload = function() {
+        console.log("load");
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

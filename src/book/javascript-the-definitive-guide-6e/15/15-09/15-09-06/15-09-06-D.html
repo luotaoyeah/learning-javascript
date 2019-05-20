@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>15-09-06</title>
+    <script>
+      window.onload = function() {
+        console.log("\n-------------------------------------------------- 01");
+        const inputEl01 = document.getElementById("input01");
+        const buttonEl01 = document.getElementById("button01");
+
+        /* 文件选择控件的 value 属性不能被赋值, 否则报错 */
+        buttonEl01.onclick = function() {
+          /*
+           * Uncaught DOMException:
+           *     Failed to set the 'value' property on 'HTMLInputElement':
+           *     This input element accepts a filename,
+           *     which may only be programmatically set to the empty string.
+           */
+          inputEl01.value = new Date().toISOString();
+        };
+
+        /* 用户选择文件后, 触发 onchange 事件 */
+        inputEl01.onchange = function() {
+          console.log(inputEl01.value);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <input
+          id="input01"
+          type="file"
+      >
+      <button
+          id="button01"
+          type="button"
+      >set value
+      </button>
+    </form>
+  </body>
+</html>

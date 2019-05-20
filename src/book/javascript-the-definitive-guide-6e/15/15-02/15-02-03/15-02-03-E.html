@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-02-03</title>
+    <script>
+      window.onload = function() {
+        /*
+         * NodeList 和 HTMLCollection 都是 array-like 对象,
+         */
+
+        /* ["img01", "img02"] */
+        console.log(Array.prototype.map.call(document.images, function(img) {
+          return img.id;
+        }));
+
+        /*
+         * HTMLCollection 的一个特性是可以通过 name 访问属性；
+         */
+        console.log(document.images.img01);
+
+        /*
+         * NodeList.item() 和 HTMLCollection.item() 根据索引访问元素；
+         */
+        console.log(document.images.item(1));
+
+        /*
+         * HTMLCollection.namedItem() 根据 name 访问元素；
+         */
+        console.log(document.images.namedItem("img02") === document.images.item(1));
+      };
+    </script>
+  </head>
+  <body>
+    <img
+        src="#"
+        id="img01"
+    >
+    <img
+        src="#"
+        id="img02"
+    >
+  </body>
+</html>

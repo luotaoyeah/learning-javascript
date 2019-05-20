@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.3.3 Event Handler Scope</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 跟普通函数一样, 回调函数也是使用词法作用域（lexical scoping）；
+         */
+        const x = "foo";
+        window.button01.onclick = function() {
+          console.log(x);
+        };
+        window.button01.addEventListener("click", function() {
+          console.log(x);
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">click me</button>
+  </body>
+</html>

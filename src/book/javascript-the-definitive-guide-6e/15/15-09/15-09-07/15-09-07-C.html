@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>15-09-07</title>
+    <script>
+      window.onload = function() {
+        console.log("\n-------------------------------------------------- 01");
+        const selectEl01 = document.getElementById("select01");
+
+        /*
+         * HTMLSelectElement.options
+         *
+         * <select> 下面的 <option> 列表,
+         * 是一个 HTMLOptionsCollection 类型的 array-like 对象；
+         */
+        console.log(selectEl01.options);
+      };
+    </script>
+  </head>
+  <body>
+    <form
+        id="form01"
+        name="form01"
+        action="#"
+    >
+      <select id="select01">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+    </form>
+  </body>
+</html>

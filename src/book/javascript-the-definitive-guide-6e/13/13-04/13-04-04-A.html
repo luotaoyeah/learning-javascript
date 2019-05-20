@@ -1,0 +1,28 @@
+<!-- 13.4.4 Quirks Mode and Standards Mode -->
+<!--
+    浏览器的排版引擎支持 3 中模式：
+        1. quirks mode（怪异模式）
+        2. standards mode（标准模式）
+        3. almost standards mode（近标准模式）
+-->
+<!--
+    通过 <!DOCTYPE> 来指定当前 HTML 要使用的模式,
+    当为 <!DOCTYPE html> 时, 表示使用标准模式；
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>13-04-04</title>
+    <script>
+      /*
+       * 通过 document.compatMode 属性可以判断当前模式：
+       *     "CSS1Compat"：标准模式
+       *     "BackCompat"：怪异模式
+       */
+      console.log(document.compatMode);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

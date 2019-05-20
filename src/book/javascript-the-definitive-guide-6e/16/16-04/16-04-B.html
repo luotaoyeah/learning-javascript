@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>16.4 Querying Computed Styles</title>
+    <script>
+      window.onload = function() {
+        const buttonEl = document.getElementById("button01");
+        buttonEl.onclick = function() {
+          const computedStyle = window.getComputedStyle(this, null);
+
+          /*
+           * 通过 Window.getComputedStyle() 方法获取到的计算样式,
+           * 有时候不一定有用, 比如当元素为 non-positioned 时,
+           * 获取到的 top 和 left 属性为 auto；
+           */
+          console.log(computedStyle.top);
+          console.log(computedStyle.left);
+        };
+      };
+    </script>
+    <style>
+      button {
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <button
+        id="button01"
+        style="color: red;"
+    >button
+    </button>
+  </body>
+</html>

@@ -5,7 +5,7 @@
  */
 function fn0001(n) {
   /*
-   * 输入非法数字时，直接原样返回该输入
+   * 输入非法数字时, 直接原样返回该输入
    */
   const num = Number.parseInt(n);
   if (Number.isNaN(num)) {
@@ -21,7 +21,7 @@ function fn0001(n) {
     resultStr += chars[i];
     /*
      * 每隔三位数字插一个逗号
-     * 如果逗号刚好位于首位，则不插入该逗号
+     * 如果逗号刚好位于首位, 则不插入该逗号
      */
     if (i % 3 === 2 && i < chars.length - 1) {
       resultStr += ",";

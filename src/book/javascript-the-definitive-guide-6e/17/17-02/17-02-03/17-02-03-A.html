@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.2.3 addEventListener()</title>
+    <script>
+      /*
+       * addEventListener() 接收三个参数：
+       *     第一个参数为：事件名称, 如：click, change, load；
+       *     第二个参数为：回调函数；
+       *     第三个参数为：是否定义为 capturing 阶段的事件回调, 默认为 false；
+       */
+      window.onload = function() {
+        window.button01.onclick = function() {
+          console.log("onclick 01");
+        };
+        window.button01.addEventListener("click", function() {
+          console.log("onclick 02");
+        });
+
+        /*
+         * 如果为同一个对象的同一个事件注册多次回调, 且回调函数为同一个对象,
+         * 则只会成功注册一次, 后面注册的无效；
+         */
+        function handleClick() {
+          console.log("onclick 03");
+        }
+
+        window.button01.addEventListener("click", handleClick);
+        window.button01.addEventListener("click", handleClick);
+        window.button01.addEventListener("click", handleClick);
+      };
+    </script>
+  </head>
+  <body>
+    <button
+        id="button01"
+    >click me
+    </button>
+  </body>
+</html>

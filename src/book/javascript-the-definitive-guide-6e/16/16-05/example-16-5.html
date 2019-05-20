@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Example 16-5. classList(): treat className as a set of CSS classes</title>
+    <script>
+      function getClassList(el) {
+
+      }
+
+      function ClassList(el) {
+        this.el = el;
+      }
+
+      ClassList.prototype.contains = function(name) {
+        /* 检查类名是否合法 */
+        if (name.length === 0 || name.indexOf(" ") !== -1) {
+          throw new Error("invalid class name: " + name);
+        }
+
+        /* 元素的 class 属性为空 */
+        const className = this.el.className;
+        if (!className) {
+          return false;
+        }
+
+        if (className == name) {
+          return true;
+        }
+
+        return className.search("\\b" + name + "\\b") !== -1;
+      };
+
+      ClassList.prototype.add = function(name) {
+        /* 已经存在, 直接返回 */
+        if (this.contains(name)) {
+          return;
+        }
+
+        /* 多个类名之间使用空格分隔 */
+        const className = this.el.className;
+        if (className && className[className.length - 1] != " ") {
+          name = " " + name;
+        }
+
+        this.el.className += name;
+      };
+
+      ClassList.prototype.remove = function(name) {
+        /* 如果不存在, 直接返回 */
+        if (!this.contains(name)) {
+          return;
+        }
+
+        const regExp = new RegExp("\\b" + name + "\\b\\s*", "g");
+        this.el.className = this.el.className.replace(regExp, "");
+      };
+
+      ClassList.prototype.toggle = function(name) {
+        if (this.contains(name)) {
+          this.remove(name);
+          return false;
+        } else {
+          this.add(name);
+          return true;
+        }
+      };
+
+      ClassList.prototype.toString = function() {
+        return this.el.className;
+      };
+
+      window.onload = function() {
+      };
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <button id="button01">button01</button>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.1.1.4 Key events</title>
+    <script>
+      /*
+       * 当敲击键盘时, 如果当前有元素处于 focus 状态,
+       * 则键盘事件会在该元素上触发, 否则键盘事件会在 document 上触发；
+       */
+      window.onload = function() {
+        /* 按键按下事件 */
+        window.input01.onkeydown = function() {
+          console.log("keydown");
+        };
+
+        /* 按键松开事件 */
+        window.input01.onkeyup = function(e) {
+          console.log("keyup");
+
+          /*
+           * KeyboardEvent.code
+           * 表示当前触发事件的是哪个按键；
+           */
+          console.log("KeyboardEvent.code", e.code);
+        };
+
+        /*
+         * 按键敲击事件；
+         * 当按键是输入按键（即不是 CTRL, ALT 等按键）时,
+         * 在 keyup 之前会触发 keypress 事件；
+         */
+        window.input01.onkeypress = function() {
+          console.log("keypress");
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Key Events</legend>
+      <input
+          type="text"
+          id="input01"
+          style="padding: 5px 10px;border-radius: 3px;outline: none;"
+      >
+    </fieldset>
+  </body>
+</html>

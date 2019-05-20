@@ -1,0 +1,38 @@
+<!-- 15.2.2 Selecting Elements by Name -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-02-02</title>
+    <script>
+      /*
+       * HTML 元素的 name 属性最开始是用在表单元素上的,
+       * 用于提交表单数据到后台服务器；
+       *
+       * name 属性只在一部分 HTML 元素上有效,
+       * 包括表单元素, <iframe>, <img>；
+       *
+       * name 属性可以重复；
+       */
+
+      window.onload = function() {
+        /*
+         * 返回一个 NodeList 类型的 array-like 对象；
+         */
+        const elements = document.getElementsByName("name01");
+        console.log(elements);
+      };
+    </script>
+  </head>
+  <body>
+    <input
+        id="input01"
+        type="text"
+        name="name01"
+    >
+    <input
+        id="input02"
+        type="text"
+        name="name01"
+    >
+  </body>
+</html>

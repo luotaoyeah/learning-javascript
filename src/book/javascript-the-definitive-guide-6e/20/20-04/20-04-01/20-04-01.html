@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html manifest="20-04-01.appcache">
+  <head>
+    <meta charset="utf-8">
+    <title>20.4.1 The Application Cache Manifest</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 要将应用安装到 application cache 中, 需要提供一个 manifest 文件,
+         * 该文件的后缀名通常为 .appcache, 该文件的第一行必须是 CACHE MANIFEST；
+         * 文件中每一行表示一个需要缓存的资源的 URL,
+         * 如果是相对路径, 则为相对于当前文件的路径；
+         * # 开头的行表示注释；
+         *
+         * 最后在 <html> 标签上, 通过 manifest 属性, 指定该文件；
+         * 通常该 HTML 文件可以不用列在该 manifest 文件中,
+         * 它会自动被缓存；
+         */
+
+        /*
+         * 应用首次加载之后, 后面的访问都会从 application cache 中读取数据,
+         * 如果某些资源没有列在 manifest 文件中, 则此时这些资源也不会从服务器重新加载,
+         * 而是会尝试从 application cache 中读取, 读取不到, 则会报错；
+         */
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>17.1.1.2 Window events</title>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Window Events</legend>
+      <fieldset>
+        <legend>load</legend>
+        <p>
+          文档加载完成, 且所有外部的资源（如：图片）也加载完成；
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>DOMContentLoaded</legend>
+        <p>
+          文档加载完成, 外部资源尚未加载完成；
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>unload</legend>
+        <p>
+          离开文档时触发；
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>beforeunload</legend>
+        <p>
+          离开文档之前触发, 可以用来保存用户状态或者阻止用户离开当前文档；
+          如果回调函数返回一个字符串, 则会弹出一个确认对话框, 该字符串显示为提示消息,
+          如果用户在确认对话框中选择取消, 则会取消跳转, 留在当前页面；
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>resize</legend>
+        <p>
+          窗口大小改变；
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>srcoll</legend>
+        <p>
+          窗口滚动；
+        </p>
+      </fieldset>
+    </fieldset>
+  </body>
+</html>

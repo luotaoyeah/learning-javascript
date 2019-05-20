@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>15-08-04</title>
+    <script>
+      /*
+       * Window.scrollBy()
+       * 在当前滚动位置的基础上, 再滚动一段距离；
+       */
+
+      window.onload = function() {
+        const divEl = document.getElementById("div01");
+        divEl.onclick = function() {
+          window.scrollBy(0, 1000);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <div
+        id="div01"
+        style="height: 10000px;"
+    >foo
+    </div>
+  </body>
+</html>

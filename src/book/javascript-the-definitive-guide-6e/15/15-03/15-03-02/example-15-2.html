@@ -1,0 +1,113 @@
+<!-- Example 15-2. Portable document traversal functions -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example 15-2</title>
+    <script>
+      /**
+       * 获取节点的第 n 级父节点；
+       * n 默认为 1 时, 表示直接父节点；
+       *
+       * @param element 当前元素
+       * @param n 第几级父节点
+       */
+      function parent(element, n) {
+        /* n 默认为 1 */
+        if (n === undefined) {
+          n = 1;
+        }
+
+        /* 一直往上寻找, 直到第 n 级父节点 */
+        while (n-- && element) {
+          element = element.parentNode;
+        }
+
+        /* 如果节点为空, 或者节点不是 element node, 返回 null */
+        if (!element || element.nodeType !== 1) {
+          return null;
+        }
+
+        return element;
+      }
+
+      /**
+       * 获取节点的第 n 个兄弟节点；
+       * 如果 n > 0, 获取后面的第 n 个兄弟节点,
+       * 如果 n < 0, 获取前面的第 n 个兄弟节点,
+       * 如果 n = 0, 返回节点本身；
+
+       * @param element 节点
+       * @param n
+       */
+      function sibling(element, n) {
+        while (element && n !== 0) {
+          if (n > 0) {
+            if (element.nextElementSibling) {
+              element = element.nextElementSibling;
+            } else {
+              for (element = element.nextSibling; element && element.nodeType !== 1; element = element.nextSibling) {
+                /*  */
+              }
+            }
+            n--;
+          } else {
+            if (element.previousElementSibling) {
+              element = element.previousElementSibling;
+            } else {
+              for (element = element.previousSibling; element && element.nodeType !== 1; element = element.previousSibling) {
+                /*  */
+              }
+            }
+            n++;
+          }
+        }
+
+        return element;
+      }
+
+      /**
+       *  获取节点的第 n 个子节点；
+       *  如果 n < 0, 表示从后往前查找；
+       * @param element
+       * @param n
+       */
+      function child(element, n) {
+        if (element.children) {
+          if (n < 0) {
+            n += element.children.length;
+          }
+
+          if (n < 0) {
+            return null;
+          }
+
+          return element.children[n];
+        }
+
+        if (n > 0) {
+          if (element.firstElementChild) {
+            element = element.firstElementChild;
+          } else {
+            for (element = element.firstChild; element && element.nodeType !== 1; element = element.nextSibling) {
+              /*  */
+            }
+          }
+          return sibling(element, n);
+        } else {
+          if (element.lastElementChild) {
+            element = element.lastElementChild;
+          } else {
+            for (element = element.lastChild; element && element.nodeType !== 1; element = element.previousSibling) {
+              /*  */
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <p id="p01">A</p>
+    <p id="p02">B</p>
+    <p id="p03">C</p>
+  </body>
+</html>

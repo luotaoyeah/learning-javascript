@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>14-07</title>
+    <script>
+      window.onload = function() {
+        button01.onclick = function() {
+          console.log(button02);
+          console.log(button03);
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">button01</button>
+    <script>
+      /*
+       * 如果在元素创建之前, window 上存在同名属性,
+       * 则不会再给 window 设置该属性；
+       */
+      window.button02 = "button02";
+    </script>
+    <button id="button02">button02</button>
+    <button id="button03">button03</button>
+    <script>
+      /*
+       * 如果在元素创建之后, window 上设置了同名属性,
+       * 则原来的属性会被覆盖；
+       */
+      window.button03 = "button03";
+    </script>
+  </body>
+</html>

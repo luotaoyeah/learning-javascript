@@ -2,7 +2,7 @@ const buffer01 = new ArrayBuffer(16);
 const arr01 = new Uint32Array(buffer01);
 
 /*
- * 以 Uint32Array 类型为例，介绍它的一些常用属性
+ * 以 Uint32Array 类型为例, 介绍它的一些常用属性
  */
 
 console.log("\n-------------------------------------------------- 01");
@@ -41,17 +41,17 @@ console.log("\n-------------------------------------------------- 04");
 {
   /*
    * Uint32Array.byteLength
-   *     字节长度，通常情况下，等于下层的 ArrayBuffer 对象的字节长度
+   *     字节长度, 通常情况下, 等于下层的 ArrayBuffer 对象的字节长度
    */
   console.assert(arr01.byteLength === arr01.buffer.byteLength);
 
   /*
-   * 如果在构建 typed array 实例对象的时候，指定了在 ArrayBuffer 对象上的偏移，
-   * 表示上层的 view 对象在使用下层的 buffer 对象的时候，
-   * 并没有全部使用该 buffer 对象，而是只使用了某一部分，
-   * 此时，该 view 对象只能访问该 buffer 对象的这一部分数据，
-   * 从而，同一个 buffer 对象可以同时被多个 view 对象使用，
-   * 这些 view 对象使用了该 buffer 对象的不同部分，
+   * 如果在构建 typed array 实例对象的时候, 指定了在 ArrayBuffer 对象上的偏移,
+   * 表示上层的 view 对象在使用下层的 buffer 对象的时候,
+   * 并没有全部使用该 buffer 对象, 而是只使用了某一部分,
+   * 此时, 该 view 对象只能访问该 buffer 对象的这一部分数据,
+   * 从而, 同一个 buffer 对象可以同时被多个 view 对象使用,
+   * 这些 view 对象使用了该 buffer 对象的不同部分,
    */
   const buffer02 = new ArrayBuffer(32);
 
@@ -74,7 +74,7 @@ console.log("\n-------------------------------------------------- 05");
 {
   /*
    * Uint32Array.byteOffset
-   *     获取在 ArrayBuffer 对象上的偏移，默认为0
+   *     获取在 ArrayBuffer 对象上的偏移, 默认为0
    */
   console.assert(arr01.byteOffset === 0);
 }

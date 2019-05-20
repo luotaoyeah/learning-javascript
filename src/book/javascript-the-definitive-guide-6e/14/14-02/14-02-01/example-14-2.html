@@ -1,0 +1,43 @@
+<!-- Example 14-2. Extracting arguments from the search string of a URL -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>example 14-2</title>
+    <script>
+      /**
+       * 获取当前 URL 中的参数对象
+       */
+      function urlArgs() {
+        const argObj = {};
+        const queryString = window.location.search.substring(1);
+        const argPairs = queryString.split("&");
+
+        for (var i = 0, length = argPairs.length; i < length; i++) {
+          const pair = argPairs[i];
+          if (pair.indexOf("=") === -1) {
+            continue;
+          }
+
+          var name = pair.split("=")[0];
+          var value = decodeURIComponent(pair.split("=")[1]);
+
+          if (!argObj[name]) {
+            argObj[name] = value;
+          } else {
+            /* 多个同名参数, 其最终参数值为单个参数值组成的数组 */
+            if (Array.isArray(argObj[name])) {
+              argObj[name].push(value);
+            } else {
+              argObj[name] = [argObj[name], value];
+            }
+          }
+        }
+
+        return argObj;
+      }
+
+      console.log(urlArgs());
+    </script>
+  </head>
+  <body></body>
+</html>

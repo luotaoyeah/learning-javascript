@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>18.1.4 HTTP Progress Events</title>
+    <style></style>
+    <script>
+      window.onload = function() {
+        /*
+         * 除了 onreadystatechange 事件之外,
+         * XHR2 还定义了一些其他的事件：
+         *     loadstart：开始加载, XMLHttpRequest.send() 方法调用之后触发；
+         *     progress：正在进行, 一般每 50 毫秒触发一次；
+         *     load：请求结束；
+         *     timeout：请求超时；
+         *     abort：请求终止；
+         *     error：请求报错；
+         *     loadend：结束加载；
+         *
+         * load, timeout, abort, error 四个只有一个会触发,
+         * 而 loadend 无论如何都会触发；
+         */
+
+        const xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("GET", "http://localhost:8888");
+        xmlHttpRequest.onreadystatechange = function() {
+          console.log("onreadystatechange", xmlHttpRequest.readyState);
+        };
+        xmlHttpRequest.onloadstart = function() {
+          console.log("onloadstart", xmlHttpRequest.readyState);
+        };
+        xmlHttpRequest.onprogress = function() {
+          console.log("onprogress", xmlHttpRequest.readyState);
+        };
+        xmlHttpRequest.onload = function() {
+          console.log("onload", xmlHttpRequest.readyState);
+        };
+        xmlHttpRequest.ontimeout = function() {
+          console.log("ontimeout", xmlHttpRequest.readyState);
+        };
+        xmlHttpRequest.onabort = function() {
+          console.log("onabort", xmlHttpRequest.readyState);
+        };
+        xmlHttpRequest.onerror = function() {
+          console.log("onerror", xmlHttpRequest.readyState);
+        };
+        xmlHttpRequest.onloadend = function() {
+          console.log("onloadend", xmlHttpRequest.readyState);
+        };
+
+        xmlHttpRequest.send();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

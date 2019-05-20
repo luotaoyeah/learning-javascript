@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html manifest="20-04-02.appcache">
+  <head>
+    <meta charset="utf-8">
+    <title>20.4.2 Cache Updates</title>
+    <script>
+      window.onload = function() {
+        /*
+         * ApplicationCache.update() 方法,
+         * 用于手动更新缓存,
+         * 它执行的逻辑跟应用第一次加载时执行的逻辑完全一致；
+         */
+
+        window.button01.onclick = function() {
+          applicationCache.update();
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <button id="button01">update()</button>
+  </body>
+</html>

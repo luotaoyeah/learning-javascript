@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-04-01</title>
+    <script>
+      /*
+       * DOM 对象的属性值有以下几种类型：
+       *     string,
+       *     boolean,
+       *     number,
+       *     function,
+       *     object
+       */
+
+      window.onload = function() {
+        const inputEl = document.getElementById("input01");
+        if (inputEl) {
+          /* string */
+          console.log(typeof inputEl.id);
+          /* boolean */
+          console.log(typeof inputEl.checked);
+          /* number */
+          console.log(typeof inputEl.maxLength);
+          /* function */
+          console.log(typeof inputEl.onblur);
+          /* object */
+          console.log(typeof inputEl.style);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <label
+        id="label01"
+        for="input01"
+    >
+      <input
+          type="checkbox"
+          id="input01"
+          maxlength="100"
+          checked
+          style="color: red;"
+          onblur="alert('blur');"
+      />
+    </label>
+  </body>
+</html>

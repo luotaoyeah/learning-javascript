@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.2 Scripting Audio and Video</title>
+    <script>
+      window.onload = function() {
+      };
+    </script>
+  </head>
+  <body>
+    <!--
+        HTML5 支持了 <audio> 和 <video> 标签, 用于展示音频和视频；
+        跟 <img> 标签一样, 通过 src 属性, 指定文件地址；
+    -->
+    <p>
+      <audio
+          src="./file/21-02-a.mp3"
+          controls="controls"
+      ></audio>
+    </p>
+    <p>
+      <video
+          src="./file/21-02-a.mp4"
+          controls="controls"
+      ></video>
+    </p>
+
+    <!--
+        由于各个浏览器支持的编码格式可能不一样,
+        通常需要通过多个 <source> 标签指定多种格式；
+    -->
+    <p>
+      <video controls="controls">
+        <source
+            src="./file/21-02-a.mp3"
+            type="audio/mp3"
+        >
+        <source
+            src="./file/21-02-a.mp4"
+            type="video/mp4"
+        >
+      </video>
+    </p>
+
+    <!--
+        如果浏览器不支持 <audio> 或者 <video> 标签,
+        则会显示标签中间的内容；
+    -->
+    <p>
+      <video src="./file/21-02-a.mp4">
+        not supported
+      </video>
+    </p>
+  </body>
+</html>

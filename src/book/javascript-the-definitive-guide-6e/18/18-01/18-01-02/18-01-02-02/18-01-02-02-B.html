@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>18.1.2.2 Decoding the response</title>
+    <style></style>
+    <script>
+      window.onload = function() {
+        /*
+         * 浏览器要正确解析后台返回的数据,
+         * 则必须保证响应头 Content-Type 的值是正确的；
+         *
+         * XMLHttpRequest.overrideMimeType() 方法用来覆盖响应头 Content-Type 的值,
+         * 需要在 XMLHttpRequest.send() 方法之前调用, 否则会报错；
+         * 调用该方法之后, 浏览器将忽略响应头 Content-Type 的值, 而使用该方法传入的参数；
+         */
+
+        const xmlHttpRequest = new XMLHttpRequest();
+        xmlHttpRequest.open("GET", "http://localhost:8888/xml");
+        xmlHttpRequest.onreadystatechange = function() {
+          if (xmlHttpRequest.readyState === 4 && xmlHttpRequest.status === 200) {
+            const responseHeader = xmlHttpRequest.getResponseHeader("Content-Type");
+            if (/(xml)/.test(responseHeader)) {
+              console.log(xmlHttpRequest.responseXML);
+            }
+          }
+        };
+
+        /*
+         * 将响应头 Content-Type 的值覆盖为 text/plain,
+         * 浏览器将不会再将响应数据解析到 XMLHttpRequest.responseXML 属性中；
+         */
+        xmlHttpRequest.overrideMimeType("text/plain; chartset=utf-8");
+        xmlHttpRequest.send();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>

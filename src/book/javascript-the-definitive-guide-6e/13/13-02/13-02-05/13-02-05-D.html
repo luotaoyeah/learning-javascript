@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>13-02-05</title>
+  </head>
+  <body>
+    <!--
+        在添加浏览器书签的时候,
+        书签的 URL 可以是 javascript: [code] 的形式的值；
+        这种书签称之为 bookmarklet；
+    -->
+    <a
+        href="javascript:
+            var expression = '';
+            var result = '';
+
+            do {
+                expression = prompt('expression: ' + expression + '\nresult: ' + result + '\n', expression);
+                try {
+                    result = eval(expression);
+                } catch(err) {
+                    result = err;
+                }
+            } while(expression);
+
+            void(0);
+        "
+    >js evaluator
+    </a>
+  </body>
+</html>

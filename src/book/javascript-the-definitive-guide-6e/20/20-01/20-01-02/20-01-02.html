@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>20.1.2 Storage API</title>
+    <script>
+      window.onload = function() {
+        /*
+         * 可以像对待普通JS对象一样,
+         * 通过设置属性（localStorage.username = 'luotao'）
+         * 和访问属性（localStorage.username）来操作存储数据；
+         *
+         * 但是, Storage 对象同时定义了一组方法,
+         * 专门用来操作存储数据；
+         */
+
+
+        /*
+         * Storage.setItem() 方法,
+         * 用来添加或者修改一个数据；
+         */
+        localStorage.setItem("username", "foo");
+
+        /*
+         * Storage.getItem() 方法,
+         * 用来获取一个数据；
+         */
+        console.log(localStorage.getItem("username"));
+
+        /*
+         * Storage.removeItem() 方法,
+         * 用来删除一个数据；
+         */
+        localStorage.removeItem("username");
+
+        /*
+         * Storage.key() 方法,
+         * 用来根据索引获取键名；
+         */
+        console.log(localStorage.key(0));
+
+        /*
+         * Storage.clear() 方法,
+         * 用来清除所有数据；
+         */
+        localStorage.clear();
+        console.log(localStorage.length);
+      };
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

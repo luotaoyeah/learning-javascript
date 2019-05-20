@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>15-02-03</title>
+    <script>
+      /*
+       * document 对象上定义了一些特殊的属性, 用于直接访问某些特定的元素：
+       */
+
+      window.onload = function() {
+        /* document.images 表示所有的 <img> 标签 */
+        console.log(document.images);
+        /* document.forms 表示所有的 <form> 标签 */
+        console.log(document.forms);
+        /* document.links 表示所有（设置了 href 属性）的 <a> 标签 */
+        console.log(document.links);
+        /* document.anchors 表示所有（设置了 name 属性）的 <a> 标签 */
+        console.log(document.anchors);
+        /* document.embeds 和 document.plugins 表示所有的 <embed> 标签 */
+        console.log(document.embeds);
+        console.log(document.plugins);
+        /* document.scripts 表示所有的 <script> 标签；（H5） */
+        console.log(document.scripts);
+      };
+    </script>
+  </head>
+  <body>
+    <div>
+      <img
+          id="img01"
+          src="#"
+      >
+      <img
+          id="img02"
+          src="#"
+      >
+    </div>
+    <div>
+      <form
+          action="#"
+          id="form01"
+      ></form>
+      <form
+          action="#"
+          id="form02"
+      ></form>
+    </div>
+    <div>
+      <a
+          href="#"
+          id="a01"
+          name="a01"
+      ></a>
+      <a
+          href="#"
+          id="a02"
+      ></a>
+      <a
+          id="a03"
+          name="a03"
+      ></a>
+    </div>
+    <div>
+      <embed
+          id="embed01"
+          src="01"
+      >
+      <embed
+          id="embed02"
+          src="02"
+      >
+    </div>
+  </body>
+</html>

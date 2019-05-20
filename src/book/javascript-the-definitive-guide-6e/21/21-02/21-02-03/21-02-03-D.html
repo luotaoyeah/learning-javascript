@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>21.2.3 Querying Media Status</title>
+    <script>
+      window.onload = function() {
+        /*
+         * HTMLMediaElement.error 属性,
+         * 表示当前媒体的错误, 如果没有错误, 则为 null；
+         */
+        console.log(window.audio01.error);
+
+        /*
+         * MediaError.MEDIA_ERR_ABORTED
+         * 终止加载；
+         */
+        console.log(MediaError.MEDIA_ERR_ABORTED);
+        /*
+         * MediaError.MEDIA_ERR_NETWORK
+         * 网络错误；
+         */
+        console.log(MediaError.MEDIA_ERR_NETWORK);
+        /*
+         * MediaError.MEDIA_ERR_DECODE
+         * 解码错误；
+         */
+        console.log(MediaError.MEDIA_ERR_DECODE);
+        /*
+         * MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED
+         * 媒体格式不支持；
+         */
+        console.log(MediaError.MEDIA_ERR_SRC_NOT_SUPPORTED);
+      };
+    </script>
+  </head>
+  <body>
+    <p>
+      <audio
+          id="audio01"
+          src="../file/21-02-b.mp3"
+          controls="controls"
+          style="width: 50%;"
+      ></audio>
+    </p>
+    <p></p></body>
+</html>

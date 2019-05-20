@@ -1,0 +1,27 @@
+<!-- 15.10.3 Querying Selected Text -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>15-10-03</title>
+    <script>
+      /*
+       * Window.getSelection()
+       * 获取当前选中的文本, 返回的是一个 Selection 类型的对象；
+       */
+      window.onload = function() {
+        const buttonEl01 = document.getElementById("button01");
+        buttonEl01.onclick = function() {
+          console.log(window.getSelection().toString());
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <fieldset>
+      <legend>Window.getSelection()</legend>
+      <div>ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+      <button id="button01">Window.getSelection()</button>
+    </fieldset>
+  </body>
+</html>

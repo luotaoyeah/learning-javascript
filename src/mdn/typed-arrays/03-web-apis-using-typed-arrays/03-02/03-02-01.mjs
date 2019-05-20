@@ -14,8 +14,8 @@ window.addEventListener("load", function() {
         xmlHttpRequest.open("POST", "http://localhost:8888");
 
         /*
-         * XMLHttpRequest.send() 方法，
-         *     参数表示请求体，可以是一个 ArrayBuffer 对象
+         * XMLHttpRequest.send() 方法,
+         *     参数表示请求体, 可以是一个 ArrayBuffer 对象
          */
         xmlHttpRequest.send(fileReader.result);
       });
