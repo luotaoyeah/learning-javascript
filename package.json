@@ -4,11 +4,11 @@
   "author": "luotao",
   "private": true,
   "scripts": {
-    "build": "rimraf ./dist && webpack",
     "dev": "npm run build && node ./dist/index.js",
     "dev:debug": "npm run build && node %NODE_DEBUG_OPTION% ./dist/index.js",
     "dev:node": "node --experimental-modules ./src/index.js",
-    "dev:node:debug": "node --harmony %NODE_DEBUG_OPTION% ./src/index.js"
+    "dev:node:debug": "node --harmony %NODE_DEBUG_OPTION% ./src/index.js",
+    "build": "rimraf ./dist && webpack"
   },
   "dependencies": {
     "lodash": "^4.17.11"
