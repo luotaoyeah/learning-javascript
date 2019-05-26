@@ -17,3 +17,9 @@ jobs:
       - run:
           name: build
           command: npm run build
+
+workflows:
+  version: 2
+  learning-angular-workflow:
+    jobs:
+      - build-learning-javascript
