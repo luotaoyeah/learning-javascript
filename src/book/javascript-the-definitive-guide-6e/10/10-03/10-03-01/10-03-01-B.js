@@ -1,10 +1,10 @@
-(function() {
+(function () {
   /*
    * RegExp.prototype.golbal
    * RegExp.prototype.ignoreCase
    * RegExp.prototype.multiline
    */
-  console.log("\n-------------------------------------------------- 01");
+  console.log('\n-------------------------------------------------- 01');
   /* true */
   console.log(/\d{3}?/gm.global);
   /* false */
