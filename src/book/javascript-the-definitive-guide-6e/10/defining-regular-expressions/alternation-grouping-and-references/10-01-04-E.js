@@ -1,35 +1,13 @@
 (function () {
   /*
-   * 使用 \n 来引用当前 pattern 中的某个分组；
-   * 如果多个分组嵌套, 则 n 表示从左往右第 n 个左括号；
+   * 分组可以嵌套, 此时如何计算分组索引?
+   * 根据每个分组的左圆括号, 从左往右计算
    */
-  console.log('\n-------------------------------------------------- 01');
 
-  const pattern01 = /(java([Ss]cript))\s\2/;
+  const str = 'JavaScript_Script javascript_script';
 
-  /* true */
-  console.log(pattern01.test('javascript script'));
-  /* false */
-  console.log(pattern01.test('javascript Script'));
-})();
-
-(function () {
-  console.log('\n-------------------------------------------------- 02');
-
-  const pattern01 = /['"][^'"]*['"]/;
-  const pattern02 = /(['"])[^'"]*\1/;
-
-  /* true */
-  console.log(pattern01.test('\'x"'));
-  /* true */
-  console.log(pattern01.test("'x'"));
-  /* true */
-  console.log(pattern01.test('"x"'));
-
-  /* false */
-  console.log(pattern02.test('\'x"'));
-  /* true */
-  console.log(pattern02.test("'x'"));
-  /* true */
-  console.log(pattern02.test('"x"'));
+  console.assert(
+    JSON.stringify(str.match(/([Jj]ava([Ss]cript))_\2/g)) ===
+      JSON.stringify(['JavaScript_Script', 'javascript_script']),
+  );
 })();
