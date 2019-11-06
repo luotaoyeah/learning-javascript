@@ -7,7 +7,7 @@
    * 当 exec() 结合 /g 使用时, 它会每次查找一个匹配项,
    * 依次往后面查找, 直到找不到匹配项时, 返回 null, 同时将 lastIndex 设为 0
    */
-  console.log('\n-------------------------------------------------- 01');
+
   const pattern01 = /\d/g;
   let result = pattern01.exec('1a2b3c');
 

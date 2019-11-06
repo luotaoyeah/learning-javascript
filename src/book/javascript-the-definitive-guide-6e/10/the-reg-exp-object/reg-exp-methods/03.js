@@ -5,9 +5,9 @@
 (function () {
   /*
    * test() 的执行机制跟 exec() 一样,
-   * 区别在于, 如果匹配成功, test() 会返回 true, 否则返回 false；
+   * 区别在于, 如果匹配成功, test() 会返回 true, 否则返回 false
    */
-  console.log('\n-------------------------------------------------- 01');
+
   const pattern01 = /\d/g;
 
   /* true */
