@@ -1,6 +1,5 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
-// eslint-disable-next-line
 import HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config: webpack.Configuration = {
