@@ -3,18 +3,30 @@ const input02 = document.querySelector('#number2');
 
 const inputResult = document.querySelector('#reslut');
 
-if (window.Worker) {
-  const worker = new Worker('./worker.js');
+let worker;
 
-  input01.addEventListener('change', function () {
-    worker.postMessage([input01.value, input02.value]);
-  });
+const buttonStart = document.querySelector('#btnStart');
+buttonStart.addEventListener('click', function () {
+  if (window.Worker) {
+    worker = new Worker('./worker.js');
 
-  input02.addEventListener('change', function () {
-    worker.postMessage([input01.value, input02.value]);
-  });
+    input01.addEventListener('input', function () {
+      worker.postMessage([input01.value, input02.value]);
+    });
 
-  worker.addEventListener('message', function (event) {
-    inputResult.value = event.data;
-  });
-}
+    input02.addEventListener('input', function () {
+      worker.postMessage([input01.value, input02.value]);
+    });
+
+    worker.addEventListener('message', function (event) {
+      inputResult.value = event.data;
+    });
+  }
+});
+
+const buttonStop = document.querySelector('#btnStop');
+buttonStop.addEventListener('click', function () {
+  if (worker) {
+    worker.terminate();
+  }
+});

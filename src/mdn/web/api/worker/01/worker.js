@@ -1,4 +1,6 @@
-console.log('self', self);
+setInterval(function () {
+  console.log(new Date().getSeconds());
+}, 1000);
 
 this.addEventListener('message', function (event) {
   const number01 = Number(event.data[0]);
