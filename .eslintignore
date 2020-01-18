@@ -1,3 +1,6 @@
 dist/
 node_modules/
 webpack.config.ts
+webpack.node.production.ts
+webpack.web.development.ts
+webpack.web.production.ts

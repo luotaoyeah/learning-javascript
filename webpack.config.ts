@@ -1,6 +1,6 @@
 import * as webpack from 'webpack';
 import * as path from 'path';
-import HtmlWebpackPlugin = require('html-webpack-plugin');
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const config: webpack.Configuration = {
   entry: {
@@ -31,13 +31,7 @@ const config: webpack.Configuration = {
       },
     ],
   },
-  mode: 'development',
-  devtool: 'inline-source-map',
-  target: 'web',
-  devServer: {
-    port: 8888,
-  },
-  plugins: [new HtmlWebpackPlugin({ template: 'src/index.html' })],
+  plugins: [new CleanWebpackPlugin()],
 };
 
 export default config;
