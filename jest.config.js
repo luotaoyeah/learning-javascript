@@ -1,4 +1,1 @@
-module.exports = {
-  collectCoverage: true,
-  verbose: true,
-};
+module.exports = {};
