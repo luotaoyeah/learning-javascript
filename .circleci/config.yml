@@ -4,7 +4,7 @@ jobs:
   build-learning-javascript:
     working_directory: ~/learning-javascript
     docker:
-      - image: circleci/node:10-browsers
+      - image: circleci/node:12-browsers
     steps:
       - checkout
       - restore_cache:
@@ -13,13 +13,38 @@ jobs:
       - save_cache:
           key: learning-javascript-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
-            - "node_modules"
+            - 'node_modules'
       - run:
           name: build
-          command: npm run build
+          command: npm run build:prod:node
+
+  test-learning-javascript:
+    working_directory: ~/learning-javascript
+    docker:
+      - image: circleci/node:12-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: learning-javascript-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm install
+      - save_cache:
+          key: learning-javascript-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - 'node_modules'
+      - run:
+          name: unit test
+          command: npm run test
+          environment:
+            NODE_OPTIONS: --max-old-space-size=4096
+      - run:
+          name: codecov
+          command: npm run codecov
 
 workflows:
   version: 2
-  learning-angular-workflow:
+  learning-javascript-workflow:
     jobs:
       - build-learning-javascript
+      - test-learning-javascript:
+          requires:
+            - build-learning-javascript

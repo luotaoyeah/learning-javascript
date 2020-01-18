@@ -3,12 +3,12 @@
  * catch 块将可以省略 error 对象绑定
  */
 
-console.log("\n-------------------------------------------------- 01");
+console.log('\n-------------------------------------------------- 01');
 {
   let success = undefined;
 
   try {
-    JSON.parse("FOO");
+    JSON.parse('FOO');
     success = true;
   } catch (e) {
     /*
@@ -21,12 +21,12 @@ console.log("\n-------------------------------------------------- 01");
   console.assert(success === false);
 }
 
-console.log("\n-------------------------------------------------- 02");
+console.log('\n-------------------------------------------------- 02');
 {
   let success = undefined;
 
   try {
-    JSON.parse("FOO");
+    JSON.parse('FOO');
     success = true;
   } catch {
     /*
