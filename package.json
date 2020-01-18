@@ -6,7 +6,9 @@
   "scripts": {
     "build:prod:node": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack --config webpack.node.production.ts",
     "build:prod:web": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack --config webpack.web.production.ts",
-    "dev:web": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack-dev-server --config webpack.web.development.ts"
+    "codecov": "codecov --token=fd34330d-bb19-4b11-aab0-0e4e39d88b08",
+    "dev:web": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack-dev-server --config webpack.web.development.ts",
+    "test": "node --max-old-space-size=4096 ./node_modules/jest/bin/jest --coverage"
   },
   "dependencies": {
     "jest": "^26.0.1",
