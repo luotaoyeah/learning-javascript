@@ -3,10 +3,10 @@ import commonConfig from './webpack.config';
 import HtmlWebpackPlugin = require('html-webpack-plugin');
 import webpackMerge = require('webpack-merge');
 
-const config: webpack.Configuration = webpackMerge(commonConfig, {
-  devtool: 'eval-source-map',
-  target: 'web',
+const config: webpack.Configuration = webpackMerge.merge(commonConfig, {
   mode: 'development',
+  target: 'web',
+  devtool: 'eval-source-map',
   devServer: {
     port: 8888,
   },

@@ -7,7 +7,7 @@
     "build:prod:node": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack --config webpack.node.production.ts",
     "build:prod:web": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack --config webpack.web.production.ts",
     "codecov": "codecov --token=10c44eb1-cd2f-4fa4-b2ad-9a43d6dc56c0",
-    "start:web": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack-dev-server --config webpack.web.development.ts",
+    "start:web": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack serve --config webpack.web.development.ts",
     "test": "node --max-old-space-size=4096 ./node_modules/jest/bin/jest --coverage"
   },
   "dependencies": {
@@ -33,9 +33,7 @@
     "@types/jest": "~26.0.15",
     "@types/lodash": "~4.14.165",
     "@types/node": "~14.14.7",
-    "@types/webpack": "~4.41.25",
-    "@types/webpack-dev-server": "~3.11.1",
-    "@types/webpack-merge": "~4.1.5",
+    "@types/webpack-dev-server": "^3.11.1",
     "babel-eslint": "~10.1.0",
     "babel-loader": "~8.2.1",
     "clean-webpack-plugin": "~3.0.0",
@@ -45,16 +43,16 @@
     "eslint-config-prettier": "~6.15.0",
     "eslint-friendly-formatter": "~4.0.1",
     "eslint-loader": "~4.0.2",
-    "html-webpack-plugin": "~4.5.0",
+    "html-webpack-plugin": "~5.0.0-alpha.2",
     "husky": "~4.3.0",
     "lint-staged": "~10.5.1",
     "prettier": "~2.1.2",
     "ts-node": "~9.0.0",
     "tsconfig-paths": "~3.9.0",
     "typescript": "~4.0.5",
-    "webpack": "~4.44.2",
-    "webpack-cli": "~3.3.12",
+    "webpack": "~5.5.0",
+    "webpack-cli": "~4.2.0",
     "webpack-dev-server": "~3.11.0",
-    "webpack-merge": "~4.2.2"
+    "webpack-merge": "~5.4.0"
   }
 }

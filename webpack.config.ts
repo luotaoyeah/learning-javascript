@@ -8,7 +8,7 @@ const config: webpack.Configuration = {
   },
   output: {
     filename: '[name].[contenthash].js',
-    path: path.resolve('dist/'),
+    path: path.resolve(__dirname, 'dist'),
   },
   resolve: {
     extensions: ['.js', '.mjs', '.json'],
