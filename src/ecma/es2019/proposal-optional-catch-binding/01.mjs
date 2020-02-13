@@ -1,3 +1,5 @@
+// https://github.com/tc39/proposal-optional-catch-binding
+
 /*
  * 该提案对 try/catch 语法进行了调整,
  * catch 块将可以省略 error 对象绑定

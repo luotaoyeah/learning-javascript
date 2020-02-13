@@ -1,13 +1,5 @@
 module.exports = {
-  overrides: [
-    {
-      files: ['.prettierrc', '.huskyrc', '.lintstagedrc'],
-      options: {
-        parser: 'json',
-      },
-    },
-  ],
-  printWidth: 160,
+  printWidth: 120,
   singleQuote: true,
   trailingComma: 'all',
 };
