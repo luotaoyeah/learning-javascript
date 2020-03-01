@@ -1,1 +1,1 @@
-module.exports = { collectCoverage: true };
+module.exports = {};
