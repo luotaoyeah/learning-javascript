@@ -11,7 +11,7 @@ describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/0
   });
 
   /*----------------------------------------------------------------------------------------------------
-   * Reflect.has() 方法等价于 in 操作符，
+   * Reflect.has() 等价于 in 操作符，
    *----------------------------------------------------------------------------------------------------*/
   it('should work 02', () => {
     const obj01 = { prop01: 666 };
@@ -22,5 +22,16 @@ describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/0
     expect(Reflect.has(obj02, 'prop02')).toBeTruthy();
     expect('prop01' in obj02).toBeTruthy();
     expect('prop02' in obj02).toBeTruthy();
+  });
+
+  /*----------------------------------------------------------------------------------------------------
+   * Reflect.apply() 用来调用方法，
+   *----------------------------------------------------------------------------------------------------*/
+  it('should work 03', () => {
+    const fn01 = (x, y) => {
+      return x + y;
+    };
+
+    expect(Reflect.apply(fn01, null, [1, 2])).toBe(3);
   });
 });
