@@ -73,4 +73,14 @@ describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/0
     Reflect.set(obj, 'prop02', 999);
     expect(Reflect.get(obj, 'prop02')).toBe(999);
   });
+
+  /*----------------------------------------------------------------------------------------------------
+   * Reflect.deleteProperty() 等价于 delete 操作符，
+   *----------------------------------------------------------------------------------------------------*/
+  it('should work 07', () => {
+    const obj = { prop01: 666 };
+    expect(Reflect.has(obj, 'prop01')).toBeTruthy();
+    Reflect.deleteProperty(obj, 'prop01');
+    expect(Reflect.has(obj, 'prop01')).toBeFalsy();
+  });
 });
