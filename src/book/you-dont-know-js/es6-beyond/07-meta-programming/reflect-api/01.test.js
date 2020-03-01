@@ -58,4 +58,19 @@ describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/0
     expect(obj['prop01']).toBe(666);
     expect(Reflect.get(obj, 'prop01')).toBe(666);
   });
+
+  /*----------------------------------------------------------------------------------------------------
+   * Reflect.set() 用来添加/修改属性值，
+   *----------------------------------------------------------------------------------------------------*/
+  it('should work 06', () => {
+    const obj = { prop01: 666 };
+
+    expect(Reflect.get(obj, 'prop01')).toBe(666);
+    Reflect.set(obj, 'prop01', 888);
+    expect(Reflect.get(obj, 'prop01')).toBe(888);
+
+    expect(Reflect.get(obj, 'prop02')).toBeUndefined();
+    Reflect.set(obj, 'prop02', 999);
+    expect(Reflect.get(obj, 'prop02')).toBe(999);
+  });
 });
