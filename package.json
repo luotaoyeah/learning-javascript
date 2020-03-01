@@ -8,7 +8,7 @@
     "build:prod:web": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack --config webpack.web.production.ts",
     "codecov": "codecov --token=10c44eb1-cd2f-4fa4-b2ad-9a43d6dc56c0",
     "start:web": "cross-env TS_NODE_PROJECT=\"webpack.tsconfig.json\" webpack serve --config webpack.web.development.ts",
-    "test": "node --max-old-space-size=4096 ./node_modules/jest/bin/jest --coverage"
+    "test": "node --max-old-space-size=4096 ./node_modules/jest/bin/jest"
   },
   "dependencies": {
     "jest": "~26.6.3",

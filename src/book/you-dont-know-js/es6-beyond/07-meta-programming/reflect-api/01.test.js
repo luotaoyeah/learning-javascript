@@ -7,6 +7,7 @@ describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/0
 
   it('should work 01', () => {
     const obj = { prop01: 666, [Symbol()]: 888 };
+    Reflect.defineProperty(obj, 'prop02', { value: 999, enumerable: false });
     expect(Reflect.ownKeys(obj)).toEqual([...Object.getOwnPropertyNames(obj), ...Object.getOwnPropertySymbols(obj)]);
   });
 
