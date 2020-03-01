@@ -49,4 +49,13 @@ describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/0
 
     expect(Reflect.construct(C01, ['luotao']).name).toBe('luotao');
   });
+
+  /*----------------------------------------------------------------------------------------------------
+   * Reflect.get() 用来访问对象属性，
+   *----------------------------------------------------------------------------------------------------*/
+  it('should work 05', () => {
+    const obj = { prop01: 666 };
+    expect(obj['prop01']).toBe(666);
+    expect(Reflect.get(obj, 'prop01')).toBe(666);
+  });
 });
