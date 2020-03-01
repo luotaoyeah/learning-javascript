@@ -34,4 +34,19 @@ describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/0
 
     expect(Reflect.apply(fn01, null, [1, 2])).toBe(3);
   });
+
+  /*----------------------------------------------------------------------------------------------------
+   * Reflect.construct() 用来调用构造函数，等价于 new 操作符，
+   *----------------------------------------------------------------------------------------------------*/
+  it('should work 04', () => {
+    class C01 {
+      name;
+
+      constructor(name) {
+        this.name = name;
+      }
+    }
+
+    expect(Reflect.construct(C01, ['luotao']).name).toBe('luotao');
+  });
 });
