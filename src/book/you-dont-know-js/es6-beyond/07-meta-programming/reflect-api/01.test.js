@@ -9,4 +9,18 @@ describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/0
     const obj = { prop01: 666, [Symbol()]: 888 };
     expect(Reflect.ownKeys(obj)).toEqual([...Object.getOwnPropertyNames(obj), ...Object.getOwnPropertySymbols(obj)]);
   });
+
+  /*----------------------------------------------------------------------------------------------------
+   * Reflect.has() 方法等价于 in 操作符，
+   *----------------------------------------------------------------------------------------------------*/
+  it('should work 02', () => {
+    const obj01 = { prop01: 666 };
+    const obj02 = { prop02: 888, [Symbol()]: 999 };
+    Object.setPrototypeOf(obj02, obj01);
+
+    expect(Reflect.has(obj02, 'prop01')).toBeTruthy();
+    expect(Reflect.has(obj02, 'prop02')).toBeTruthy();
+    expect('prop01' in obj02).toBeTruthy();
+    expect('prop02' in obj02).toBeTruthy();
+  });
 });
