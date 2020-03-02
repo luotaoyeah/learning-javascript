@@ -1,4 +1,4 @@
-describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/proxies/01.js', () => {
+describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/proxies/proxies.js', () => {
   /*----------------------------------------------------------------------------------------------------
    * 某些 handler 的默认实现，会调用其他的 handler，
    * 比如 set()   的默认实现，会调用 getOwnPropertyDescriptor() 和 defineProperty()，
