@@ -14,6 +14,7 @@
 
   var x = 1;
 
+  // eslint-disable-next-line
   with (obj) {
     // 在 with 里面声明的变量, 会被添加到当前 function execution context 的 variable object 上
     var z = x + y;

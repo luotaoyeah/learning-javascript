@@ -10,7 +10,10 @@ console.log('\n-------------------------------------------------- 01');
  * 在当前 module 中不能修改它们的值
  */
 
-import { name, change } from './05-08-01-02-01';
+import {
+  name,
+  change,
+} from './05-08-01-02-01';
 
 console.log(name); // FOO
 

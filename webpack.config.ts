@@ -17,15 +17,6 @@ const config: webpack.Configuration = {
     rules: [
       {
         test: /\.m?js$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [path.resolve('src')],
-        options: {
-          formatter: require('eslint-friendly-formatter'),
-        },
-      },
-      {
-        test: /\.m?js$/,
         loader: 'babel-loader',
         include: [path.resolve('src')],
       },
