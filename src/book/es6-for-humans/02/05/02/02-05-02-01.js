@@ -4,7 +4,7 @@
  *         Template Literals and Delimiters
  */
 
-console.log("\n-------------------------------------------------- 01");
+console.log('\n-------------------------------------------------- 01');
 {
   /*
    * 普通的 string 使用单引号（'）或者双引号（"）定义,
@@ -31,5 +31,5 @@ world`);
   /*
    * 使用普通的 string 定义多行文本, 需要使用转义字符\n
    */
-  console.log("hello\n\nworld");
+  console.log('hello\n\nworld');
 }
