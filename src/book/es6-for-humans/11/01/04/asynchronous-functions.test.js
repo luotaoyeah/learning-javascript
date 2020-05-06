@@ -1,21 +1,35 @@
+import { fetch } from './asynchronous-functions';
+
 describe('src/book/es6-for-humans/11/01/04/asynchronous-functions.js', () => {
+  // ----------------------------------------------------------------------------------------------------
+  // 定义一个普通的方法，返回一个 promise 对象，
+  // ----------------------------------------------------------------------------------------------------
   it('01', (cb) => {
-    async function getSomething() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          console.log('2');
-          resolve();
-          cb();
-        }, 1000);
-      });
-    }
-    async function fn01() {
-      console.log('1');
-      await getSomething();
+    function getData() {
+      return fetch().then((value) => value * 2);
     }
 
-    console.log('0');
-    fn01().then(() => {});
-    console.log('3');
+    getData().then((value) => {
+      expect(value).toEqual(12);
+      cb();
+    });
+  });
+
+  // ----------------------------------------------------------------------------------------------------
+  // 使用 async/await 定义一个异步方法，返回的也是 promise 对象，
+  // ----------------------------------------------------------------------------------------------------
+  it('02', (cb) => {
+    // ----------------------------------------------------------------------------------------------------
+    // async method 的返回类型始终是 promise 对象，如果返回的不是 promise 对象，会被转换/包装成一个 promise 对象，
+    // ----------------------------------------------------------------------------------------------------
+    async function getData() {
+      const value = await fetch();
+      return value * 2;
+    }
+
+    getData().then((value) => {
+      expect(value).toEqual(12);
+      cb();
+    });
   });
 });
