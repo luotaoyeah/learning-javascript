@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>passive</title>
+  </head>
+  <body>
+    <div id="div01" style="border: 1px solid red; border-radius: 3px; padding: 12px; width: 100%; height: 300px">
+      <p>
+        wheel / touchstart / touchmove 这些事件称之为 scroll-blocking event, 因为在它们的回调函数中有可能会调用 preventDefault() 来阻止滚动(scroll),
+        因此浏览器会等到回调函数执行完毕之后, 才进行滚动, 从而延迟了滚动行为.
+      </p>
+
+      <p>
+        为了优化上面的问题, 在绑定回调函数的时候可以添加配置选项 passive, 表示告诉浏览器我这个回调函数里面绝对不会调用 preventDefault(),
+        浏览器就可以立即进行滚动, 而不用等到回调函数执行完毕.
+      </p>
+    </div>
+
+    <script>
+      window.addEventListener('load', function () {
+        /** @type { HTMLDivElement } */
+        const element = document.querySelector('#div01');
+        element.addEventListener(
+          'touchmove',
+          function () {
+            console.log('wheel');
+          },
+          { passive: false },
+        );
+      });
+    </script>
+  </body>
+</html>
