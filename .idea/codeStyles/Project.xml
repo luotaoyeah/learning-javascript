@@ -57,7 +57,7 @@
       </indentOptions>
     </codeStyleSettings>
     <codeStyleSettings language="HTML">
-      <option name="SOFT_MARGINS" value="120" />
+      <option name="SOFT_MARGINS" value="160" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
@@ -67,7 +67,7 @@
     <codeStyleSettings language="JavaScript">
       <option name="METHOD_PARAMETERS_LPAREN_ON_NEXT_LINE" value="true" />
       <option name="METHOD_PARAMETERS_RPAREN_ON_NEXT_LINE" value="true" />
-      <option name="SOFT_MARGINS" value="120" />
+      <option name="SOFT_MARGINS" value="160" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
@@ -145,7 +145,7 @@
     <codeStyleSettings language="TypeScript">
       <option name="KEEP_BLANK_LINES_IN_CODE" value="1" />
       <option name="ALIGN_MULTILINE_CHAINED_METHODS" value="true" />
-      <option name="SOFT_MARGINS" value="120" />
+      <option name="SOFT_MARGINS" value="160" />
       <indentOptions>
         <option name="INDENT_SIZE" value="2" />
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
@@ -364,7 +364,7 @@
       </arrangement>
     </codeStyleSettings>
     <codeStyleSettings language="Vue">
-      <option name="SOFT_MARGINS" value="120" />
+      <option name="SOFT_MARGINS" value="160" />
       <indentOptions>
         <option name="CONTINUATION_INDENT_SIZE" value="2" />
       </indentOptions>

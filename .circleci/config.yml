@@ -16,7 +16,7 @@ jobs:
             - 'node_modules'
       - run:
           name: build
-          command: npm run build:prod:node
+          command: npm run build:production:node
 
   test-learning-javascript:
     working_directory: ~/learning-javascript
