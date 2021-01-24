@@ -15,7 +15,7 @@
   /**
    * 比较两个对象是否相等
    * @param obj02 要比较的对象
-   * @return {boolean} 是否相等
+   * @returns {boolean} 是否相等
    */
   Range.prototype.equals = function(obj02) {
     if (this === obj02) {

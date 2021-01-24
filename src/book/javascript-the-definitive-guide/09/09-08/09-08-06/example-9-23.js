@@ -27,7 +27,7 @@
    *     如果参数为空, 表示获取所有 own properties；
    *     如果只有一个参数, 且其为数组, 则它的每一个元素表示一个属性；
    *     否则每个参数表示一个属性；
-   * @return {Properties} 对象的属性描述对象
+   * @returns {Properties} 对象的属性描述对象
    */
   function properties() {
     var names = [];
@@ -105,7 +105,7 @@
     /**
      *
      * @param name
-     * @return {string}
+     * @returns {string}
      */
     function nameToString(name) {
       var str = "\t";

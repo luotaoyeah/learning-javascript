@@ -21,7 +21,7 @@ console.log('\n-------------------------------------------------- 01');
 /**
  * 模拟实现 iterator protocol
  * @param arr
- * @return {*}
+ * @returns {*}
  */
 function getMyIterator(arr) {
   let index = 0;

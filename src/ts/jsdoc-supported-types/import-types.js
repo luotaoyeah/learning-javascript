@@ -13,7 +13,7 @@
   /**
    *
    * @param { import('./types').Pet } p
-   * @return { void }
+   * @returns { void }
    */
   function fn01(p) {
     console.log(p.name);
@@ -22,7 +22,7 @@
   /**
    *
    * @param { MyPet } p
-   * @return { number }
+   * @returns { number }
    */
   function fn02(p) {
     console.log(p.name);

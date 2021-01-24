@@ -24,7 +24,7 @@ function observable(data) {
  * @param data
  * @param key
  * @param val
- * @return {*}
+ * @returns {*}
  */
 function observe(data, key, val) {
   observable(val);

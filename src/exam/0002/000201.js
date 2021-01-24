@@ -3,7 +3,7 @@
  * 当遇到重复的字符时, 从子串中该字符后面开始, 重新存储不重复的子串,
  * 在这个过程中, 每循环一个字符, 就记录一次最大子串的长度, 最后得到的就是最大的那个子串的长度
  * @param n
- * @return {string}
+ * @returns {string}
  */
 function fn0002(n) {
   if (typeof n !== "string") {

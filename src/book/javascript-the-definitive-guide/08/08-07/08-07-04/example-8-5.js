@@ -7,7 +7,7 @@
   /**
    *
    * @param obj
-   * @return {function(): *}
+   * @returns {function(): *}
    */
   Function.prototype.bind01 = function(obj) {
     const fn = this;

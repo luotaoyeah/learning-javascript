@@ -1,7 +1,7 @@
 /**
  *
  * @param n
- * @return {string}
+ * @returns {string}
  */
 function fn0001(n) {
   /*

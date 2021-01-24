@@ -3,7 +3,7 @@
  * @param fn 原始函数
  * @param wait 延时（毫秒）
  * @param leading 是否在 leading edge 执行, 否则在 trailing edge 执行
- * @return {*}
+ * @returns {*}
  */
 function myDebounce(fn, wait, leading) {
   /* 延时器计时器ID */

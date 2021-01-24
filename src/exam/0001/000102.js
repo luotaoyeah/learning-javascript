@@ -3,7 +3,7 @@
  * 每三个数字一组, 放入一个新的数组,
  * 将新的数组中的元素使用逗号连接起来
  * @param n
- * @return {string}
+ * @returns {string}
  */
 function fn0001(n) {
   /*

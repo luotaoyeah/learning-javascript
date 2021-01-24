@@ -6,7 +6,7 @@ console.log("\n-------------------------------------------------- 01");
 /**
  * 间接地获取某个对象的 class；
  * @param obj 对象
- * @return {string} 对象的 class
+ * @returns {string} 对象的 class
  */
 function classOf(obj) {
   return Object.prototype.toString.call(obj).slice(8, -1);

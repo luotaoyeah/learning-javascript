@@ -6,7 +6,7 @@ console.log("\n-------------------------------------------------- 01");
 /**
  * 继承
  * @param p 原型对象
- * @return object 一个新的对象, 其 prototype 对象为 p；
+ * @returns object 一个新的对象, 其 prototype 对象为 p；
  */
 function inherit(p) {
   if (p === null) {

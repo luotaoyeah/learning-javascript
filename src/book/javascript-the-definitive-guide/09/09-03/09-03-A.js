@@ -24,7 +24,7 @@
  * 可以模拟 Java 中的 instance field 和 instance method；
  */
 
-import { extend } from "../../08/08-05/example-8-3";
+import { extend } from '../../08/08-05/example-8-3';
 
 (function() {
   /*
@@ -40,7 +40,7 @@ import { extend } from "../../08/08-05/example-8-3";
    * @param ctor the constructor
    * @param methods instance methods
    * @param statics static properties and static methods
-   * @return {*}
+   * @returns {*}
    */
   function defineClass(ctor, methods, statics) {
     if (methods) {
@@ -71,7 +71,7 @@ import { extend } from "../../08/08-05/example-8-3";
       /**
        * static method
        * @param to
-       * @return {*}
+       * @returns {*}
        */
       upto: function(to) {
         return new Range(0, to);

@@ -3,7 +3,7 @@
  * 以字符为key, 次数为value, 存储到一个对象中,
  * 找出次数最多的那个字符及它的次数
  * @param str
- * @return {string}
+ * @returns {string}
  */
 function fn0005(str) {
   const count = {};

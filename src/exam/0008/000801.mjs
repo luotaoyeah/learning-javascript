@@ -5,7 +5,7 @@
  * 以此类推
  *
  * @param arr 待排序的数组
- * @return {*}
+ * @returns {*}
  */
 function bubbleSort(arr) {
   for (let i = arr.length - 1; i >= 1; i--) {

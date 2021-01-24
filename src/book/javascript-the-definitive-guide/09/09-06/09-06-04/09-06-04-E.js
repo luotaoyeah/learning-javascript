@@ -12,7 +12,7 @@
   /**
    * 比较对象是否相等
    * @param obj
-   * @return {boolean}
+   * @returns {boolean}
    */
   Range.prototype.equals = function(obj) {
     if (this === obj) {
@@ -33,7 +33,7 @@
   /**
    * 比较对象的大小
    * @param obj
-   * @return {number}
+   * @returns {number}
    */
   Range.prototype.compareTo = function(obj) {
     if (!(obj instanceof Range)) {

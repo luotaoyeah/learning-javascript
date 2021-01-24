@@ -2,12 +2,12 @@
  * Example 9-7. Enumerated types in JavaScript
  */
 
-import { inherit } from "../../../06/06-01/06-01-04/example-6-1";
+import { inherit } from '../../../06/06-01/06-01-04/example-6-1';
 
 /**
  *
  * @param properties
- * @return {enumeration}
+ * @returns {enumeration}
  * @constructor
  */
 function Enumeration(properties) {

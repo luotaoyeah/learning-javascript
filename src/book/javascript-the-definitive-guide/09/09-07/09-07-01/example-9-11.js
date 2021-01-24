@@ -2,8 +2,8 @@
  * Example 9-11. Subclass definition utilities
  */
 
-import { inherit } from "../../../06/06-01/06-01-04/example-6-1";
-import { extend } from "../../../08/08-05/example-8-3";
+import { inherit } from '../../../06/06-01/06-01-04/example-6-1';
+import { extend } from '../../../08/08-05/example-8-3';
 
 /*
  *
@@ -16,7 +16,7 @@ console.log("\n-------------------------------------------------- 01");
  * @param constructor 子类的 constructor
  * @param methods 实例方法
  * @param statics 静态方法
- * @return {*}
+ * @returns {*}
  */
 function defineSubClass(superClass, constructor, methods, statics) {
   constructor.prototype = inherit(superClass.prototype);

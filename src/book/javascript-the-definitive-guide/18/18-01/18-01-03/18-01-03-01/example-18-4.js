@@ -5,7 +5,7 @@
 /**
  * 将 JS 对象编码为 form 表单数据；
  * @param obj
- * @return {string}
+ * @returns {string}
  */
 function encodeFormData(obj) {
   if (!obj) {
