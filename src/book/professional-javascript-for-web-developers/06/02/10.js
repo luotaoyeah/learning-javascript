@@ -9,7 +9,7 @@
   /**
    * 判断一个属性是否是一个 prototype 属性
    * @param key
-   * @returns {boolean}
+   * @return {boolean}
    */
   Object.prototype.hasPrototypeProperty = function (key) {
     return !this.hasOwnProperty(key) && key in this;

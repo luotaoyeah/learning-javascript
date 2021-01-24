@@ -86,7 +86,7 @@ console.log(obj05);
 /**
  *
  * @param obj
- * @returns
+ * @return
  */
 function deepFreeze(obj) {
   const propertyNames = Object.getOwnPropertyNames(obj);

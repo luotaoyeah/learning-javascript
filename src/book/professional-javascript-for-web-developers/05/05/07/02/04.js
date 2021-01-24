@@ -19,7 +19,7 @@
    * 返回指定范围中的整数
    * @param min 最小值
    * @param max 最大值
-   * @returns {number}
+   * @return {number}
    */
   function fromRange(min, max) {
     if (max < min) {
