@@ -27,11 +27,25 @@ describe('book/professional-javascript-for-web-developers.4e/06/03.typed-arrays/
         expect(dataView.getInt8(1).toBinaryString(1)).toBe('00000000');
 
         // getInt16(0) 表示从位置 0 开始读取 16 位
-        expect(dataView.getInt16(0).toBinaryString(2)).toBe('0000000000000000');
+        expect(dataView.getInt16(0).toBinaryString(2)).toBe('00000000 00000000');
 
         dataView.setUint8(1, 0b11111111);
 
         expect(dataView.getUint8(1).toBinaryString(1)).toBe('11111111');
-        expect(dataView.getUint16(0).toBinaryString(2)).toBe('0000000011111111');
+        expect(dataView.getUint16(0).toBinaryString(2)).toBe('00000000 11111111');
+    });
+
+    /**
+     * DataView 的相关方法默认使用 Big-Endian 的字节顺序, 可以通过参数 littleEndian 来使用 Little-Endtian 的字节顺序.
+     */
+    it('03', () => {
+        const arrayBuffer = new ArrayBuffer(2);
+        const dataView = new DataView(arrayBuffer);
+
+        dataView.setUint16(0, 0b00000001_10000000);
+        // big-endian
+        expect(dataView.getUint16(0).toBinaryString(2)).toBe('00000001 10000000');
+        // little-endian
+        expect(dataView.getUint16(0, true).toBinaryString(2)).toBe('10000000 00000001');
     });
 });
