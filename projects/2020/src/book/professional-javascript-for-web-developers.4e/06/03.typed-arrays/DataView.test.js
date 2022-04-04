@@ -36,7 +36,7 @@ describe('book/professional-javascript-for-web-developers.4e/06/03.typed-arrays/
     });
 
     /**
-     * DataView 的相关方法默认使用 Big-Endian 的字节顺序, 可以通过参数 littleEndian 来使用 Little-Endtian 的字节顺序.
+     * DataView 的相关方法默认使用 Big-Endian 的字节顺序, 可以通过参数 littleEndian 来使用 Little-Endian 的字节顺序.
      */
     it('03', () => {
         const arrayBuffer = new ArrayBuffer(2);
