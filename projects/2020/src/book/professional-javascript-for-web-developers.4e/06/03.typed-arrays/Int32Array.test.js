@@ -37,4 +37,19 @@ describe('book/professional-javascript-for-web-developers.4e/06/03.typed-arrays/
         expect(int32Array01.length).toBe(int32Array02.length);
         expect(int32Array02.length).toBe(int32Array03.length);
     });
+
+    /**
+     * Int32Array.set(), 批量修改元素的值, 设置某个范围内的元素的值.
+     */
+    it('04', () => {
+        const int32Array = new Int32Array(8);
+
+        // 将第 0/1/2/3 个元素的值分别设置为 1,2,3,4
+        int32Array.set([1, 2, 3, 4]);
+        expect(int32Array.toString()).toEqual('1,2,3,4,0,0,0,0');
+
+        // 将第 4/5/6/7 个元素的值分别设置为 5,6,7,8
+        int32Array.set([5, 6, 7, 8], 4);
+        expect(int32Array.toString()).toEqual('1,2,3,4,5,6,7,8');
+    });
 });
