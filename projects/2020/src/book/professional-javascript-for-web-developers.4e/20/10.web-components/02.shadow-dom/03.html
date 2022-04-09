@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>20.10.2.4. Composition and Shadow DOM Slots</title>
+        <style>
+            * {
+                font-family: SimSun, sans-serif;
+            }
+
+            #foo div {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="foo">
+            <div>FOO</div>
+
+            <div slot="b">B</div>
+            <div slot="a">A</div>
+        </div>
+
+        <script>
+            /**
+             * 元素挂载 shadow DOM 之后, 本身的子节点会被隐藏,
+             * 除非在 shadow DOM 中定义 <slot></slot> 元素, 将本身的子节点投射(project)过去,
+             *
+             * default slot:
+             *     没有指定 name 属性的 slot 称为 default slot, 最多只能有一个,
+             *
+             * named slot:
+             *     <slot> 元素可以指定 name 属性: <slot name="foo">, 投射的时候就可以指定投射到哪个 slot 去: <div slot="foo">
+             */
+
+            /**
+             * 子节点被投射过去后, 依然属于外部.
+             */
+
+            const fooElement = document.querySelector('#foo');
+            fooElement.attachShadow({ mode: 'open' });
+            fooElement.shadowRoot.innerHTML = `
+<fieldset>
+    <div>BAR</div>
+
+    <fieldset>
+        <legend>slot default</legend>
+        <slot></slot>
+    </fieldset>
+
+    <fieldset>
+        <legend>slot a</legend>
+        <slot name="a"></slot>
+    </fieldset>
+
+    <fieldset>
+        <legend>slot b</legend>
+        <slot name="b"></slot>
+    </fieldset>
+</fieldset>
+
+<style>
+    div {
+        color: red;
+    }
+</style>`;
+        </script>
+    </body>
+</html>

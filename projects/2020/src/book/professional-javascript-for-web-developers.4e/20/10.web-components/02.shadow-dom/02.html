@@ -24,7 +24,7 @@
             fooElement.attachShadow({ mode: 'open' });
 
             fooElement.shadowRoot.innerHTML = `
-<div class="red">RED</div>
+<div class="red" id="red">RED</div>
 
 <style>
     .red {
@@ -34,7 +34,7 @@
 </style>`;
 
             // 外部无法访问内部的元素
-            console.assert(document.querySelector('div.red') === null);
+            console.assert(document.querySelector('div#red') === null);
 
             // 只能通过 shadow root 来访问内部的元素
             console.assert(fooElement.shadowRoot.querySelector('div.red') !== null);
