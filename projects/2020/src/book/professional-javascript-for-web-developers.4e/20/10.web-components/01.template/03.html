@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>web-components</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend></legend>
+
+            <div id="foo" style="border: 1px solid #000000"></div>
+
+            <template id="bar">
+                <div>A</div>
+                <script>
+                    /**
+                     * <template> 下面的 <script> 会在插入到 DOM 时才执行.
+                     */
+                    console.log('template script');
+                </script>
+            </template>
+
+            <div>
+                <button id="btn-01">01</button>
+            </div>
+
+            <script>
+                document.querySelector('#btn-01').addEventListener('click', () => {
+                    const container = document.querySelector('#foo');
+                    const fragment = document.querySelector('#bar').content;
+
+                    console.log('before appendChild()');
+                    container.appendChild(fragment);
+                    console.log('after appendChild()');
+                });
+            </script>
+        </fieldset>
+    </body>
+</html>
