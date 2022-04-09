@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>web-components</title>
+    </head>
+    <body>
+        <div id="foo"></div>
+
+        <script>
+            /**
+             * 不是所有的元素下都可以挂载 shadow DOM,
+             * 一个元素下不能挂载多个 shadow DOM,
+             */
+
+            /** @type { HTMLDivElement } */
+            const fooElement = document.querySelector('#foo');
+
+            // 使用 Element.attachShadow() 方法给元素挂载 shadow DOM,
+
+            /** @type { ShadowRoot } */
+            const shadowRoot = fooElement.attachShadow({ mode: 'open' });
+
+            // 通过 Element.shadowRoot 属性访问 shadow root
+            console.assert(fooElement.shadowRoot === shadowRoot);
+
+            // 通过 ShadowRoot.host 属性访问 shadow host
+            console.assert(fooElement === shadowRoot.host);
+        </script>
+    </body>
+</html>
