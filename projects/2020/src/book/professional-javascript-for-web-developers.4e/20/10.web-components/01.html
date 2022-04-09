@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>html-templates</title>
+    </head>
+    <body>
+        <template id="foo">
+            <p>inside a template</p>
+            <div>inside a template</div>
+        </template>
+
+        <script>
+            /**
+             * <template> 里面的内容是一个 {@link DocumentFragment} 对象, 可以通过 {@link HTMLTemplateElement.content} 属性获取.
+             */
+
+            /** @type { HTMLTemplateElement } */
+            const templateElement = document.querySelector('#foo');
+
+            /** @type { DocumentFragment } */
+            const documentFragment = templateElement.content;
+
+            console.assert(documentFragment instanceof DocumentFragment);
+        </script>
+
+        <fieldset>
+            <legend>DocumentFragment</legend>
+
+            <div id="bar" style="border: 1px solid #000000"></div>
+
+            <div>
+                <button id="btn-01">Node.appendChild()</button>
+                <button id="btn-02">DocumentFragment</button>
+            </div>
+        </fieldset>
+
+        <script>
+            const container = document.querySelector('#bar');
+
+            /**
+             * 直接使用 HTMLDivElement.appendChild() 方法插入多个子节点.
+             */
+            const btn01 = document.querySelector('#btn-01');
+            btn01.addEventListener('click', function () {
+                const child01 = document.createElement('div');
+                child01.textContent = 'A';
+
+                const child02 = document.createElement('div');
+                child02.textContent = 'B';
+
+                const child03 = document.createElement('div');
+                child03.textContent = 'C';
+
+                // 往父节点插入多次
+                container.appendChild(child01);
+                container.appendChild(child02);
+                container.appendChild(child03);
+            });
+
+            /**
+             * 先将多个子节点插入到 DocumentFragment 节点, 再一次性将 DocumentFragment 节点插入到父节点.
+             */
+            const btn02 = document.querySelector('#btn-02');
+            btn02.addEventListener('click', () => {
+                const fragment = new DocumentFragment();
+
+                const child01 = document.createElement('div');
+                child01.textContent = 'A';
+
+                const child02 = document.createElement('div');
+                child02.textContent = 'B';
+
+                const child03 = document.createElement('div');
+                child03.textContent = 'C';
+
+                // 调用 DocumentFragment.appendChild() 方法, 不会导致页面渲染, 因此不会影响性能
+                fragment.appendChild(child01);
+                fragment.appendChild(child02);
+                fragment.appendChild(child03);
+
+                // 往父节点插入一次
+                container.appendChild(fragment);
+            });
+        </script>
+    </body>
+</html>
