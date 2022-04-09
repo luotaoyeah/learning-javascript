@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>web-components</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend></legend>
+
+            <div id="foo" style="border: 1px solid #000000"></div>
+
+            <template id="bar">
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+            </template>
+
+            <template id="baz">
+                <div>D</div>
+                <div>E</div>
+                <div>F</div>
+            </template>
+
+            <div>
+                <button id="btn-01">01</button>
+                <button id="btn-02">02</button>
+            </div>
+
+            <script>
+                document.querySelector('#btn-01').addEventListener('click', () => {
+                    const container = document.querySelector('#foo');
+                    const fragment = document.querySelector('#bar').content;
+
+                    console.assert(fragment.children.length === 3);
+
+                    /**
+                     * 直接将 DocumentFragment 传给 appendChild() 之后, DocumentFragment 的内容会被清空.
+                     * 类似于'剪切'操作.
+                     */
+                    container.appendChild(fragment);
+
+                    console.assert(fragment.children.length === 0);
+                });
+
+                document.querySelector('#btn-02').addEventListener('click', () => {
+                    const container = document.querySelector('#foo');
+                    const fragment = document.querySelector('#baz').content;
+
+                    console.assert(fragment.children.length === 3);
+
+                    /**
+                     * 使用 Document.importNode() 方法, 将 DocumentFragment 复制一份, 再传给 appendChild() 方法,
+                     * 这样 DocumentFragment 的内容就不会被清空, 类似于'复制'操作.
+                     */
+                    container.appendChild(document.importNode(fragment, true));
+
+                    console.assert(fragment.children.length === 3);
+                });
+            </script>
+        </fieldset>
+    </body>
+</html>

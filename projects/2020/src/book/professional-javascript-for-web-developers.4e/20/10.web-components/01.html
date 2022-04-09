@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>html-templates</title>
+        <title>web-components</title>
     </head>
     <body>
         <template id="foo">
@@ -79,8 +79,13 @@
                 fragment.appendChild(child02);
                 fragment.appendChild(child03);
 
+                console.assert(fragment.children.length === 3);
+
                 // 往父节点插入一次
                 container.appendChild(fragment);
+
+                // DocumentFragment 被插入到 DOM 之后, 内容会被清空
+                console.assert(fragment.children.length === 0);
             });
         </script>
     </body>
