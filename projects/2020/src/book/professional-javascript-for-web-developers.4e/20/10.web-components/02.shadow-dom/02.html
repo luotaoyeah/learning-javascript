@@ -20,10 +20,10 @@
              * 外部的样式不会影响到内部, 内部的样式也不会影响到外部.
              */
 
-            const fooElement = document.querySelector('#foo');
-            fooElement.attachShadow({ mode: 'open' });
+            const shadowHost = document.querySelector('#foo');
+            shadowHost.attachShadow({ mode: 'open' });
 
-            fooElement.shadowRoot.innerHTML = `
+            shadowHost.shadowRoot.innerHTML = `
 <div class="red" id="red">RED</div>
 
 <style>
@@ -37,7 +37,7 @@
             console.assert(document.querySelector('div#red') === null);
 
             // 只能通过 shadow root 来访问内部的元素
-            console.assert(fooElement.shadowRoot.querySelector('div.red') !== null);
+            console.assert(shadowHost.shadowRoot.querySelector('div.red') !== null);
         </script>
     </body>
 </html>

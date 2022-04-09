@@ -14,18 +14,18 @@
              */
 
             /** @type { HTMLDivElement } */
-            const fooElement = document.querySelector('#foo');
+            const shadowHost = document.querySelector('#foo');
 
             // 使用 Element.attachShadow() 方法给元素挂载 shadow DOM,
 
             /** @type { ShadowRoot } */
-            const shadowRoot = fooElement.attachShadow({ mode: 'open' });
+            const shadowRoot = shadowHost.attachShadow({ mode: 'open' });
 
             // 通过 Element.shadowRoot 属性访问 shadow root
-            console.assert(fooElement.shadowRoot === shadowRoot);
+            console.assert(shadowHost.shadowRoot === shadowRoot);
 
             // 通过 ShadowRoot.host 属性访问 shadow host
-            console.assert(fooElement === shadowRoot.host);
+            console.assert(shadowHost === shadowRoot.host);
         </script>
     </body>
 </html>

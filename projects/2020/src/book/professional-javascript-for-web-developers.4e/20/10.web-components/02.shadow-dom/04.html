@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>20.10.2.5. Event Retargeting</title>
+        <style>
+            * {
+                font-family: SimSun, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="foo">
+            <div id="bar">
+                <button id="btn-01">01</button>
+            </div>
+        </div>
+
+        <script>
+            /**
+             * 正常的事件冒泡, 每一层拿到的 event.target 都相同.
+             */
+
+            const button01Element = document.querySelector('#btn-01');
+            document.querySelector('#foo').addEventListener('click', (event) => console.assert(event.target === button01Element));
+            document.querySelector('#bar').addEventListener('click', (event) => console.assert(event.target === button01Element));
+            button01Element.addEventListener('click', (event) => console.assert(event.target === button01Element));
+        </script>
+
+        <div id="foo02"></div>
+        <script>
+            /**
+             * shadow DOM 中的事件冒泡到外部时, 外部元素拿到的 event.target 为 shadow host.
+             */
+
+            const shadowHost = document.querySelector('#foo02');
+
+            shadowHost.addEventListener('click', (event) => console.assert(event.target === shadowHost));
+
+            shadowHost.attachShadow({ mode: 'open' });
+            shadowHost.shadowRoot.innerHTML = `
+<button id="btn-02">btn02</button>`;
+
+            const buttonElement = shadowHost.shadowRoot.querySelector('#btn-02');
+            buttonElement.addEventListener('click', (event) => console.assert(event.target === buttonElement));
+        </script>
+    </body>
+</html>

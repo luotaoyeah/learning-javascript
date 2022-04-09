@@ -37,9 +37,9 @@
              * 子节点被投射过去后, 依然属于外部.
              */
 
-            const fooElement = document.querySelector('#foo');
-            fooElement.attachShadow({ mode: 'open' });
-            fooElement.shadowRoot.innerHTML = `
+            const shadowHost = document.querySelector('#foo');
+            shadowHost.attachShadow({ mode: 'open' });
+            shadowHost.shadowRoot.innerHTML = `
 <fieldset>
     <div>BAR</div>
 
