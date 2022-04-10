@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>20.10.3.2. Adding Web Component Content</title>
+    </head>
+    <body>
+        <x-foo></x-foo>
+        <x-foo></x-foo>
+        <x-foo></x-foo>
+
+        <template id="x-foo-tpl">
+            <div>FOO</div>
+        </template>
+
+        <script>
+            class FooElement extends HTMLElement {
+                constructor() {
+                    super();
+
+                    this.attachShadow({ mode: 'open' });
+
+                    /** @type { HTMLTemplateElement } */
+                    const templateElement = document.querySelector('#x-foo-tpl');
+
+                    this.shadowRoot.appendChild(templateElement.content.cloneNode(true));
+                }
+            }
+
+            window.customElements.define('x-foo', FooElement);
+        </script>
+    </body>
+</html>
