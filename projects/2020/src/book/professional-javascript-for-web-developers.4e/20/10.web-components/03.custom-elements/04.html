@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>20.10.3.4. Reflecting Custom Element Attributes</title>
+    </head>
+    <body>
+        <x-foo bar="true">FOO</x-foo>
+        <script>
+            class FooElement extends HTMLElement {
+                /**
+                 * 定义要监视哪些 attribute 的变更.
+                 *
+                 * @return { string[] }
+                 */
+                static get observedAttributes() {
+                    return ['bar'];
+                }
+
+                constructor() {
+                    super();
+
+                    this.bar = false;
+                }
+
+                get bar() {
+                    console.log('000');
+                    return this.getAttribute('bar');
+                }
+
+                set bar(value) {
+                    if (this.getAttribute('bar') !== value) {
+                        console.log(`111 | ${value}`);
+                        this.setAttribute('bar', value);
+                    }
+                }
+
+                /**
+                 * 当某个 attribute 发生变更.
+                 *
+                 * @param name attribute 的名称.
+                 * @param oldValue 旧值.
+                 * @param newValue 新值.
+                 */
+                attributeChangedCallback(name, oldValue, newValue) {
+                    if (oldValue !== newValue) {
+                        console.log(`222 | ${oldValue} > ${newValue}`);
+
+                        this[name] = newValue;
+                    }
+                }
+            }
+
+            window.customElements.define('x-foo', FooElement);
+        </script>
+    </body>
+</html>
