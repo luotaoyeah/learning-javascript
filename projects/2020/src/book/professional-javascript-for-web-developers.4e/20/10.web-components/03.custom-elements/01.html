@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>20.10.3.1. Defining a Custom Element</title>
+    </head>
+    <body>
+        <x-foo>HELLO</x-foo>
+        <x-foo>WORLD</x-foo>
+
+        <script>
+            const fooElement = document.querySelector('x-foo');
+            /**
+             * 未识别的标签, 默认是一个 {@link HTMLElement} 对象
+             */
+            console.assert(fooElement instanceof HTMLElement);
+
+            class FooElement extends HTMLElement {
+                constructor() {
+                    super();
+                    console.log('FooElement.constructor()');
+                }
+            }
+
+            /**
+             * 使用 CustomElementRegistry.define() 方法, 创建一个自定义的元素.
+             */
+            console.assert(window.customElements instanceof CustomElementRegistry);
+            window.customElements.define('x-foo', FooElement);
+
+            console.assert(fooElement instanceof FooElement);
+        </script>
+
+        <div id="bar" is="x-bar">BAR</div>
+
+        <script>
+            /**
+             * custom element 有两种:
+             *   1. autonomous custom element
+             *      必须继承自 HTMLElement, 使用 <x-foo> 的形式来使用
+             *
+             *   2. customized built-in element
+             *      1. 继承某个具体的元素(比如 HTMLDivElement), 使用 <div is="x-bar"> 的形式来使用
+             *      2. define() 方法传入参数 `{ extends: 'div' }`
+             */
+            class BarElement extends HTMLDivElement {
+                constructor() {
+                    super();
+                    console.log('BarElement.constructor()');
+                }
+            }
+            window.customElements.define('x-bar', BarElement, { extends: 'div' });
+            console.assert(document.querySelector('#bar') instanceof BarElement);
+        </script>
+    </body>
+</html>

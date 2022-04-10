@@ -3,11 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <title>20.10.2.5. Event Retargeting</title>
-        <style>
-            * {
-                font-family: SimSun, sans-serif;
-            }
-        </style>
     </head>
     <body>
         <div id="foo">
@@ -30,7 +25,7 @@
         <div id="foo02"></div>
         <script>
             /**
-             * shadow DOM 中的事件冒泡到外部时, 外部元素拿到的 event.target 为 shadow host.
+             * shadow DOM 中的事件冒泡到外部时, 外部拿到的 event.target 为 shadow host.
              */
 
             const shadowHost = document.querySelector('#foo02');

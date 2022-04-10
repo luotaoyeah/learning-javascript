@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>web-components</title>
+        <title>20.10.1.2. Using <template> tags</title>
     </head>
     <body>
         <fieldset>
@@ -54,6 +54,9 @@
                      * 这样 DocumentFragment 的内容就不会被清空, 类似于'复制'操作.
                      */
                     container.appendChild(document.importNode(fragment, true));
+
+                    // 也可以使用 Node.cloneNode() 方法
+                    container.appendChild(fragment.cloneNode(true));
 
                     console.assert(fragment.children.length === 3);
                 });

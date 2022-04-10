@@ -63,8 +63,6 @@
              */
             const btn02 = document.querySelector('#btn-02');
             btn02.addEventListener('click', () => {
-                const fragment = new DocumentFragment();
-
                 const child01 = document.createElement('div');
                 child01.textContent = 'A';
 
@@ -74,6 +72,7 @@
                 const child03 = document.createElement('div');
                 child03.textContent = 'C';
 
+                const fragment = new DocumentFragment();
                 // 调用 DocumentFragment.appendChild() 方法, 不会导致页面渲染, 因此不会影响性能
                 fragment.appendChild(child01);
                 fragment.appendChild(child02);
