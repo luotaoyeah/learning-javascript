@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>20.10.3.3. Using Custom Element Lifecycle Hooks</title>
+    </head>
+    <body>
+        <script>
+            /**
+             * 支持 5 个生命周期:
+             *   1. constructor()
+             *   2. connectedCallback()
+             *   3. disconnectedCallback()
+             *   4. attributeChangedCallback()
+             *   5. adoptedCallback()
+             */
+            class FooElement extends HTMLElement {
+                constructor() {
+                    super();
+                    console.log('FooElement.constructor()');
+                }
+
+                /**
+                 * 挂载到 DOM 时触发.
+                 */
+                connectedCallback() {
+                    console.log('FooElement.connectedCallback()');
+                }
+
+                /**
+                 * 从 DOM 卸载时触发.
+                 */
+                disconnectedCallback() {
+                    console.log('FooElement.disconnectedCallback()');
+                }
+            }
+
+            window.customElements.define('x-foo', FooElement);
+
+            const fooElement = document.createElement('x-foo');
+
+            document.body.appendChild(fooElement);
+            document.body.removeChild(fooElement);
+        </script>
+    </body>
+</html>
