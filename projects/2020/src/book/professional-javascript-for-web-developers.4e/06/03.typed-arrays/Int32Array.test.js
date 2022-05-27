@@ -57,18 +57,18 @@ describe('book/professional-javascript-for-web-developers.4e/06/03.typed-arrays/
      * Int32Array.subarray(), 从原数组构造一个子数组.
      * 注意: 子数组跟原数组共用同一个 ArrayBuffer, 因此子数组修改数据之后, 原数组对应的数据也会变更, 反之亦然.
      */
-    it('04', () => {
-        const int32Array = new Int32Array(8);
-        int32Array.set([1, 2, 3, 4, 5, 6, 7, 8]);
-        expect(int32Array.toString()).toBe('1,2,3,4,5,6,7,8');
+    it('05', () => {
+        const int32Array01 = new Int32Array(8);
+        int32Array01.set([1, 2, 3, 4, 5, 6, 7, 8]);
+        expect(int32Array01.toString()).toBe('1,2,3,4,5,6,7,8');
 
-        const int32Array02 = int32Array.subarray(2, 4);
-        expect(int32Array02.buffer).toBe(int32Array.buffer);
-        expect(int32Array02.toString()).toBe('3,4,5,6');
+        const int32Array02 = int32Array01.subarray(2, 4);
+        expect(int32Array02.buffer).toBe(int32Array01.buffer);
+        expect(int32Array02.toString()).toBe('3,4');
 
-        int32Array02.set([0, 0, 0, 0]);
+        int32Array02.set([0, 0]);
         // 子数组修改了元素的值, 原数组对应的元素也变了
-        expect(int32Array02.toString()).toBe('0,0,0,0');
-        expect(int32Array.toString()).toBe('1,2,0,0,0,0,7,8');
+        expect(int32Array02.toString()).toBe('0,0');
+        expect(int32Array01.toString()).toBe('1,2,0,0,5,6,7,8');
     });
 });
