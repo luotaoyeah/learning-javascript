@@ -1,4 +1,4 @@
-describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/property-ordering.js', () => {
+describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/property-ordering.test.js', () => {
   /*----------------------------------------------------------------------------------------------------
    * Reflect.ownKeys() / Object.getOwnPropertyNames() / Object.getOwnPropertySymbols() 返回的属性名的顺序，
    * 在规范中明确定义如下：

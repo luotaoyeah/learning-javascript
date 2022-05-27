@@ -1,4 +1,4 @@
-describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/reflect-api.js', () => {
+describe('src/book/you-dont-know-js/es6-beyond/07-meta-programming/reflect-api/reflect-api.test.js', () => {
   /*----------------------------------------------------------------------------------------------------
    * 类似 Math 对象，Reflect 包含多个静态方法，
    * 其中有些方法跟 Object 上的同名方法功能类似，但具体实现上有区别，
