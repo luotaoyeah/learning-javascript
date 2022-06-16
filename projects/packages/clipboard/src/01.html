@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>01</title>
+        <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
+
+        <style>
+            input {
+                padding: 8px 8px;
+                font-size: 14px;
+                font-family: SimSun, sans-serif;
+                color: #333;
+                vertical-align: middle;
+                background-color: #fff;
+                background-repeat: no-repeat;
+                background-position: right 8px center;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                outline: none;
+                box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+            }
+
+            button {
+                position: relative;
+                display: inline-block;
+                padding: 6px 12px;
+                font-size: 13px;
+                font-weight: 700;
+                line-height: 20px;
+                color: #333;
+                white-space: nowrap;
+                vertical-align: middle;
+                cursor: pointer;
+                background-color: #eee;
+                background-image: linear-gradient(#fcfcfc, #eee);
+                border: 1px solid #d5d5d5;
+                border-radius: 3px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-appearance: none;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>复制</legend>
+
+            <input id="input01" type="text" />
+            <button data-clipboard-action="copy" data-clipboard-target="#input01" id="btn01">复制</button>
+        </fieldset>
+
+        <fieldset>
+            <legend>剪切</legend>
+
+            <input id="input02" type="text" />
+            <button data-clipboard-action="cut" data-clipboard-target="#input02" id="btn02">剪切</button>
+        </fieldset>
+
+        <script>
+            const clipboardJS01 = new ClipboardJS('#btn01');
+            clipboardJS01.on('success', (event) => {
+                alert('复制成功: ' + event.text);
+            });
+
+            const clipboardJS02 = new ClipboardJS('#btn02');
+            clipboardJS02.on('success', (event) => {
+                alert('剪切成功: ' + event.text);
+            });
+        </script>
+    </body>
+</html>
