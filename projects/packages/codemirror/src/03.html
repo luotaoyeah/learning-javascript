@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>03</title>
+
+        <script src="../node_modules/codemirror/lib/codemirror.js"></script>
+        <script src="../node_modules/codemirror/mode/javascript/javascript.js"></script>
+        <link href="../node_modules/codemirror/lib/codemirror.css" rel="stylesheet" />
+        <link href="../node_modules/codemirror/theme/idea.css" rel="stylesheet" />
+
+        <style>
+            .CodeMirror {
+                font-family: Monaco, monospace;
+                font-size: 80%;
+                border: 1px solid #ddd;
+            }
+        </style>
+    </head>
+
+    <body>
+        <textarea id="textarea01">console.log("HELLO WORLD")</textarea>
+
+        <script type="module">
+            const codeMirror = CodeMirror.fromTextArea(document.querySelector('#textarea01'), {
+                mode: 'javascript',
+                theme: 'idea',
+                lineNumbers: true,
+                indentUnit: 4,
+                readOnly: false,
+            });
+        </script>
+    </body>
+</html>
