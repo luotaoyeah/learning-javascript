@@ -1,0 +1,16 @@
+{
+    "name": "@luotao/learning-javascript.codemirror",
+    "version": "1.0.0",
+    "dependencies": {
+        "codemirror": "5.65.12"
+    },
+    "devDependencies": {
+        "prettier": "2.8.4"
+    },
+    "prettier": {
+        "printWidth": 160,
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4
+    }
+}
