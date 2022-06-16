@@ -15,11 +15,36 @@
                 font-size: 80%;
                 border: 1px solid #ddd;
             }
+
+            button {
+                position: relative;
+                display: inline-block;
+                padding: 6px 12px;
+                font-size: 13px;
+                font-family: SimSun, sans-serif;
+                line-height: 20px;
+                color: #333;
+                white-space: nowrap;
+                vertical-align: middle;
+                cursor: pointer;
+                background-color: #eee;
+                background-image: linear-gradient(#fcfcfc, #eee);
+                border: 1px solid #d5d5d5;
+                border-radius: 3px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-appearance: none;
+            }
         </style>
     </head>
 
     <body>
         <textarea id="textarea01">console.log("HELLO WORLD")</textarea>
+
+        <button id="btn01">getValue()</button>
+        <button id="btn02">setValue()</button>
 
         <script type="module">
             const codeMirror = CodeMirror.fromTextArea(document.querySelector('#textarea01'), {
@@ -28,6 +53,14 @@
                 lineNumbers: true,
                 indentUnit: 4,
                 readOnly: false,
+            });
+
+            document.querySelector('#btn01').addEventListener('click', (event) => {
+                alert(codeMirror.getValue());
+            });
+
+            document.querySelector('#btn02').addEventListener('click', (event) => {
+                codeMirror.setValue('console.log("FOOBAR")');
             });
         </script>
     </body>
