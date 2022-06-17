@@ -16,14 +16,26 @@
     </head>
 
     <body>
-        <div style="width: 100%; height: auto">
+        <div style="width: 100%; height: 500px">
             <img id="img01" src="./picture.jpg" />
         </div>
 
         <script>
             const image = document.getElementById('img01');
             const cropper = new Cropper(image, {
-                aspectRatio: 16 / 9,
+                // 裁剪框的比例
+                aspectRatio: 1,
+                // 是否允许缩放
+                zoomable: false,
+                // 是否允许移动裁剪框
+                cropBoxMovable: true,
+                // 是否允许调整裁剪框的尺寸
+                cropBoxResizable: true,
+                // 是否显示网格背景
+                background: true,
+                highlight: true,
+                // 显示半透明的遮罩层
+                modal: true,
                 crop(event) {
                     console.log(event);
                 },
