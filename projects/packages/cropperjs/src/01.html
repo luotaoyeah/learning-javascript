@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>01</title>
+
+        <script src="../node_modules/cropperjs/dist/cropper.js"></script>
+        <link href="../node_modules/cropperjs/dist/cropper.css" rel="stylesheet" />
+
+        <style>
+            img {
+                display: block;
+                max-width: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div style="width: 100%; height: auto">
+            <img id="img01" src="./picture.jpg" />
+        </div>
+
+        <script>
+            const image = document.getElementById('img01');
+            const cropper = new Cropper(image, {
+                aspectRatio: 16 / 9,
+                crop(event) {
+                    console.log(event);
+                },
+            });
+        </script>
+    </body>
+</html>

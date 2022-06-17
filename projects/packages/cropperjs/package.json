@@ -1,7 +1,9 @@
 {
     "name": "@luotao/learning-javascript.cropperjs",
     "version": "1.0.0",
-    "dependencies": {},
+    "dependencies": {
+        "cropperjs": "1.5.13"
+    },
     "devDependencies": {
         "prettier": "2.8.4"
     },

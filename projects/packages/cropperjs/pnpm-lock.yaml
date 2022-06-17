@@ -1,12 +1,20 @@
 lockfileVersion: 5.4
 
 specifiers:
+  cropperjs: 1.5.13
   prettier: 2.8.4
+
+dependencies:
+  cropperjs: 1.5.13
 
 devDependencies:
   prettier: 2.8.4
 
 packages:
+
+  /cropperjs/1.5.13:
+    resolution: {integrity: sha512-by7jKAo73y5/Do0K6sxdTKHgndY0NMjG2bEdgeJxycbcmHuCiMXqw8sxy5C5Y5WTOTcDGmbT7Sr5CgKOXR06OA==}
+    dev: false
 
   /prettier/2.8.4:
     resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
