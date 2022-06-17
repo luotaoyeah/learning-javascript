@@ -37,7 +37,8 @@
                 // 显示半透明的遮罩层
                 modal: true,
                 crop(event) {
-                    console.log(event);
+                    const data = cropper.getData();
+                    console.log(data);
                 },
             });
         </script>
