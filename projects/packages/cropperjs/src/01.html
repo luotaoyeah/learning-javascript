@@ -20,7 +20,11 @@
             <img id="img01" src="./picture.jpg" />
         </div>
 
-        <script>
+        <img id="img02" src="" width="64px" height="64px" style="border: 1px solid #000; margin-top: 12px" />
+
+        <script type="module">
+            import debounce from '../node_modules/lodash-es/debounce.js';
+
             const image = document.getElementById('img01');
             const cropper = new Cropper(image, {
                 // 裁剪框的比例
@@ -36,10 +40,21 @@
                 highlight: true,
                 // 显示半透明的遮罩层
                 modal: true,
-                crop(event) {
+                crop: debounce((event) => {
                     const data = cropper.getData();
                     console.log(data);
-                },
+
+                    const canvas = cropper.getCroppedCanvas();
+                    canvas.toBlob((blob) => {
+                        const fileReader = new FileReader();
+
+                        fileReader.onloadend = (event) => {
+                            document.querySelector('#img02').src = event?.target?.result;
+                        };
+
+                        fileReader.readAsDataURL(blob);
+                    }, 'image/png');
+                }, 200),
             });
         </script>
     </body>
