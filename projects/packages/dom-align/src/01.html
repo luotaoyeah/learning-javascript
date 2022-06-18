@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>01</title>
+    </head>
+    <body>
+        <div id="div01" style="width: 100px; height: 100px; display: inline-block; background: rgba(255, 0, 0, 0.5)"></div>
+        <div id="div02" style="width: 100px; height: 100px; display: inline-block; background: rgba(0, 0, 255, 0.5)"></div>
+
+        <script type="module">
+            import { alignElement } from '../node_modules/dom-align/dist-web/index.js';
+
+            const div01 = document.querySelector('#div01');
+            const div02 = document.querySelector('#div02');
+
+            alignElement(div01, div02, {
+                points: ['tl', 'cc'],
+                offset: [0, 0],
+                targetOffset: [0, 0],
+                overflow: {
+                    alwaysByViewport: true,
+                },
+            });
+        </script>
+    </body>
+</html>
