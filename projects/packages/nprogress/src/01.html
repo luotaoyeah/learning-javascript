@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>01</title>
+        <script src="../node_modules/nprogress/nprogress.js"></script>
+        <link rel="stylesheet" href="../node_modules/nprogress/nprogress.css" />
+    </head>
+    <body>
+        <script>
+            NProgress.configure({ showSpinner: false });
+
+            NProgress.start();
+
+            setTimeout(() => {
+                NProgress.done();
+            }, 2000);
+        </script>
+    </body>
+</html>
