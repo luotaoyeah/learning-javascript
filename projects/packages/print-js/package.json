@@ -1,0 +1,16 @@
+{
+    "name": "@luotao/learning-javascript.print-js",
+    "version": "1.0.0",
+    "dependencies": {
+        "print-js": "1.6.0"
+    },
+    "devDependencies": {
+        "prettier": "2.8.4"
+    },
+    "prettier": {
+        "printWidth": 160,
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4
+    }
+}

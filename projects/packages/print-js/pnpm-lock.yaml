@@ -1,0 +1,23 @@
+lockfileVersion: 5.4
+
+specifiers:
+  prettier: 2.8.4
+  print-js: 1.6.0
+
+dependencies:
+  print-js: 1.6.0
+
+devDependencies:
+  prettier: 2.8.4
+
+packages:
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /print-js/1.6.0:
+    resolution: {integrity: sha512-BfnOIzSKbqGRtO4o0rnj/K3681BSd2QUrsIZy/+WdCIugjIswjmx3lDEZpXB2ruGf9d4b3YNINri81+J0FsBWg==}
+    dev: false
