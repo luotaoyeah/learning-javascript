@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>toDataURL</title>
+        <script src="../../node_modules/qrcode/build/qrcode.js"></script>
+    </head>
+    <body>
+        <img id="img01" src="#" width="256" />
+
+        <script type="module">
+            const qrcode02 = QRCode.create('HELLO WORLD', {});
+            QRCode.toDataURL(qrcode02.segments, { margin: 1, width: 256 }).then((value) => {
+                console.assert(value.startsWith('data:image/png;base64'));
+
+                document.querySelector('#img01').src = value;
+            });
+        </script>
+    </body>
+</html>
