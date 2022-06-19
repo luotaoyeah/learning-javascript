@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>toCanvas</title>
+        <script src="../../node_modules/qrcode/build/qrcode.js"></script>
+    </head>
+    <body>
+        <canvas id="canvas01" width="256" height="256"></canvas>
+        <canvas id="canvas02" width="256" height="256"></canvas>
+
+        <script type="module">
+            QRCode.toCanvas(document.querySelector('#canvas01'), 'HELLO WORLD', { color: { dark: '#ff0000' }, margin: 1 }).then(() => {});
+
+            const qrcode02 = QRCode.create('HELLO WORLD', {});
+            QRCode.toCanvas(document.querySelector('#canvas02'), qrcode02.segments, { color: { dark: '#0000ff' }, margin: 1 }).then(() => {});
+        </script>
+    </body>
+</html>
