@@ -1,0 +1,17 @@
+{
+    "name": "@luotao/learning-javascript.sortablejs",
+    "version": "1.0.0",
+    "dependencies": {
+        "sortablejs": "1.6.0"
+    },
+    "devDependencies": {
+        "@types/sortablejs": "1.15.0",
+        "prettier": "2.8.4"
+    },
+    "prettier": {
+        "printWidth": 160,
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4
+    }
+}

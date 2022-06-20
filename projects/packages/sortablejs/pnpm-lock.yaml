@@ -1,0 +1,29 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@types/sortablejs': 1.15.0
+  prettier: 2.8.4
+  sortablejs: 1.6.0
+
+dependencies:
+  sortablejs: 1.6.0
+
+devDependencies:
+  '@types/sortablejs': 1.15.0
+  prettier: 2.8.4
+
+packages:
+
+  /@types/sortablejs/1.15.0:
+    resolution: {integrity: sha512-qrhtM7M41EhH4tZQTNw2/RJkxllBx3reiJpTbgWCM2Dx0U1sZ6LwKp9lfNln9uqE26ZMKUaPEYaD4rzvOWYtZw==}
+    dev: true
+
+  /prettier/2.8.4:
+    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: true
+
+  /sortablejs/1.6.0:
+    resolution: {integrity: sha512-g26kClbzGYGC1dXlkCgxNefcyD1Qkej3/ZUx7iQo/Vbdh/vfirDMVM2qUfWf+8MoqYsiU4LcoSQqB77Q9IN72w==}
+    dev: false
