@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>01</title>
+
+        <script src="../node_modules/sortablejs/Sortable.js"></script>
+
+        <style>
+            * {
+                font-family: SimSun, sans-serif;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            li {
+                border: 1px solid #ddd;
+                padding: 3px 6px;
+                border-radius: 3px;
+                margin-bottom: 12px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="ul01">
+            <li>A</li>
+            <li>B</li>
+            <li>C</li>
+        </ul>
+
+        <script>
+            const sortable = Sortable.create(document.querySelector('#ul01'), {});
+        </script>
+    </body>
+</html>
